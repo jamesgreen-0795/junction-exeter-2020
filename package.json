@@ -1,4 +1,5 @@
 {
+    "private": true,
     "dependencies": {
         "coffee-loader": "^0.9.0",
         "coffeescript": "^2.5.1",
@@ -7,6 +8,8 @@
         "webpack-cli": "^3.3.11"
     },
     "scripts": {
-        "build": "node_modules/.bin/webpack --config webpack.config.js --watch"
+        "sync": "yarn install",
+        "webpack": "node_modules/.bin/webpack --config webpack.config.js --watch",
+        "build": "sync && webpack"
     }
 }
