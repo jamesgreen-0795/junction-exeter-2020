@@ -10,6 +10,6 @@
     "scripts": {
         "sync": "yarn install",
         "webpack": "node_modules/.bin/webpack --config webpack.config.js --watch",
-        "build": "sync && webpack"
+        "build": "yarn sync && yarn webpack"
     }
 }
