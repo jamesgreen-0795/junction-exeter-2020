@@ -6,16 +6,16 @@
 
 <script>
 
-    const modelContext = require.context("./models", true, /.vue/);
+    const modelsContext = require.context("./models", true, /.vue/);
 
     export default {
         name: "layout",
 
         components: {
             // Load models
-            ...modelContext.keys().reduce((accum, key) => {
-                accum[modelContext(key).default.name] = modelContext(key).default;
-                return accum;
+            ...modelsContext.keys().reduce((models, contextKey) => {
+                models[modelsContext(contextKey).default.name] = modelsContext(contextKey).default;
+                return models;
             }, {})
         },
     }
