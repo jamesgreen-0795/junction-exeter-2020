@@ -3,7 +3,7 @@ node_js:
   - "10.4"
 
 before_install:
-  - yarn build
+  - yarn travis
 
 deploy:
   provider: pages
