@@ -6,5 +6,5 @@ window.store = {
 	models: {
         regions: require("./models/regions").default,
     },
-    points: 0,
+	points: 0,
 };

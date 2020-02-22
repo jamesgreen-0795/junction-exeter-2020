@@ -1,6 +1,8 @@
 <template>
     <div ref="svg" class="model-map">
-        <svg-map style="width: 100%;"></svg-map>
+        <div>
+            <svg-map class="svg-map"></svg-map>
+        </div>
     </div>
 </template>
 
@@ -12,27 +14,31 @@
     path {
         fill: #{var(--teal)};
     }
-
     .model-map {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        transform: scale(1.005);
+        background: #{var(--white)};
+        border-radius: 0.25rem;
     }
-
+    .svg-map {
+        transform: scale(1.1);
+    }
 </style>
 
 <script>
 
     import SvgMap from "~assets/regions.svg";
+    import PanZoom from "panzoom";
 
     export default {
         name: "model-map",
 
         components: {
             SvgMap,
+        },
+
+        data(){
+            return {
+                panzoom: null,
+            }
         },
 
         watch: {
@@ -50,6 +56,19 @@
                     });
                 },
             },
+        },
+
+        mounted(){
+            this.panzoom = new PanZoom(this.$refs['svg'], {
+                bounds: true,
+                boundsPadding: 1,
+                maxZoom: 3,
+                minZoom: 1
+            });
+        },
+
+        beforeDestroy(){
+
         },
     }
 </script>
