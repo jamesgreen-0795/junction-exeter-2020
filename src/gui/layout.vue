@@ -23,10 +23,11 @@
     .layout {
         position: relative;
         display: inline-block;
-        margin: 4rem auto;
-        width: 90%;
+        margin: 3rem auto;
+        width: 90vw;
+        height: 80vh;
         border-radius: 12px;
-        background: var(--white);
+        background: var(--black);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
         overflow: hidden;
