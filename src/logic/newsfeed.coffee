@@ -10,8 +10,20 @@ toggleFlooding = ->
 		country.state.flooding = false
 		createNewsItem(country.name + " has stopped flooding.")
 	else
-		country.state.flooding = true
-		createNewsItem(country.name + " has begun to flood.")
+		if Math.floor(Math.random() * 100) < window.store.carbon
+			country.state.flooding = true
+			window.store.points += 10
+			createNewsItem("Severe flooding in " + country.name + ".")
+		else
+			true
+
+emissionsTarget = ->
+	country = getCountry()
+	if country.state.corruption < 5 and window.store.carbon > 10
+		window.store.carbon -= 2
+		createNewsItem("Today, at the UN, " + country.name + " has announced ambitious climate targets.")
+	else
+		false
 
 oilDeal = ->
 	country = getCountry()
@@ -31,9 +43,10 @@ closeBorders = ->
 		false
 
 newsTypes = [
-	closeBorders,
+	# closeBorders,
 	toggleFlooding,
-	oilDeal
+	oilDeal,
+	emissionsTarget
 ]
 
 doEvent = ->
