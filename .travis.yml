@@ -1,11 +1,12 @@
-# Install the apt prerequisites
-addons:
-  apt:
-    packages:
-      - python-pygments
-# Clean and don't fail
-install:
-  - rm -rf public || exit 0
-# Build the website
-script:
-  - ./ yarn build
+language: node_js
+node_js:
+  - "10.4"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
+  local_dir: dist       
