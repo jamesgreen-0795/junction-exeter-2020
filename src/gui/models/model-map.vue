@@ -9,6 +9,10 @@
         transition: all 10s ease;
     }
 
+    path {
+        fill: #{var(--teal)};
+    }
+
     .model-map {
         display: flex;
         width: 100%;
