@@ -6,7 +6,7 @@ const generator = entries => entries.map(entry => {
         uuid: uuid(),
         timestamp: Date.now(),
         name: null,
-        continent: null,
+		continent: null,
         state: {
             openBorders: true,
             flooding: false,

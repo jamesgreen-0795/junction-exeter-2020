@@ -3,6 +3,11 @@
         <div class="sidebar">
 
         </div>
+		<div class="current-year">
+			Current year: {{ $root.store.currentYear }}
+			Points: {{ $root.store.points }}
+			Temperature: {{ 15 + (($root.store.temperature / 100) * 5) }}
+		</div>
         <div class="map">
             <model-test class="test"></model-test>
             <model-newsfeed class="newsfeed"></model-newsfeed>
