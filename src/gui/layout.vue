@@ -1,5 +1,6 @@
 <template>
     <div class="wrapper">
+        <model-scores></model-scores>
         <div class="map">
             <div class="sidebar">
                 <h5 style="text-align:center;">Inventory</h5>
@@ -7,10 +8,8 @@
             </div>
             <model-test class="test"></model-test>
             <model-newsfeed class="newsfeed"></model-newsfeed>
+
             <model-map></model-map>
-            <div class="current-frame-iteration">
-                {{ $root.frame }}
-            </div>
         </div>
     </div>
 </template>
@@ -58,20 +57,13 @@
         position: relative;
         display: inline-block;
         width: 90vw;
-        height: 90vh;
+        height: 85vh;
+        top: 0.25rem;
         border-radius: 12px;
         background: var(--black);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
         overflow: hidden;
-
-
-        .current-frame-iteration {
-            position: absolute;
-            bottom: 0.5rem;
-            right: 0.5rem;
-            font-size: 0.75rem;
-        }
 
         .newsfeed {
             z-index: 5;
