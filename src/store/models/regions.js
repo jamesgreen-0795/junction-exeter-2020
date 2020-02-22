@@ -11,6 +11,7 @@ const generator = entries => entries.map(entry => {
             openBorders: true,
             flooding: false,
             temperture: 0,
+            hasOil: false,
         },
         ...entry,
     };

@@ -1,0 +1,15 @@
+Type: AWS::CodePipeline::Pipeline
+Properties:
+  ArtifactStore:
+    ArtifactStore
+  ArtifactStores:
+    - ArtifactStoreMap
+  DisableInboundStageTransitions:
+    - StageTransition
+  Name: String
+  RestartExecutionOnUpdate: Boolean
+  RoleArn: String
+  Stages:
+    - StageDeclaration
+  Tags:
+    - Tag
