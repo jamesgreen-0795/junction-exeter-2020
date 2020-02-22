@@ -85,7 +85,7 @@ closeBorders = ->
 	country = getCountry()
 	if country.state.openBorders
 		country.state.openBorders = false
-		if country.name == "britain"
+		if country.name == "Britain"
 			createNewsItem("Brexit means brexit, " + country.name + " has closed its borders.")
 		else
 			createNewsItem(country.name + " has closed its borders.")
