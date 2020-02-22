@@ -1,5 +1,8 @@
 <template>
-    <div>
+    <div class="wrapper">
+        <div class="sidebar">
+
+        </div>
         <div class="map">
             <model-test class="test"></model-test>
             <model-newsfeed class="newsfeed"></model-newsfeed>
@@ -8,14 +11,16 @@
                 {{ $root.frame }}
             </div>
         </div>
-
-        <button @click="mutateOil">
-            Oil
-        </button>
     </div>
 </template>
 
 <style lang="scss">
+    .wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: #{calc(100vh - 1rem)};
+    }
     .test {
         position: absolute;
         top: 0.5rem;
@@ -27,19 +32,30 @@
         color: #000;
     }
 
-
+    .sidebar {
+        position: relative;
+        display: inline-block;
+        width: 30vw;
+        height: #{calc(60vw * 0.66)};
+        background: #{var(--white)};
+        border-radius: 12px;
+        box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
+    }
 
     .map {
         position: relative;
         display: inline-block;
-        margin: 3rem auto;
-        width: 55vw;
-        height: 40vh;
+        width: 60vw;
+        height: #{calc(60vw * 0.66)};
         border-radius: 12px;
         background: var(--black);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
         overflow: hidden;
+        cursor: grab;
+        &:focus:active {
+            cursor: grabbing;
+        }
 
         .current-frame-iteration {
             position: absolute;
