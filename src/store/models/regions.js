@@ -10,7 +10,8 @@ const generator = entries => entries.map(entry => {
         state: {
             openBorders: true,
             flooding: false,
-            temperture: 0,
+			temperture: 0,
+			corruption: 0,
         },
         ...entry,
     };

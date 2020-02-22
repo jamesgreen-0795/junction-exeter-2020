@@ -12,7 +12,13 @@ toggleFlooding = ->
 	else
 		country.state.flooding = true
 		createNewsItem(country.name + " has begun to flood.")
-	true
+
+oilDeal = ->
+	country = getCountry()
+	if country.state.corruption > 2
+		createNewsItem(country.name + " has leased its oil fields to CrudeIncorporated.")
+	else
+		false
 
 closeBorders = ->
 	country = getCountry()
@@ -25,11 +31,11 @@ closeBorders = ->
 
 newsTypes = [
 	closeBorders,
-	toggleFlooding
+	toggleFlooding,
+	oilDeal
 ]
 
 doEvent = ->
-	# TODO: Garbage collection of old events
 	if newsTypes[Math.floor(Math.random() * newsTypes.length)]()
 		true
 	else
@@ -40,6 +46,7 @@ createNewsItem = (msg) ->
 	item = utils.createStoreItem()
 	item.message = msg
 	window.store.newsfeed.push(item)
+	true
 
 getCountry = ->
 	cCount = window.store.models.regions.length
