@@ -21,9 +21,9 @@
             display: inline-block;
             margin-bottom: 0.25rem;
             padding: 0 0.25rem;
-            background-color: #{var(--white)};
+            background-color: #{var(--black)};
             border-radius: 0.25rem;
-            color: #{var(--black)};
+            color: #{var(--white)};
         }
     }
 </style>

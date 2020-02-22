@@ -1,11 +1,17 @@
 <template>
-    <div class="layout">
-        <model-test class="test"></model-test>
-        <model-newsfeed class="newsfeed"></model-newsfeed>
-        <model-map></model-map>
-        <div class="current-frame-iteration">
-            {{ $root.frame }}
+    <div>
+        <div class="map">
+            <model-test class="test"></model-test>
+            <model-newsfeed class="newsfeed"></model-newsfeed>
+            <model-map></model-map>
+            <div class="current-frame-iteration">
+                {{ $root.frame }}
+            </div>
         </div>
+
+        <button @click="mutateOil">
+            Oil
+        </button>
     </div>
 </template>
 
@@ -20,12 +26,15 @@
         padding: 0.25rem;
         color: #000;
     }
-    .layout {
+
+
+
+    .map {
         position: relative;
         display: inline-block;
         margin: 3rem auto;
-        width: 90vw;
-        height: 80vh;
+        width: 55vw;
+        height: 40vh;
         border-radius: 12px;
         background: var(--black);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
@@ -59,6 +68,12 @@
                 return models;
             }, {})
         },
+
+        methods: {
+            mutateOil(){
+                window.mutations.upgrades.oil1();
+            }
+        }
     }
 
 

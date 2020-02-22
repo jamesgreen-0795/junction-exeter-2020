@@ -11,7 +11,7 @@ const generator = entries => entries.map(entry => {
             openBorders: true,
             flooding: false,
 			temperture: 0,
-			corruption: 0,
+			corruption: Math.floor(Math.random() * 2), // randomly level 0 or 1
             hasOil: false,
         },
         ...entry,
