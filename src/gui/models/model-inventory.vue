@@ -7,7 +7,9 @@
             class="upgrade"
             @click="runUpgrade($event, upgrade)"
         >
-			{{ upgrade.name }}
+			<span class="name">
+                {{ upgrade.name }}
+            </span>
 		</button>
     </div>
 </template>
@@ -18,16 +20,17 @@
         flex-wrap: wrap;
         height: 100%;
         border-radius: 0 0 0.5rem 0.5rem;
+        background-color: rgba(0, 0, 0, 0.1);
 
         .upgrade {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             width: 50%;
-            height: 50%;
-            background: #{var(--black)};
-            border-color: #{var(--grey)};
-            border-width: 1px;
+            padding-bottom: 50%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 0;
             cursor: pointer;
             transform: scale(1);
             text-align: center;
@@ -35,7 +38,14 @@
             transition: background 0.15s ease, transform 0.15s ease;
 
             &:hover {
-                background: #{var(--dark)};
+                background: rgba(0, 0, 0, 0.3);
+            }
+
+            .name {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
 
             &:hover:focus {
@@ -81,14 +91,13 @@
 
         methods: {
             runUpgrade($event, upgrade){
-                upgrade.onPurchase();
-
                 // remove focus from button after 200ms and remove upgrade from list
                 const target = $event.target;
                 setTimeout(() => {
                     target.blur();
 					window.mutations.upgrades.removeUpgrade(upgrade);
                 }, 200);
+                upgrade.onPurchase();
             },
         },
     }
