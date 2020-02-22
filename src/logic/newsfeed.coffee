@@ -42,5 +42,5 @@ createNewsItem = (msg) ->
 	window.store.newsfeed.push(item)
 
 getCountry = ->
-	cCount = window.store.countries.length
-	country = window.store.countries[Math.floor(Math.random() * cCount)]
+	cCount = window.store.models.countries.length
+	country = window.store.models.countries[Math.floor(Math.random() * cCount)]
