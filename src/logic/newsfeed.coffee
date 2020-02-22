@@ -44,6 +44,16 @@ oilDeal = ->
 	else
 		false
 
+banElectricCars = ->
+	country = getCountry()
+	if country.state.corruption > 4 && !country.state.electicCarsBanned
+		country.state.electicCarsBanned = true
+		window.store.temperature += 2
+		window.store.points += 100
+		createNewsItem("The government of " + country.name + " has banned electric cars over fears of toenail cancer.")
+	else
+		false
+
 closeBorders = ->
 	country = getCountry()
 	if country.state.openBorders
@@ -64,7 +74,8 @@ newsTypes = [
 	oilDeal,
 	drought,
 	emissionsTarget,
-	carFactory
+	carFactory,
+	banElectricCars,
 ]
 
 doEvent = ->
