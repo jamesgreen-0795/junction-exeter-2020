@@ -31,6 +31,7 @@ oilDeal = ->
 		country.state.hasOil = false
 		window.store.temperature += 1
 		window.store.points += 50
+		
 		createNewsItem(country.name + " has leased its oil fields to CrudeIncorporated.")
 	else
 		false
@@ -47,7 +48,13 @@ closeBorders = ->
 carFactory = ->
 	country = getCountry()
 	window.store.temperature += 0.5
-	createNewsItem("Ferd have opened a new car plant in " + country.name)
+	carBrands = ["Ferd","Tayata","Handa","Renot","VMW","Markedes"]
+	events = [" have opened a new factory in " ,
+			" have expanded operations in ",
+			" hit a new all time sales record in ",
+			" have been given a large tax break in "]
+	eventString = carBrands[Math.floor(Math.random() * carBrands.length)] + events[Math.floor(Math.random() * events.length)] + country.name
+	createNewsItem(eventString)
 
 newsTypes = [
 	# closeBorders,
