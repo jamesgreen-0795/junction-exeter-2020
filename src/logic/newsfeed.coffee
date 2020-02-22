@@ -21,7 +21,7 @@ emissionsTarget = ->
 	country = getCountry()
 	if country.state.corruption < 5 and window.store.carbon > 10
 		window.store.carbon -= 2
-		createNewsItem("Today, at the UN, " + country.name + " has announced ambitious climate targets.")
+		createNewsItem("Today, at the UN, " + country.name + " announced ambitious climate targets.")
 	else
 		false
 
