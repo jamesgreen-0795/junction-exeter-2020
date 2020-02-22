@@ -73,6 +73,18 @@ plt.xlabel("Week Number")
 plt.show()
 
 
+def temp_curve(x):
+	return (128**(x/70)/128) -0.5
+y_example = temp_curve(x)
+y_example_fuzz = np.zeros(year_points)
+for i in range(len(y)):
+	y_example_fuzz[i] = year_fuzz(y_example[i])
+plt.plot(x,y_example,"k-",label="Underlying temp",c=(0,0,0,0.5))
+plt.plot(x,y_example_fuzz,"r--")
+plt.ylim(-1,1)
+plt.show()
+
+
 #def test(x):
 #    return (128**(x) - 1)/128
 #test_x = np.linspace(0,1)
