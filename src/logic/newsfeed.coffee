@@ -35,7 +35,9 @@ drought = ->
 	if Math.floor(Math.random() * 200) < window.store.temperature
 			country.state.flooding = true
 			window.store.points += 25
-			events = [" is in drought.", " has imposed a hose pipe ban"]
+			events = [" is in drought.", 
+				" has imposed a hose pipe ban",
+				"'s water reserves are at an all time low."]
 			createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 		else
 			true
@@ -61,7 +63,21 @@ banElectricCars = ->
 		country.state.electicCarsBanned = true
 		window.store.temperature += 2
 		window.store.points += 100
-		createNewsItem("The government of " + country.name + " has banned electric cars over fears of toenail cancer.")
+		events = ["The government of " + country.name + " has banned electric cars over fears of toenail cancer.",
+			country.name + " has banned electric transport over fears of reduced oil profits."]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+banRenewableEnergy = ->
+	country = getCountry()
+	if country.state.corruption > 5 && !country.state.renewableEnergyBanned
+		country.state.renewableEnergyBanned = true
+		window.store.temperature += 2
+		window.store.points += 150
+		events = [country.name + " has banned wind turbines over fears of sub sonic noises",
+			country.name + " has banned home solar panels."]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
 		false
 
