@@ -9,7 +9,15 @@ window.store = {
     },
 	models: {
         regions: require("./models/regions").default,
-    },
+	},
+	availableUpgrades: [
+		{
+			uuid: uuid(),
+			name: "Oil Lobbying 1",
+			onPurchase: window.mutations.upgrades.oil1,
+			price: 10
+		}
+	],
 	points: 0,
     temperature: 0,
     fuzzTemperature: 15,

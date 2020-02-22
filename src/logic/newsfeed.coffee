@@ -19,11 +19,20 @@ toggleFlooding = ->
 
 emissionsTarget = ->
 	country = getCountry()
-	if country.state.corruption < 5 and window.store.temperature > 10
+	if country.state.corruption < 5 and window.store.temperature > 30
 		window.store.temperature -= 2
 		createNewsItem("Today, at the UN, " + country.name + " announced ambitious climate targets.")
 	else
 		false
+
+drought = ->
+	country = getCountry()
+	if Math.floor(Math.random() * 200) < window.store.temperature
+			country.state.flooding = true
+			window.store.points += 25
+			createNewsItem(country.name + " is in drought.")
+		else
+			true
 
 oilDeal = ->
 	country = getCountry()
@@ -60,6 +69,7 @@ newsTypes = [
 	# closeBorders,
 	toggleFlooding,
 	oilDeal,
+	drought,
 	emissionsTarget,
 	carFactory
 ]
