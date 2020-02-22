@@ -91,10 +91,11 @@
 
         methods: {
             runUpgrade($event, upgrade){
-                // remove focus from button after 200ms
+                // remove focus from button after 200ms and remove upgrade from list
                 const target = $event.target;
                 setTimeout(() => {
                     target.blur();
+					window.mutations.upgrades.removeUpgrade(upgrade);
                 }, 200);
                 upgrade.onPurchase();
             },
