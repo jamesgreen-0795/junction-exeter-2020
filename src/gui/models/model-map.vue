@@ -4,6 +4,12 @@
     </div>
 </template>
 
+<style lang="scss" scoped>
+    g {
+        transition: fill 0.3s ease;
+    }
+</style>
+
 <script>
 
     import SvgMap from "~assets/continents.svg";
@@ -22,10 +28,10 @@
                     JSON.parse(JSON.stringify(updatedRegions)).forEach(region => {
                         if (region.state.flooding){
                             console.log("flood", this.$refs.svg.querySelector(region.classIdentifier));
-                            this.$refs.svg.querySelector(region.classIdentifier).classList.add("bg-blue");
+                            this.$refs.svg.querySelector(region.classIdentifier).classList.add("fill-blue");
                         }
                         else {
-                            this.$refs.svg.querySelector(region.classIdentifier).classList.remove("bg-blue");
+                            this.$refs.svg.querySelector(region.classIdentifier).classList.remove("fill-blue");
                         }
                     });
                 },

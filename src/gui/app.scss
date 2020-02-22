@@ -1,6 +1,7 @@
 // Global styles
 
 $colors: (
+    "lightblue": #66c5e6,
     "blue": #114b5f,
     "teal": #1a936f,
     "green": #88d498,
@@ -23,6 +24,10 @@ $colors: (
 
     .bg-#{$name} {
         background: #{$value};
+    }
+
+    .fill-#{$name} {
+        fill: #{$value};
     }
 }
 

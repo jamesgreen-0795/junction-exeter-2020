@@ -16,7 +16,7 @@
         width: 800px;
         height: 450px;
         border-radius: 12px;
-        background: var(--blue);
+        background: var(--lightblue);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
 
