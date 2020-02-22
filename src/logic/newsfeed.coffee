@@ -7,9 +7,10 @@ export getNews = ->
 doEvent = ->
 	cCount = window.store.countries.length
 	country = window.store.countries[Math.floor(Math.random() * cCount)]
-	console.log(country)
-	country.state.openBorders = false
-	createNewsItem(country.name + " has closed its borders.")
+
+	if country.openBorders
+		country.state.openBorders = false
+		createNewsItem(country.name + " has closed its borders.")
 
 createNewsItem = (msg) ->
 	window.store.newsfeed.push({
