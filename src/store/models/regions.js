@@ -78,7 +78,7 @@ export default generator([
         continent: "europe",
         climate: {
             temperature: 20,
-            hemisphere: "n",
+            hemisphere: "n"
         },
     },
     {
