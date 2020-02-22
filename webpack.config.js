@@ -4,6 +4,11 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
     entry: "./src/index.js",
     mode: "development",
+    resolve: {
+        alias: {
+            "~assets": path.resolve(__dirname, "assets"),
+        },
+    },
     output: {
         filename: "app.js",
         path: path.resolve(__dirname, 'dist'),
@@ -41,6 +46,10 @@ module.exports = {
                     'vue-style-loader',
                     'css-loader'
                 ]
+            },
+            {
+               test: /\.svg$/,
+               loader: 'vue-svg-loader', // `vue-svg` for webpack 1.x
             },
         ]
     },
