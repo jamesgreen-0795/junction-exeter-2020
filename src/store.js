@@ -1,6 +1,7 @@
 const uuid = require('uuid/v4');
 
 window.store = {
+    currentFrame: 0,
 	newsfeed: [],
 	countries: [
 		{

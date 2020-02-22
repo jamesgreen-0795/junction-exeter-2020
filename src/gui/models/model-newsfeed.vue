@@ -1,7 +1,7 @@
 <template>
     <div class="model-newsfeed">
-        <div v-for="(item, index) in $root.store.newsfeed" v-if="index < 3" :key="item.uuid" class="item">
-            {{ item.message }}
+        <div v-for="(item, index) in recentNews" :key="item.uuid" class="item">
+            <span v-html="item.message"></span>
         </div>
     </div>
 </template>
@@ -31,5 +31,15 @@
 <script>
     export default {
         name: "model-newsfeed",
+        computed: {
+            recentNews(){
+                return this.$root.store.newsfeed.filter(news => !!this.isNewsRecent(news, this.$root.frame));
+            },
+        },
+        methods: {
+            isNewsRecent(item){
+                return item.timestamp > ( Date.now() - 5000);
+            }
+        }
     }
 </script>

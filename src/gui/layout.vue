@@ -1,10 +1,13 @@
 <template>
     <div class="layout">
         <model-newsfeed></model-newsfeed>
+        <div class="frame">
+            {{ $root.frame }}
+        </div>
     </div>
 </template>
 
-<style>
+<style lang="scss">
     .layout {
         position: relative;
         display: inline-block;
@@ -15,6 +18,13 @@
         background: var(--blue);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
+
+        .frame {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.75rem;
+        }
     }
 </style>
 

@@ -11,6 +11,11 @@ window.gui = {
         template: "<layout/>",
         data: {
             store: window.store,
-        }
+        },
+        computed: {
+            frame(){
+                return this.store.currentFrame;
+            },
+        },
     }),
 };
