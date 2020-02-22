@@ -1,8 +1,22 @@
 <template>
-    <div>
+    <div class="layout">
         <model-newsfeed></model-newsfeed>
     </div>
 </template>
+
+<style>
+    .layout {
+        position: relative;
+        display: inline-block;
+        margin: 4rem auto;
+        width: 800px;
+        height: 450px;
+        border-radius: 12px;
+        background: var(--blue);
+        box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
+        transition: background 10s ease;
+    }
+</style>
 
 <script>
 

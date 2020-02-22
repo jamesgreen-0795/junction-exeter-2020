@@ -1,0 +1,35 @@
+// Global styles
+
+$colors: (
+    "blue": #114b5f,
+    "teal": #1a936f,
+    "green": #88d498,
+    "yellow": #ffdf68,
+    "orange": #DB8200,
+    "red": #B04001,
+    "grey": #c6dabf,
+    "white": #f3e9d2,
+    "black": #272727,
+);
+
+@each $name, $value in $colors {
+    :root {
+        --#{$name}: #{$value};
+    }
+
+    .#{$name} {
+        color: #{$value};
+    }
+
+    .bg-#{$name} {
+        background: #{$value};
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: var(--black);
+    color: var(--white);
+    font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
