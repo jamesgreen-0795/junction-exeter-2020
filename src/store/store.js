@@ -5,5 +5,6 @@ window.store = {
 	newsfeed: [],
 	models: {
         regions: require("./models/regions").default,
-    }
+    },
+    points: 0,
 };
