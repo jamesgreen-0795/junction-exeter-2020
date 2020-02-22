@@ -15,7 +15,7 @@ doModulate = ->
 		region.climate.temperature += region.climate.temperature * getSeasonOffset()
 		console.log(region.name + ": " + region.climate.temperature)
 
-fuzzYearTemperature = (temp) ->
+export fuzzYearTemperature = (temp) ->
 	magnitudeSign = if Math.random() < 0.5 then 1 else -1
 	rnd = Math.random()
 	offset = (Math.pow(32,rnd) - 1) / (32*4)
