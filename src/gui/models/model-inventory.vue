@@ -1,5 +1,9 @@
 <template>
     <div class="inventory">
+		
+		<li v-for="upgrade in $root.store.availableUpgrades">
+			{{ upgrade.name }}
+		</li>
         <button class="upgrade" @click="upgrade($event, 'fossil-fuels')">
             Fossil Fuels
         </button>
