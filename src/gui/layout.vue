@@ -1,15 +1,10 @@
 <template>
     <div class="wrapper">
-        <div class="sidebar">
-            <h2 class="black" style="text-align:center;">Inventory</h2>
-            <model-inventory></model-inventory>
-        </div>
-		<div class="current-year">
-			Current year: {{ $root.store.currentYear }}
-			Points: {{ $root.store.points }}
-			Temperature: {{ $root.store.fuzzTemperature }}
-		</div>
         <div class="map">
+            <div class="sidebar">
+                <h5 class="black" style="text-align:center;">Inventory</h5>
+                <model-inventory></model-inventory>
+            </div>
             <model-test class="test"></model-test>
             <model-newsfeed class="newsfeed"></model-newsfeed>
             <model-map></model-map>
@@ -39,26 +34,39 @@
     }
 
     .sidebar {
-        position: relative;
-        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: inline-flex;
         flex-direction: column;
-        width: 30vw;
-        height: #{calc(60vw * 0.66)};
+        width: 25%;
+        height: 50%;
         background: #{var(--white)};
-        border-radius: 12px;
-        box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
+        border-radius: 0 12px 0 12px;
+        // box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
+        z-index: 5;
+        opacity: 0.75;
+        transform: #{translateY(calc(100% - 3.85rem))};
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+        transition: opacity 0.15s ease, transform 0.3s ease;
+
+        &:hover, &:focus-within {
+            opacity: 1;
+            transform: #{translateY(0)};
+        }
     }
 
     .map {
         position: relative;
         display: inline-block;
-        width: 60vw;
-        height: #{calc(60vw * 0.66)};
+        width: 90vw;
+        height: 90vh;
         border-radius: 12px;
         background: var(--black);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
         overflow: hidden;
+
 
         .current-frame-iteration {
             position: absolute;
