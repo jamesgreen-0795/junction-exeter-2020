@@ -1,7 +1,8 @@
 <template>
     <div class="layout">
         <model-newsfeed></model-newsfeed>
-        <div class="frame">
+        <model-map></model-map>
+        <div class="current-frame-iteration">
             {{ $root.frame }}
         </div>
     </div>
@@ -15,11 +16,11 @@
         width: 800px;
         height: 450px;
         border-radius: 12px;
-        background: var(--blue);
+        background: var(--lightblue);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
 
-        .frame {
+        .current-frame-iteration {
             position: absolute;
             bottom: 0.5rem;
             right: 0.5rem;
