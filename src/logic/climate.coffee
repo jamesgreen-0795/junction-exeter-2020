@@ -23,7 +23,11 @@ fuzzYearTemperature = (tempPoints) ->
 	rnd = Math.random()
 	offset = (Math.pow(32,rnd) - 1) / (32*4)
 	offset = offset * magnitudeSign
-	return Math.round((temp + offset) * 100)/100
+	fuzzy = Math.round((temp + offset) * 100)/100
+	if fuzzy >= 20 && window.store.temperature < 20
+		return Math.round((19.99 - (Math.random()/3)) * 100)/100
+	else
+		return fuzzy
 
 getWeekTemperature = (week, currYr, seasonVar, weekVar) ->
 	yrPercent = (week % 52) / 52

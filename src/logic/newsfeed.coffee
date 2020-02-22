@@ -21,7 +21,12 @@ emissionsTarget = ->
 	country = getCountry()
 	if country.state.corruption < 5 and window.store.temperature > 30
 		window.store.temperature -= 2
-		createNewsItem("Today, at the UN, " + country.name + " announced ambitious climate targets.")
+		events = ["During the UN, " + country.name + " announced ambitious climate targets.",
+				country.name + " has signed the Paris climate accords.",
+				"Within 15 years, " + country.name + " has pledged to ban all petrol cars.",
+				country.name + " are in talks with Bestla to open a new electric car factory.",
+				country.name + " have reached their emissions goals " + Math.round(Math.random()*5) + " years ahead of schedule."]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
 		false
 
@@ -30,7 +35,8 @@ drought = ->
 	if Math.floor(Math.random() * 200) < window.store.temperature
 			country.state.flooding = true
 			window.store.points += 25
-			createNewsItem(country.name + " is in drought.")
+			events = [" is in drought.", " has imposed a hose pipe ban"]
+			createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 		else
 			true
 
@@ -40,8 +46,12 @@ oilDeal = ->
 		country.state.hasOil = false
 		window.store.temperature += 1
 		window.store.points += 50
-		
-		createNewsItem(country.name + " has leased its oil fields to CrudeIncorporated.")
+		events = [" has started to increase investment in oil.",
+				" has increased its oil exports.",
+				" has given CrudeInc increased oil drilling rights.",
+				" has started a national oil company",
+				" approved Petroleum International's national expansion plans."]
+		createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 	else
 		false
 
@@ -49,7 +59,10 @@ closeBorders = ->
 	country = getCountry()
 	if country.state.openBorders
 		country.state.openBorders = false
-		createNewsItem(country.name + " has closed its borders.")
+		if country.name == "britain"
+			createNewsItem("Brexit means brexit, " + country.name + " has closed its borders.")
+		else
+			createNewsItem(country.name + " has closed its borders.")
 		true
 	else
 		false
