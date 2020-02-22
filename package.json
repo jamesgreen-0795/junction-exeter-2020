@@ -16,11 +16,13 @@
         "vue-svg-loader": "^0.16.0",
         "vue-template-compiler": "^2.6.11",
         "webpack": "^4.41.6",
-        "webpack-cli": "^3.3.11"
+        "webpack-cli": "^3.3.11",
+        "yarn": "^1.22.0"
     },
     "scripts": {
         "sync": "yarn install",
         "webpack": "node_modules/.bin/webpack --config webpack.config.js --watch",
-        "build": "yarn sync && yarn webpack"
+        "build": "yarn sync && yarn webpack",
+        "test": "yarn --version"
     }
 }
