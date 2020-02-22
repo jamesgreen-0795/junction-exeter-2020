@@ -44,11 +44,17 @@ closeBorders = ->
 	else
 		false
 
+carFactory = ->
+	country = getCountry()
+	window.store.temperature += 0.5
+	createNewsItem("Ferd have opened a new car plant in " + country.name)
+
 newsTypes = [
 	# closeBorders,
 	toggleFlooding,
 	oilDeal,
-	emissionsTarget
+	emissionsTarget,
+	carFactory
 ]
 
 doEvent = ->

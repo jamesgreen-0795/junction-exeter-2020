@@ -11,6 +11,7 @@ $colors: (
     "grey": #c6dabf,
     "white": #f3e9d2,
     "black": #272727,
+    "dark": lighten(#272727, 10%),
 );
 
 @each $name, $value in $colors {
