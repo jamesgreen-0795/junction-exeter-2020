@@ -16,6 +16,8 @@
     }
     .model-map {
         background: #{var(--white)};
+        height: 100%;
+        width: 100%;
         border-radius: 0.25rem;
         cursor: grab !important;
         &.is-moving {
@@ -88,8 +90,7 @@
 
                 console.log(svgPosition, regionPosition);
 
-                this.panzoom.zoom(3, {animate: true});
-                this.panzoom.pan(coords.x, coords.y);
+                // this.panzoom.zoom(1.1, {animate: true});
 
                 // this.panzoom.moveTo(coords.x, coords.y);
             },
@@ -106,9 +107,9 @@
                 contain: "outside",
                 maxScale: 10,
                 minScale: 1,
-                // zoom: 2,
-                // panOnlyWhenZoomed: true,
             });
+            this.panzoom.zoom(1, {animate: true});
+            // this.panzoom.zoom(1, {animate: true});
             // Bind to mousewheel
             this.$refs["svg"].parentElement.addEventListener('wheel', this.panzoom.zoomWithWheel);
             this.$refs["svg"].addEventListener("panzoomstart", () => {
