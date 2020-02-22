@@ -1,7 +1,8 @@
 <template>
     <div class="wrapper">
         <div class="sidebar">
-
+            <h2 class="black" style="text-align:center;">Inventory</h2>
+            <model-inventory></model-inventory>
         </div>
         <div class="map">
             <model-test class="test"></model-test>
@@ -34,7 +35,8 @@
 
     .sidebar {
         position: relative;
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
         width: 30vw;
         height: #{calc(60vw * 0.66)};
         background: #{var(--white)};
@@ -52,10 +54,6 @@
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
         overflow: hidden;
-        cursor: grab;
-        &:focus:active {
-            cursor: grabbing;
-        }
 
         .current-frame-iteration {
             position: absolute;

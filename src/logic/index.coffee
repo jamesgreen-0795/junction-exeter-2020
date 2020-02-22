@@ -12,3 +12,10 @@ mainLoop = ->
 	requestAnimationFrame(mainLoop)
 
 mainLoop()
+
+# Zoom in on the UK on load
+setTimeout ( ->
+		window.store.user.focusedRegionUuid = (window.store.models.regions.find ( (region) ->
+			region.name == "britain"
+		) ).uuid
+), 1000
