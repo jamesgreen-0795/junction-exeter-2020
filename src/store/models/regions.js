@@ -56,7 +56,7 @@ const isOil = name => {
         "Pakistan",
         "Turkey",
         "Trinidad and Tobago",
-        "Bolivia"
+        "Bolivia",
         "Cameroon",
         "Belarus",
         "Democratic Republic of the Congo",
