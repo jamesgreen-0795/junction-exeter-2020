@@ -18,7 +18,6 @@ const generator = entries => entries.map(entry => {
 });
 
 export default generator([
-
     {
         name: "albania",
         continent: "europe",
@@ -2683,6 +2682,4 @@ export default generator([
             hemisphere: "n"
         },
     },
-
-
 ])
