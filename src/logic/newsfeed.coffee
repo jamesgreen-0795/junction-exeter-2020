@@ -1,4 +1,4 @@
-import uuid from 'uuid/v4'
+utils = require './utils.coffee'
 
 export getNews = ->
 	if (Math.random()) < 0.01
@@ -8,12 +8,11 @@ doEvent = ->
 	cCount = window.store.countries.length
 	country = window.store.countries[Math.floor(Math.random() * cCount)]
 
-	if country.openBorders
+	if country.state.openBorders
 		country.state.openBorders = false
 		createNewsItem(country.name + " has closed its borders.")
 
 createNewsItem = (msg) ->
-	window.store.newsfeed.push({
-		uuid: uuid(),
-		message: msg,
-	})
+	item = utils.createStoreItem()
+	item.message = msg
+	window.store.newsfeed.push(item)
