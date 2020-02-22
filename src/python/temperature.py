@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # global
-def year_fuzz(temp):
+def year_fuzz(value):
+	temp = 15 + (value/20)
 	magnitude_sign = 1 if np.random.rand() < 0.5 else -1
 	rnd = np.random.rand()
 	offset = (32**(rnd) - 1)/(32 * 4) # range over 0.3 of a degree
@@ -12,27 +13,13 @@ def year_fuzz(temp):
 # per region
 # year_avgs = avg_prev, avg_cur, avg_next
 # +ve season_var = northern,  -ve = southern,   0 = equator
-def week_fuzz(year_avgs,week,season_var,week_var):
+def week_fuzz(curr_yr,week,season_var,week_var):
 	
 	year_percent = (week / 52)
-	
-	# winter -1 to 0 to summer 1 to 0 etc
-
-
 	season_fade = (season_var/2) * np.sin(2 * np.pi * year_percent)
 
-
-
-	# This smoothes the year transition
-	yr_fade = 0.25 * (1 + np.cos(2*np.pi * year_percent))
-	prev_yr,curr_yr,next_yr = year_avgs
-	if year_percent < 0.5:
-		weighted_yr = yr_fade * prev_yr + (1-yr_fade) * curr_yr
-	else:
-		weighted_yr = yr_fade * next_yr + (1-yr_fade) * curr_yr
-
 	week_rand = week_var * (np.random.rand() - 0.5)
-	return weighted_yr + season_fade + week_rand
+	return curr_yr + season_fade + week_rand
 
 
 
@@ -60,9 +47,9 @@ wks = 52 * 2
 x_wk = np.arange(0,wks)
 y_wk = np.zeros(wks)
 for i in range(wks // 52):
-	year_avgs = y[i:i+3]
+	year_avg = y[i]
 for i in range(len(y_wk)):
-	y_wk[i] = week_fuzz(year_avgs,i,15,10)
+	y_wk[i] = week_fuzz(year_avg,i,15,10)
 
 plt.sca(ax[1])
 plt.grid(True,'major','y')
