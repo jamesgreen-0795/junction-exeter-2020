@@ -42,3 +42,8 @@ body {
 .flip-list-move, .flip-list-enter-active, .flip-list-leave-active {
   transition: transform 0.25s;
 }
+
+.flooding {
+    position: relative;
+    @extend .fill-blue;
+}

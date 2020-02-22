@@ -1,6 +1,6 @@
 <template>
     <div class="layout">
-        <model-newsfeed></model-newsfeed>
+        <model-newsfeed class="newsfeed"></model-newsfeed>
         <model-map></model-map>
         <div class="current-frame-iteration">
             {{ $root.frame }}
@@ -13,18 +13,22 @@
         position: relative;
         display: inline-block;
         margin: 4rem auto;
-        width: 800px;
-        height: 450px;
+        width: 90%;
         border-radius: 12px;
         background: var(--lightblue);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
+        overflow: hidden;
 
         .current-frame-iteration {
             position: absolute;
             bottom: 0.5rem;
             right: 0.5rem;
             font-size: 0.75rem;
+        }
+
+        .newsfeed {
+            z-index: 5;
         }
     }
 </style>
