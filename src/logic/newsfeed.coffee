@@ -15,7 +15,8 @@ toggleFlooding = ->
 
 oilDeal = ->
 	country = getCountry()
-	if country.state.corruption > 2
+	if country.state.corruption > 2 && country.state.hasOil
+		country.state.hasOil = false
 		createNewsItem(country.name + " has leased its oil fields to CrudeIncorporated.")
 	else
 		false
