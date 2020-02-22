@@ -1,17 +1,14 @@
 <template>
     <div class="inventory">
-        <button class="upgrade" @click="upgrade($event, 'fossil-fuels')">
-            Fossil Fuels
-        </button>
-        <button class="upgrade" @click="upgrade($event, 'transportation')">
-            Transportation
-        </button>
-        <button class="upgrade" @click="upgrade($event, 'destruction')">
-            Destruction
-        </button>
-        <button class="upgrade" @click="upgrade($event, 'waste')">
-            Waste
-        </button>
+
+		<button
+            v-for="(upgrade, index) in $root.store.availableUpgrades"
+            :key="upgrade.uuid"
+            class="upgrade"
+            @click="runUpgrade($event, upgrade)"
+        >
+			{{ upgrade.name }}
+		</button>
     </div>
 </template>
 
@@ -60,7 +57,6 @@
                 border-bottom: 0;
             }
             &:nth-child(4){
-                border-radius: 0 0 0.5rem 0;
                 border-right: 0;
                 border-bottom: 0;
             }
@@ -84,8 +80,8 @@
         },
 
         methods: {
-            upgrade($event, type){
-                console.log(`TODO: upgrade method handling in 'src/gui/models/model-inventory.default.methods.upgrade($event, '${type}')'`);
+            runUpgrade($event, upgrade){
+                upgrade.onPurchase();
 
                 // remove focus from button after 200ms
                 const target = $event.target;

@@ -86,10 +86,11 @@
                     y: regionPosition.y - svgPosition.y - (svgPosition.height / 2),
                 };
 
-                console.log(coords);
+                console.log(svgPosition, regionPosition);
 
+                this.panzoom.zoom(3, {animate: true});
                 this.panzoom.pan(coords.x, coords.y);
-                this.panzoom.zoom(5, {animate: true});
+
                 // this.panzoom.moveTo(coords.x, coords.y);
             },
             getRegionByName(name){
