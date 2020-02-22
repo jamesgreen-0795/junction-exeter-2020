@@ -38,10 +38,10 @@
                     JSON.parse(JSON.stringify(updatedRegions)).forEach(region => {
                         if (region.state.flooding){
                             console.log("flood", this.$refs.svg.querySelector(region.classIdentifier));
-                            this.$refs.svg.querySelector(region.classIdentifier).classList.add("flooding");
+                            // this.$refs.svg.querySelector(region.classIdentifier).classList.add("flooding");
                         }
                         else {
-                            this.$refs.svg.querySelector(region.classIdentifier).classList.remove("flooding");
+                            // this.$refs.svg.querySelector(region.classIdentifier).classList.remove("flooding");
                         }
                     });
                 },
