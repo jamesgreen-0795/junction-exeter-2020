@@ -1,21 +1,9 @@
 <template>
     <div class="inventory">
-		
-		<li v-for="upgrade in $root.store.availableUpgrades">
+
+		<button v-for="(upgrade, index) in $root.store.availableUpgrades" :key="upgrade.uuid" class="upgrade" @click="runUpgrade($event, upgrade)">
 			{{ upgrade.name }}
-		</li>
-        <button class="upgrade" @click="upgrade($event, 'fossil-fuels')">
-            Fossil Fuels
-        </button>
-        <button class="upgrade" @click="upgrade($event, 'transportation')">
-            Transportation
-        </button>
-        <button class="upgrade" @click="upgrade($event, 'destruction')">
-            Destruction
-        </button>
-        <button class="upgrade" @click="upgrade($event, 'waste')">
-            Waste
-        </button>
+		</button>
     </div>
 </template>
 
@@ -87,8 +75,8 @@
         },
 
         methods: {
-            upgrade($event, type){
-                console.log(`TODO: upgrade method handling in 'src/gui/models/model-inventory.default.methods.upgrade($event, '${type}')'`);
+            runUpgrade($event, upgrade){
+                upgrade.onPurchase();
 
                 // remove focus from button after 200ms
                 const target = $event.target;
