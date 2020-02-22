@@ -11,5 +11,6 @@ window.store = {
         regions: require("./models/regions").default,
     },
 	points: 0,
-	temperature: 12,
+    temperature: 0,
+    fuzzTemperature: 15,
 };
