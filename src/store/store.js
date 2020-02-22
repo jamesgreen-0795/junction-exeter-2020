@@ -7,5 +7,5 @@ window.store = {
         regions: require("./models/regions").default,
     },
 	points: 0,
-	carbon: 12,
+	temperature: 12,
 };
