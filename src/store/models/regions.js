@@ -32,7 +32,17 @@ const isOil = name => {
         "Indonesia",
         "Malaysia",
         "Yeman",
-        "United Kingdom"
+        "United Kingdom",
+        "Syria",
+        "Uganda",
+        "Argentina",
+        "Colombia",
+        "Gabon",
+        "Australia",
+        "Congo",
+        "Chad",
+        "Brunei",
+        "Equatorial Guinea"
     ];
 
     var foundCountry = countries_with_oil.find(country => {
