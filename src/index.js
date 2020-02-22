@@ -2,6 +2,6 @@
 import "./gui/app.scss";
 
 // Scripts
-import "./store.js";
+import "./store/store.js";
 import "./logic/index.coffee";
 import "./gui/index.js";
