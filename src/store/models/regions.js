@@ -1,21 +1,138 @@
 const uuid = require('uuid/v4');
 
+const isOil = name => {
+    var countries_with_oil = [
+        "Venezuela",
+        "Saudi",
+        "Arabia",
+        "Iran",
+        "Canada",
+        "Iraq",
+        "UEA",
+        "Kuwait",
+        "Russia",
+        "Libya",
+        "Nigeria",
+        "United States",
+        "Kazakhstan",
+        "China",
+        "Qatar",
+        "Brazil",
+        "Algeria",
+        "Angola",
+        "Ecuador",
+        "Guyana",
+        "Mexico",
+        "Azerbaijan",
+        "Norway",
+        "Oman",
+        "India",
+        "Egypt",
+        "Vietnam",
+        "Indonesia",
+        "Malaysia",
+        "Yeman",
+        "United Kingdom",
+        "Syria",
+        "Uganda",
+        "Argentina",
+        "Colombia",
+        "Gabon",
+        "Australia",
+        "Congo",
+        "Chad",
+        "Brunei",
+        "Equatorial Guinea",
+        "Ghana",
+        "Romania",
+        "Turkmenistan",
+        "Uzbekistan",
+        "Italy",
+        "Denmark",
+        "Peru",
+        "Tunisia",
+        "Thailand",
+        "Ukraine",
+        "Pakistan",
+        "Turkey",
+        "Trinidad and Tobago",
+        "Bolivia",
+        "Cameroon",
+        "Belarus",
+        "Democratic Republic of the Congo",
+        "Albania",
+        "Papua New Guinea",
+        "Chile",
+        "Niger",
+        "Spain",
+        "Germany",
+        "Myanmar",
+        "Philippines",
+        "Poland",
+        "Bahrain",
+        "Cuba",
+        "Netherlands",
+        "Ivory Coast",
+        "Suriname",
+        "Guatemala",
+        "France",
+        "Serbia",
+        "Croatia",
+        "New Zealand",
+        "Japan",
+        "Austria",
+        "Kyrgyzstan",
+        "Georgia",
+        "Bangladesh",
+        "Hungary",
+        "Mauritania",
+        "Bulgaria",
+        "Czech Republic",
+        "South Africa",
+        "Israel",
+        "Lithuania",
+        "Tajikistan",
+        "Greece",
+        "Slovakia",
+        "Benin",
+        "Belize",
+        "Taiwan",
+        "Barbados",
+        "Jordan",
+        "Morocco",
+        "Ethiopia",
+        "Afghanistan",
+
+
+    ];
+
+    var foundCountry = countries_with_oil.find(country => {
+        return country.toLowerCase() == name.toLowerCase();
+    });
+
+    //return as bool
+    return !!foundCountry;
+
+};
+
+
 const generator = entries => entries.map(entry => {
 
-    return {
-        uuid: uuid(),
-        timestamp: Date.now(),
-        name: null,
-		continent: null,
-        state: {
-            openBorders: true,
-            flooding: false,
-			temperture: 0,
-			corruption: Math.floor(Math.random() * 2), // randomly level 0 or 1
-			hasOil: false,
-		},
-        ...entry,
-    };
+        return {
+            uuid: uuid(),
+            timestamp: Date.now(),
+            name: null,
+            continent: null,
+            state: {
+                openBorders: true,
+                flooding: false,
+                temperture: 0,
+                corruption: Math.floor(Math.random() * 2), // randomly level 0 or 1
+                hasOil: isOil(entry.name),
+
+            },
+            ...entry,
+        };
 });
 
 export default generator([

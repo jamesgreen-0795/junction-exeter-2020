@@ -64,7 +64,6 @@
                 border-bottom: 0;
             }
             &:nth-child(4){
-                border-radius: 0 0 0.5rem 0;
                 border-right: 0;
                 border-bottom: 0;
             }
