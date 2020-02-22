@@ -101,7 +101,7 @@ const isOil = name => {
         "Jordan",
         "Morocco",
         "Ethiopia",
-        "Afghanistan"
+        "Afghanistan",
 
 
     ];
