@@ -1,7 +1,12 @@
 <template>
     <div class="inventory">
 
-		<button v-for="(upgrade, index) in $root.store.availableUpgrades" :key="upgrade.uuid" class="upgrade" @click="runUpgrade($event, upgrade)">
+		<button
+            v-for="(upgrade, index) in $root.store.availableUpgrades"
+            :key="upgrade.uuid"
+            class="upgrade"
+            @click="runUpgrade($event, upgrade)"
+        >
 			{{ upgrade.name }}
 		</button>
     </div>
