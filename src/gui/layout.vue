@@ -1,16 +1,15 @@
 <template>
     <div class="wrapper">
+        <model-scores></model-scores>
         <div class="map">
             <div class="sidebar">
-                <h5 class="black" style="text-align:center;">Inventory</h5>
+                <h5 style="text-align:center;">Inventory</h5>
                 <model-inventory></model-inventory>
             </div>
             <model-test class="test"></model-test>
             <model-newsfeed class="newsfeed"></model-newsfeed>
+
             <model-map></model-map>
-            <div class="current-frame-iteration">
-                {{ $root.frame }}
-            </div>
         </div>
     </div>
 </template>
@@ -40,17 +39,15 @@
         display: inline-flex;
         flex-direction: column;
         width: 25%;
-        height: 50%;
-        background: #{var(--white)};
+        background: #{var(--teal)};
         border-radius: 0 12px 0 12px;
-        // box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         z-index: 5;
         opacity: 0.75;
         transform: #{translateY(calc(100% - 3.85rem))};
         box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
         transition: opacity 0.15s ease, transform 0.3s ease;
 
-        &:hover, &:focus-within {
+        &:hover {
             opacity: 1;
             transform: #{translateY(0)};
         }
@@ -60,20 +57,13 @@
         position: relative;
         display: inline-block;
         width: 90vw;
-        height: 90vh;
+        height: 85vh;
+        top: 0.25rem;
         border-radius: 12px;
         background: var(--black);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
         transition: background 10s ease;
         overflow: hidden;
-
-
-        .current-frame-iteration {
-            position: absolute;
-            bottom: 0.5rem;
-            right: 0.5rem;
-            font-size: 0.75rem;
-        }
 
         .newsfeed {
             z-index: 5;
