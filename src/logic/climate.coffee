@@ -25,7 +25,7 @@ fuzzYearTemperature = (temp) ->
 getWeekTemperature = (week, prevYr, currYr, nextYr, seasonVar, weekVar) ->
 	yrPercent = (week % 52) / 52
 
-	seasonFade = (seasonVar / 2) * Math.cos(2 * Math.PI * yrPercent)
+	seasonFade = (seasonVar / 2) * Math.sin(2 * Math.PI * yrPercent)
 
 	yrFade = 0.25 * (1 + Math.cos(2 * Math.PI * yrPercent))
 	if yrPercent < 0.5
