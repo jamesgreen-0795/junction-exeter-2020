@@ -4,6 +4,6 @@ window.store = {
     currentFrame: 0,
 	newsfeed: [],
 	models: {
-        countries: require("./models/countries").default,
+        regions: require("./models/regions").default,
     }
 };
