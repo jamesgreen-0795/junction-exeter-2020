@@ -25,6 +25,7 @@
         "sync": "yarn install",
         "webpack": "node_modules/.bin/webpack --config webpack.config.js --watch",
         "build": "yarn sync && yarn webpack",
-        "test": "yarn --version"
+        "test": "yarn --version",
+        "travis": "yarn sync && node_modules/.bin/webpack --config webpack.config.js"
     }
 }

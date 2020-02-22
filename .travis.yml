@@ -3,7 +3,7 @@ node_js:
   - "10.4"
 
 before_install:
-  - yarn build
+  - yarn travis
 
 deploy:
   provider: pages
@@ -12,4 +12,4 @@ deploy:
   keep_history: true
   on:
     branch: master
-  local_dir: dist
+  local_dir: $TRAVIS_BUILD_LOCATION/dist

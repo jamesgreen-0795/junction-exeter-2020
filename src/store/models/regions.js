@@ -129,6 +129,8 @@ const generator = entries => entries.map(entry => {
                 temperture: 0,
                 corruption: Math.floor(Math.random() * 2), // randomly level 0 or 1
                 hasOil: isOil(entry.name),
+                electicCarsBanned: false,
+                renewableEnergyBanned: false,
 
             },
             ...entry,
@@ -137,7 +139,7 @@ const generator = entries => entries.map(entry => {
 
 export default generator([
     {
-        name: "albania",
+        name: "Albania",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -145,7 +147,7 @@ export default generator([
         },
     },
     {
-        name: "armenia",
+        name: "Armenia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -153,7 +155,7 @@ export default generator([
         },
     },
     {
-        name: "austria",
+        name: "Austria",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -161,7 +163,7 @@ export default generator([
         },
     },
     {
-        name: "azerbaijan",
+        name: "Azerbaijan",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -169,7 +171,7 @@ export default generator([
         },
     },
     {
-        name: "belarus",
+        name: "Belarus",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -177,7 +179,7 @@ export default generator([
         },
     },
     {
-        name: "belgium",
+        name: "Belgium",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -185,7 +187,7 @@ export default generator([
         },
     },
     {
-        name: "bell",
+        name: "Bell",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -193,7 +195,7 @@ export default generator([
         },
     },
     {
-        name: "bosnia",
+        name: "Bosnia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -201,7 +203,7 @@ export default generator([
         },
     },
     {
-        name: "britain",
+        name: "Britain",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -209,7 +211,7 @@ export default generator([
         },
     },
     {
-        name: "bulgaria",
+        name: "Bulgaria",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -217,7 +219,7 @@ export default generator([
         },
     },
     {
-        name: "corsica",
+        name: "Corsica",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -225,7 +227,7 @@ export default generator([
         },
     },
     {
-        name: "crete",
+        name: "Crete",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -233,7 +235,7 @@ export default generator([
         },
     },
     {
-        name: "croatia",
+        name: "Croatia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -241,7 +243,7 @@ export default generator([
         },
     },
     {
-        name: "cyprus",
+        name: "Cyprus",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -249,7 +251,7 @@ export default generator([
         },
     },
     {
-        name: "czech",
+        name: "Czech",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -257,7 +259,7 @@ export default generator([
         },
     },
     {
-        name: "denmark",
+        name: "Denmark",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -265,7 +267,7 @@ export default generator([
         },
     },
     {
-        name: "edgeoya",
+        name: "Edgeoya",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -273,7 +275,7 @@ export default generator([
         },
     },
     {
-        name: "estonia",
+        name: "Estonia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -281,7 +283,7 @@ export default generator([
         },
     },
     {
-        name: "finland",
+        name: "Finland",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -289,7 +291,7 @@ export default generator([
         },
     },
     {
-        name: "france",
+        name: "France",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -297,7 +299,7 @@ export default generator([
         },
     },
     {
-        name: "georgia",
+        name: "Georgia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -305,7 +307,7 @@ export default generator([
         },
     },
     {
-        name: "germany",
+        name: "Germany",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -313,7 +315,7 @@ export default generator([
         },
     },
     {
-        name: "gotland",
+        name: "Gotland",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -321,7 +323,7 @@ export default generator([
         },
     },
     {
-        name: "greece",
+        name: "Greece",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -329,7 +331,7 @@ export default generator([
         },
     },
     {
-        name: "hiumaa",
+        name: "Hiumaa",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -337,7 +339,7 @@ export default generator([
         },
     },
     {
-        name: "hungary",
+        name: "Hungary",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -345,7 +347,7 @@ export default generator([
         },
     },
     {
-        name: "iceland",
+        name: "Iceland",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -353,7 +355,7 @@ export default generator([
         },
     },
     {
-        name: "ireland",
+        name: "Ireland",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -361,7 +363,7 @@ export default generator([
         },
     },
     {
-        name: "italy",
+        name: "Italy",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -369,7 +371,7 @@ export default generator([
         },
     },
     {
-        name: "lithuania",
+        name: "Lithuania",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -377,7 +379,7 @@ export default generator([
         },
     },
     {
-        name: "macedonia",
+        name: "Macedonia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -385,7 +387,7 @@ export default generator([
         },
     },
     {
-        name: "majorca",
+        name: "Majorca",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -393,7 +395,7 @@ export default generator([
         },
     },
     {
-        name: "malta",
+        name: "Malta",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -401,7 +403,7 @@ export default generator([
         },
     },
     {
-        name: "milne",
+        name: "Milne",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -409,7 +411,7 @@ export default generator([
         },
     },
     {
-        name: "moldova",
+        name: "Moldova",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -417,7 +419,7 @@ export default generator([
         },
     },
     {
-        name: "netherlands",
+        name: "Netherlands",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -425,7 +427,7 @@ export default generator([
         },
     },
     {
-        name: "nordaustlandet",
+        name: "Nordaustlandet",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -433,7 +435,7 @@ export default generator([
         },
     },
     {
-        name: "norway",
+        name: "Norway",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -441,7 +443,7 @@ export default generator([
         },
     },
     {
-        name: "novaya zemlya north",
+        name: "Novaya zemlya north",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -449,7 +451,7 @@ export default generator([
         },
     },
     {
-        name: "novaya zemlya south",
+        name: "Novaya zemlya south",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -457,7 +459,7 @@ export default generator([
         },
     },
     {
-        name: "poland",
+        name: "Poland",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -465,7 +467,7 @@ export default generator([
         },
     },
     {
-        name: "portugal",
+        name: "Portugal",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -473,7 +475,7 @@ export default generator([
         },
     },
     {
-        name: "prince george",
+        name: "Prince george",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -481,7 +483,7 @@ export default generator([
         },
     },
     {
-        name: "prince of wales",
+        name: "Prince of wales",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -489,7 +491,7 @@ export default generator([
         },
     },
     {
-        name: "romania",
+        name: "Romania",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -497,7 +499,7 @@ export default generator([
         },
     },
     {
-        name: "saaremaa",
+        name: "Saaremaa",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -505,7 +507,7 @@ export default generator([
         },
     },
     {
-        name: "salisbury",
+        name: "Salisbury",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -513,7 +515,7 @@ export default generator([
         },
     },
     {
-        name: "sardinia",
+        name: "Sardinia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -521,7 +523,7 @@ export default generator([
         },
     },
     {
-        name: "serbia",
+        name: "Serbia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -529,7 +531,7 @@ export default generator([
         },
     },
     {
-        name: "sicily",
+        name: "Sicily",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -537,7 +539,7 @@ export default generator([
         },
     },
     {
-        name: "sjælland",
+        name: "Sjælland",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -545,7 +547,7 @@ export default generator([
         },
     },
     {
-        name: "slovakia",
+        name: "Slovakia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -553,7 +555,7 @@ export default generator([
         },
     },
     {
-        name: "slovenia",
+        name: "Slovenia",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -561,7 +563,7 @@ export default generator([
         },
     },
     {
-        name: "southhampton",
+        name: "Southhampton",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -569,7 +571,7 @@ export default generator([
         },
     },
     {
-        name: "spain",
+        name: "Spain",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -577,7 +579,7 @@ export default generator([
         },
     },
     {
-        name: "spitsbergen",
+        name: "Spitsbergen",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -585,7 +587,7 @@ export default generator([
         },
     },
     {
-        name: "sweden",
+        name: "Sweden",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -593,7 +595,7 @@ export default generator([
         },
     },
     {
-        name: "switzerland",
+        name: "Switzerland",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -601,7 +603,7 @@ export default generator([
         },
     },
     {
-        name: "terceira",
+        name: "Terceira",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -609,7 +611,7 @@ export default generator([
         },
     },
     {
-        name: "ukraine",
+        name: "Ukraine",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -617,7 +619,7 @@ export default generator([
         },
     },
     {
-        name: "wilczek",
+        name: "Wilczek",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -626,7 +628,7 @@ export default generator([
     },
 
     {
-        name: "aldabra",
+        name: "Aldabra",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -634,7 +636,7 @@ export default generator([
         },
     },
     {
-        name: "algeria",
+        name: "Algeria",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -642,7 +644,7 @@ export default generator([
         },
     },
     {
-        name: "angola",
+        name: "Angola",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -650,7 +652,7 @@ export default generator([
         },
     },
     {
-        name: "benin",
+        name: "Benin",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -658,7 +660,7 @@ export default generator([
         },
     },
     {
-        name: "bioko",
+        name: "Bioko",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -666,7 +668,7 @@ export default generator([
         },
     },
     {
-        name: "bissau",
+        name: "Bissau",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -674,7 +676,7 @@ export default generator([
         },
     },
     {
-        name: "boa vista",
+        name: "Boa vista",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -682,7 +684,7 @@ export default generator([
         },
     },
     {
-        name: "botswana",
+        name: "Botswana",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -690,7 +692,7 @@ export default generator([
         },
     },
     {
-        name: "burkina",
+        name: "Burkina",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -698,7 +700,7 @@ export default generator([
         },
     },
     {
-        name: "burundi",
+        name: "Burundi",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -706,7 +708,7 @@ export default generator([
         },
     },
     {
-        name: "cabinda",
+        name: "Cabinda",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -714,7 +716,7 @@ export default generator([
         },
     },
     {
-        name: "cameroon",
+        name: "Cameroon",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -722,7 +724,7 @@ export default generator([
         },
     },
     {
-        name: "casamance",
+        name: "Casamance",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -730,7 +732,7 @@ export default generator([
         },
     },
     {
-        name: "centrafrique",
+        name: "Centrafrique",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -738,7 +740,7 @@ export default generator([
         },
     },
     {
-        name: "chad",
+        name: "Chad",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -746,7 +748,7 @@ export default generator([
         },
     },
     {
-        name: "congo",
+        name: "Congo",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -754,7 +756,7 @@ export default generator([
         },
     },
     {
-        name: "djibouti",
+        name: "Djibouti",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -762,7 +764,7 @@ export default generator([
         },
     },
     {
-        name: "drc",
+        name: "Drc",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -770,7 +772,7 @@ export default generator([
         },
     },
     {
-        name: "egypt",
+        name: "Egypt",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -778,7 +780,7 @@ export default generator([
         },
     },
     {
-        name: "equatorial guinea",
+        name: "Equatorial guinea",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -786,7 +788,7 @@ export default generator([
         },
     },
     {
-        name: "eritrea",
+        name: "Eritrea",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -794,7 +796,7 @@ export default generator([
         },
     },
     {
-        name: "ethiopia",
+        name: "Ethiopia",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -802,7 +804,7 @@ export default generator([
         },
     },
     {
-        name: "gabon",
+        name: "Gabon",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -810,7 +812,7 @@ export default generator([
         },
     },
     {
-        name: "gambia",
+        name: "Gambia",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -818,7 +820,7 @@ export default generator([
         },
     },
     {
-        name: "ghana",
+        name: "Ghana",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -826,7 +828,7 @@ export default generator([
         },
     },
     {
-        name: "gran canaria",
+        name: "Gran canaria",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -834,7 +836,7 @@ export default generator([
         },
     },
     {
-        name: "grande comore",
+        name: "Grande comore",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -842,7 +844,7 @@ export default generator([
         },
     },
     {
-        name: "guinee",
+        name: "Guinee",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -850,7 +852,7 @@ export default generator([
         },
     },
     {
-        name: "ivoire",
+        name: "Ivoire",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -858,7 +860,7 @@ export default generator([
         },
     },
     {
-        name: "kenya",
+        name: "Kenya",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -866,7 +868,7 @@ export default generator([
         },
     },
     {
-        name: "kirgizstan",
+        name: "Kirgizstan",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -874,7 +876,7 @@ export default generator([
         },
     },
     {
-        name: "lanzarote",
+        name: "Lanzarote",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -882,7 +884,7 @@ export default generator([
         },
     },
     {
-        name: "lesotho",
+        name: "Lesotho",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -890,7 +892,7 @@ export default generator([
         },
     },
     {
-        name: "liberia",
+        name: "Liberia",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -898,7 +900,7 @@ export default generator([
         },
     },
     {
-        name: "libya",
+        name: "Libya",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -906,7 +908,7 @@ export default generator([
         },
     },
     {
-        name: "madagascar",
+        name: "Madagascar",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -914,7 +916,7 @@ export default generator([
         },
     },
     {
-        name: "madeira",
+        name: "Madeira",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -922,7 +924,7 @@ export default generator([
         },
     },
     {
-        name: "mahe",
+        name: "Mahe",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -930,7 +932,7 @@ export default generator([
         },
     },
     {
-        name: "malawi",
+        name: "Malawi",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -938,7 +940,7 @@ export default generator([
         },
     },
     {
-        name: "mali",
+        name: "Mali",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -946,7 +948,7 @@ export default generator([
         },
     },
     {
-        name: "mauretania",
+        name: "Mauretania",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -954,7 +956,7 @@ export default generator([
         },
     },
     {
-        name: "mauritius",
+        name: "Mauritius",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -962,7 +964,7 @@ export default generator([
         },
     },
     {
-        name: "mayotte",
+        name: "Mayotte",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -970,7 +972,7 @@ export default generator([
         },
     },
     {
-        name: "morocco",
+        name: "Morocco",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -978,7 +980,7 @@ export default generator([
         },
     },
     {
-        name: "mozambique",
+        name: "Mozambique",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -986,7 +988,7 @@ export default generator([
         },
     },
     {
-        name: "namibia",
+        name: "Namibia",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -994,7 +996,7 @@ export default generator([
         },
     },
     {
-        name: "niger",
+        name: "Niger",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1002,7 +1004,7 @@ export default generator([
         },
     },
     {
-        name: "nigeria",
+        name: "Nigeria",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1010,7 +1012,7 @@ export default generator([
         },
     },
     {
-        name: "pico",
+        name: "Pico",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1018,7 +1020,7 @@ export default generator([
         },
     },
     {
-        name: "praslin",
+        name: "Praslin",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1026,7 +1028,7 @@ export default generator([
         },
     },
     {
-        name: "principe",
+        name: "Principe",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1034,7 +1036,7 @@ export default generator([
         },
     },
     {
-        name: "reunion",
+        name: "Reunion",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1042,7 +1044,7 @@ export default generator([
         },
     },
     {
-        name: "rwanda",
+        name: "Rwanda",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1050,7 +1052,7 @@ export default generator([
         },
     },
     {
-        name: "santiago",
+        name: "Santiago",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1058,7 +1060,7 @@ export default generator([
         },
     },
     {
-        name: "santo antao",
+        name: "Santo antao",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1066,7 +1068,7 @@ export default generator([
         },
     },
     {
-        name: "sao miguel",
+        name: "Sao miguel",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1074,7 +1076,7 @@ export default generator([
         },
     },
     {
-        name: "sao tome",
+        name: "Sao tome",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1082,7 +1084,7 @@ export default generator([
         },
     },
     {
-        name: "senegal",
+        name: "Senegal",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1090,7 +1092,7 @@ export default generator([
         },
     },
     {
-        name: "sierra leone",
+        name: "Sierra leone",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1098,7 +1100,7 @@ export default generator([
         },
     },
     {
-        name: "somalia",
+        name: "Somalia",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1106,7 +1108,7 @@ export default generator([
         },
     },
     {
-        name: "somaliland",
+        name: "Somaliland",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1114,7 +1116,7 @@ export default generator([
         },
     },
     {
-        name: "soqotra",
+        name: "Soqotra",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1122,7 +1124,7 @@ export default generator([
         },
     },
     {
-        name: "south africa",
+        name: "South africa",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1130,7 +1132,7 @@ export default generator([
         },
     },
     {
-        name: "south_sudan",
+        name: "South_sudan",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1138,7 +1140,7 @@ export default generator([
         },
     },
     {
-        name: "swaziland",
+        name: "Swaziland",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1146,7 +1148,7 @@ export default generator([
         },
     },
     {
-        name: "tanzania",
+        name: "Tanzania",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1154,7 +1156,7 @@ export default generator([
         },
     },
     {
-        name: "tenerife",
+        name: "Tenerife",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1162,7 +1164,7 @@ export default generator([
         },
     },
     {
-        name: "togo",
+        name: "Togo",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1170,7 +1172,7 @@ export default generator([
         },
     },
     {
-        name: "tunisia",
+        name: "Tunisia",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1178,7 +1180,7 @@ export default generator([
         },
     },
     {
-        name: "uganda",
+        name: "Uganda",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1186,7 +1188,7 @@ export default generator([
         },
     },
     {
-        name: "zambia",
+        name: "Zambia",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1194,7 +1196,7 @@ export default generator([
         },
     },
     {
-        name: "zimbabwe",
+        name: "Zimbabwe",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1203,7 +1205,7 @@ export default generator([
     },
 
     {
-        name: "afghanistan",
+        name: "Afghanistan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1211,7 +1213,7 @@ export default generator([
         },
     },
     {
-        name: "bali",
+        name: "Bali",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1219,7 +1221,7 @@ export default generator([
         },
     },
     {
-        name: "bangladesh",
+        name: "Bangladesh",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1227,7 +1229,7 @@ export default generator([
         },
     },
     {
-        name: "bering island",
+        name: "Bering island",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1235,7 +1237,7 @@ export default generator([
         },
     },
     {
-        name: "bhutan",
+        name: "Bhutan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1243,7 +1245,7 @@ export default generator([
         },
     },
     {
-        name: "bolshevik",
+        name: "Bolshevik",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1251,7 +1253,7 @@ export default generator([
         },
     },
     {
-        name: "brunei",
+        name: "Brunei",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1259,7 +1261,7 @@ export default generator([
         },
     },
     {
-        name: "burma",
+        name: "Burma",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1267,7 +1269,7 @@ export default generator([
         },
     },
     {
-        name: "cambodia",
+        name: "Cambodia",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1275,7 +1277,7 @@ export default generator([
         },
     },
     {
-        name: "cebu",
+        name: "Cebu",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1283,7 +1285,7 @@ export default generator([
         },
     },
     {
-        name: "china",
+        name: "China",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1291,7 +1293,7 @@ export default generator([
         },
     },
     {
-        name: "chukotka",
+        name: "Chukotka",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1299,7 +1301,7 @@ export default generator([
         },
     },
     {
-        name: "east malaysia",
+        name: "East malaysia",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1307,7 +1309,7 @@ export default generator([
         },
     },
     {
-        name: "emirates",
+        name: "Emirates",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1315,7 +1317,7 @@ export default generator([
         },
     },
     {
-        name: "flores",
+        name: "Flores",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1323,7 +1325,7 @@ export default generator([
         },
     },
     {
-        name: "gan",
+        name: "Gan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1331,7 +1333,7 @@ export default generator([
         },
     },
     {
-        name: "hainan",
+        name: "Hainan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1339,7 +1341,7 @@ export default generator([
         },
     },
     {
-        name: "hokkaido",
+        name: "Hokkaido",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1347,7 +1349,7 @@ export default generator([
         },
     },
     {
-        name: "honshu",
+        name: "Honshu",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1355,7 +1357,7 @@ export default generator([
         },
     },
     {
-        name: "india",
+        name: "India",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1363,7 +1365,7 @@ export default generator([
         },
     },
     {
-        name: "iran",
+        name: "Iran",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1371,7 +1373,7 @@ export default generator([
         },
     },
     {
-        name: "iraq",
+        name: "Iraq",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1379,7 +1381,7 @@ export default generator([
         },
     },
     {
-        name: "irian jaya",
+        name: "Irian jaya",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1387,7 +1389,7 @@ export default generator([
         },
     },
     {
-        name: "israel",
+        name: "Israel",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1395,7 +1397,7 @@ export default generator([
         },
     },
     {
-        name: "iturup",
+        name: "Iturup",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1403,7 +1405,7 @@ export default generator([
         },
     },
     {
-        name: "java",
+        name: "Java",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1411,7 +1413,7 @@ export default generator([
         },
     },
     {
-        name: "jordan",
+        name: "Jordan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1419,7 +1421,7 @@ export default generator([
         },
     },
     {
-        name: "kalimantan",
+        name: "Kalimantan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1427,7 +1429,7 @@ export default generator([
         },
     },
     {
-        name: "kazakhstan",
+        name: "Kazakhstan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1435,7 +1437,7 @@ export default generator([
         },
     },
     {
-        name: "komsomolets",
+        name: "Komsomolets",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1443,7 +1445,7 @@ export default generator([
         },
     },
     {
-        name: "kotelny",
+        name: "Kotelny",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1451,7 +1453,7 @@ export default generator([
         },
     },
     {
-        name: "kuwait",
+        name: "Kuwait",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1459,7 +1461,7 @@ export default generator([
         },
     },
     {
-        name: "kyushu",
+        name: "Kyushu",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1467,7 +1469,7 @@ export default generator([
         },
     },
     {
-        name: "laos",
+        name: "Laos",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1475,7 +1477,7 @@ export default generator([
         },
     },
     {
-        name: "lebanon",
+        name: "Lebanon",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1483,7 +1485,7 @@ export default generator([
         },
     },
     {
-        name: "lombok",
+        name: "Lombok",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1491,7 +1493,7 @@ export default generator([
         },
     },
     {
-        name: "luzon",
+        name: "Luzon",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1499,7 +1501,7 @@ export default generator([
         },
     },
     {
-        name: "lyakhovsky",
+        name: "Lyakhovsky",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1507,7 +1509,7 @@ export default generator([
         },
     },
     {
-        name: "malaysia",
+        name: "Malaysia",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1515,7 +1517,7 @@ export default generator([
         },
     },
     {
-        name: "maldive",
+        name: "Maldive",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1523,7 +1525,7 @@ export default generator([
         },
     },
     {
-        name: "male",
+        name: "Male",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1531,7 +1533,7 @@ export default generator([
         },
     },
     {
-        name: "maluku",
+        name: "Maluku",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1539,7 +1541,7 @@ export default generator([
         },
     },
     {
-        name: "medny",
+        name: "Medny",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1547,7 +1549,7 @@ export default generator([
         },
     },
     {
-        name: "mindoro",
+        name: "Mindoro",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1555,7 +1557,7 @@ export default generator([
         },
     },
     {
-        name: "mongolia",
+        name: "Mongolia",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1563,7 +1565,7 @@ export default generator([
         },
     },
     {
-        name: "negros",
+        name: "Negros",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1571,7 +1573,7 @@ export default generator([
         },
     },
     {
-        name: "nepal",
+        name: "Nepal",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1579,7 +1581,7 @@ export default generator([
         },
     },
     {
-        name: "north korea",
+        name: "North korea",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1587,7 +1589,7 @@ export default generator([
         },
     },
     {
-        name: "novaya sibir",
+        name: "Novaya sibir",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1595,7 +1597,7 @@ export default generator([
         },
     },
     {
-        name: "october",
+        name: "October",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1603,7 +1605,7 @@ export default generator([
         },
     },
     {
-        name: "oman",
+        name: "Oman",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1611,7 +1613,7 @@ export default generator([
         },
     },
     {
-        name: "onekotan",
+        name: "Onekotan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1619,7 +1621,7 @@ export default generator([
         },
     },
     {
-        name: "pakistan",
+        name: "Pakistan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1627,7 +1629,7 @@ export default generator([
         },
     },
     {
-        name: "palawan",
+        name: "Palawan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1635,7 +1637,7 @@ export default generator([
         },
     },
     {
-        name: "paramushir",
+        name: "Paramushir",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1643,7 +1645,7 @@ export default generator([
         },
     },
     {
-        name: "qatar",
+        name: "Qatar",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1651,7 +1653,7 @@ export default generator([
         },
     },
     {
-        name: "russia",
+        name: "Russia",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1659,7 +1661,7 @@ export default generator([
         },
     },
     {
-        name: "sakhalin",
+        name: "Sakhalin",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1667,7 +1669,7 @@ export default generator([
         },
     },
     {
-        name: "samar",
+        name: "Samar",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1675,7 +1677,7 @@ export default generator([
         },
     },
     {
-        name: "saudi",
+        name: "Saudi",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1683,7 +1685,7 @@ export default generator([
         },
     },
     {
-        name: "seram",
+        name: "Seram",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1691,7 +1693,7 @@ export default generator([
         },
     },
     {
-        name: "shikoku",
+        name: "Shikoku",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1699,7 +1701,7 @@ export default generator([
         },
     },
     {
-        name: "south korea",
+        name: "South korea",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1707,7 +1709,7 @@ export default generator([
         },
     },
     {
-        name: "sri lanka",
+        name: "Sri lanka",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1715,7 +1717,7 @@ export default generator([
         },
     },
     {
-        name: "sulawesi",
+        name: "Sulawesi",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1723,7 +1725,7 @@ export default generator([
         },
     },
     {
-        name: "sumatra",
+        name: "Sumatra",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1731,7 +1733,7 @@ export default generator([
         },
     },
     {
-        name: "sumba",
+        name: "Sumba",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1739,7 +1741,7 @@ export default generator([
         },
     },
     {
-        name: "syria",
+        name: "Syria",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1747,7 +1749,7 @@ export default generator([
         },
     },
     {
-        name: "taiwan",
+        name: "Taiwan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1755,7 +1757,7 @@ export default generator([
         },
     },
     {
-        name: "tajikistan",
+        name: "Tajikistan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1763,7 +1765,7 @@ export default generator([
         },
     },
     {
-        name: "thailand",
+        name: "Thailand",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1771,7 +1773,7 @@ export default generator([
         },
     },
     {
-        name: "timor",
+        name: "Timor",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1779,7 +1781,7 @@ export default generator([
         },
     },
     {
-        name: "turkey",
+        name: "Turkey",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1787,7 +1789,7 @@ export default generator([
         },
     },
     {
-        name: "turkmenistan",
+        name: "Turkmenistan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1795,7 +1797,7 @@ export default generator([
         },
     },
     {
-        name: "urup",
+        name: "Urup",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1803,7 +1805,7 @@ export default generator([
         },
     },
     {
-        name: "uzbekistan",
+        name: "Uzbekistan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1811,7 +1813,7 @@ export default generator([
         },
     },
     {
-        name: "vietnam",
+        name: "Vietnam",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1819,7 +1821,7 @@ export default generator([
         },
     },
     {
-        name: "wrangel",
+        name: "Wrangel",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1827,7 +1829,7 @@ export default generator([
         },
     },
     {
-        name: "wrangel-w",
+        name: "Wrangel-w",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1835,7 +1837,7 @@ export default generator([
         },
     },
     {
-        name: "yemen",
+        name: "Yemen",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1844,7 +1846,7 @@ export default generator([
     },
 
     {
-        name: "alexander",
+        name: "Alexander",
         continent: "antarctica",
         climate: {
             temperature: 20,
@@ -1852,7 +1854,7 @@ export default generator([
         },
     },
     {
-        name: "antarctic peninsula",
+        name: "Antarctic peninsula",
         continent: "antarctica",
         climate: {
             temperature: 20,
@@ -1860,7 +1862,7 @@ export default generator([
         },
     },
     {
-        name: "east antarctica",
+        name: "East antarctica",
         continent: "antarctica",
         climate: {
             temperature: 20,
@@ -1868,7 +1870,7 @@ export default generator([
         },
     },
     {
-        name: "elephant",
+        name: "Elephant",
         continent: "antarctica",
         climate: {
             temperature: 20,
@@ -1876,7 +1878,7 @@ export default generator([
         },
     },
     {
-        name: "kerguelen",
+        name: "Kerguelen",
         continent: "antarctica",
         climate: {
             temperature: 20,
@@ -1884,7 +1886,7 @@ export default generator([
         },
     },
     {
-        name: "smyley",
+        name: "Smyley",
         continent: "antarctica",
         climate: {
             temperature: 20,
@@ -1894,7 +1896,7 @@ export default generator([
 
 
     {
-        name: "australia",
+        name: "Australia",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1902,7 +1904,7 @@ export default generator([
         },
     },
     {
-        name: "banks",
+        name: "Banks",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1910,7 +1912,7 @@ export default generator([
         },
     },
     {
-        name: "bougainville",
+        name: "Bougainville",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1918,7 +1920,7 @@ export default generator([
         },
     },
     {
-        name: "choiseul",
+        name: "Choiseul",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1926,7 +1928,7 @@ export default generator([
         },
     },
     {
-        name: "efate",
+        name: "Efate",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1934,7 +1936,7 @@ export default generator([
         },
     },
     {
-        name: "espiritu santo",
+        name: "Espiritu santo",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1942,7 +1944,7 @@ export default generator([
         },
     },
     {
-        name: "fiji",
+        name: "Fiji",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1950,7 +1952,7 @@ export default generator([
         },
     },
     {
-        name: "malaita",
+        name: "Malaita",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1958,7 +1960,7 @@ export default generator([
         },
     },
     {
-        name: "malakula",
+        name: "Malakula",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1966,7 +1968,7 @@ export default generator([
         },
     },
     {
-        name: "new britain",
+        name: "New britain",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1974,7 +1976,7 @@ export default generator([
         },
     },
     {
-        name: "new caledonia",
+        name: "New caledonia",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1982,7 +1984,7 @@ export default generator([
         },
     },
     {
-        name: "new georgia",
+        name: "New georgia",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1990,7 +1992,7 @@ export default generator([
         },
     },
     {
-        name: "new ireland",
+        name: "New ireland",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -1998,7 +2000,7 @@ export default generator([
         },
     },
     {
-        name: "new zealand north island",
+        name: "New zealand north island",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2006,7 +2008,7 @@ export default generator([
         },
     },
     {
-        name: "new zealand south island",
+        name: "New zealand south island",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2014,7 +2016,7 @@ export default generator([
         },
     },
     {
-        name: "papua new guinea",
+        name: "Papua new guinea",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2022,7 +2024,7 @@ export default generator([
         },
     },
     {
-        name: "raiatea",
+        name: "Raiatea",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2030,7 +2032,7 @@ export default generator([
         },
     },
     {
-        name: "rennell",
+        name: "Rennell",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2038,7 +2040,7 @@ export default generator([
         },
     },
     {
-        name: "santa ana",
+        name: "Santa ana",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2046,7 +2048,7 @@ export default generator([
         },
     },
     {
-        name: "santa isabel",
+        name: "Santa isabel",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2054,7 +2056,7 @@ export default generator([
         },
     },
     {
-        name: "tahiti",
+        name: "Tahiti",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2062,7 +2064,7 @@ export default generator([
         },
     },
     {
-        name: "tasmania",
+        name: "Tasmania",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2070,7 +2072,7 @@ export default generator([
         },
     },
     {
-        name: "victoria",
+        name: "Victoria",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2080,7 +2082,7 @@ export default generator([
 
 
     {
-        name: "argentina",
+        name: "Argentina",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2088,7 +2090,7 @@ export default generator([
         },
     },
     {
-        name: "bolivia",
+        name: "Bolivia",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2096,7 +2098,7 @@ export default generator([
         },
     },
     {
-        name: "brazil",
+        name: "Brazil",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2104,7 +2106,7 @@ export default generator([
         },
     },
     {
-        name: "chile",
+        name: "Chile",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2112,7 +2114,7 @@ export default generator([
         },
     },
     {
-        name: "chiloe",
+        name: "Chiloe",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2120,7 +2122,7 @@ export default generator([
         },
     },
     {
-        name: "colombia",
+        name: "Colombia",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2128,7 +2130,7 @@ export default generator([
         },
     },
     {
-        name: "ecuador",
+        name: "Ecuador",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2136,7 +2138,7 @@ export default generator([
         },
     },
     {
-        name: "falklands east",
+        name: "Falklands east",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2144,7 +2146,7 @@ export default generator([
         },
     },
     {
-        name: "falklands west",
+        name: "Falklands west",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2152,7 +2154,7 @@ export default generator([
         },
     },
     {
-        name: "galapagos",
+        name: "Galapagos",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2160,7 +2162,7 @@ export default generator([
         },
     },
     {
-        name: "guadeloupe",
+        name: "Guadeloupe",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2168,7 +2170,7 @@ export default generator([
         },
     },
     {
-        name: "guyana",
+        name: "Guyana",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2176,7 +2178,7 @@ export default generator([
         },
     },
     {
-        name: "guyane",
+        name: "Guyane",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2184,7 +2186,7 @@ export default generator([
         },
     },
     {
-        name: "paraguay",
+        name: "Paraguay",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2192,7 +2194,7 @@ export default generator([
         },
     },
     {
-        name: "peru",
+        name: "Peru",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2200,7 +2202,7 @@ export default generator([
         },
     },
     {
-        name: "suriname",
+        name: "Suriname",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2208,7 +2210,7 @@ export default generator([
         },
     },
     {
-        name: "tierra del fuego argentina",
+        name: "Tierra del fuego argentina",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2216,7 +2218,7 @@ export default generator([
         },
     },
     {
-        name: "tierra del fuego chile",
+        name: "Tierra del fuego chile",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2224,7 +2226,7 @@ export default generator([
         },
     },
     {
-        name: "uruguay",
+        name: "Uruguay",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2232,7 +2234,7 @@ export default generator([
         },
     },
     {
-        name: "venezuela",
+        name: "Venezuela",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2241,7 +2243,7 @@ export default generator([
     },
 
     {
-        name: "adak",
+        name: "Adak",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2249,7 +2251,7 @@ export default generator([
         },
     },
     {
-        name: "adak west",
+        name: "Adak west",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2257,7 +2259,7 @@ export default generator([
         },
     },
     {
-        name: "alaska",
+        name: "Alaska",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2265,7 +2267,7 @@ export default generator([
         },
     },
     {
-        name: "alaska-westcopy",
+        name: "Alaska-westcopy",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2273,7 +2275,7 @@ export default generator([
         },
     },
     {
-        name: "amchitka",
+        name: "Amchitka",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2281,7 +2283,7 @@ export default generator([
         },
     },
     {
-        name: "amchitka west",
+        name: "Amchitka west",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2289,7 +2291,7 @@ export default generator([
         },
     },
     {
-        name: "amund ringnes",
+        name: "Amund ringnes",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2297,7 +2299,7 @@ export default generator([
         },
     },
     {
-        name: "andros",
+        name: "Andros",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2305,7 +2307,7 @@ export default generator([
         },
     },
     {
-        name: "another aleutian west",
+        name: "Another aleutian west",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2313,7 +2315,7 @@ export default generator([
         },
     },
     {
-        name: "attu",
+        name: "Attu",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2321,7 +2323,7 @@ export default generator([
         },
     },
     {
-        name: "attu west",
+        name: "Attu west",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2329,7 +2331,7 @@ export default generator([
         },
     },
     {
-        name: "axel heiberg",
+        name: "Axel heiberg",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2337,7 +2339,7 @@ export default generator([
         },
     },
     {
-        name: "baffin",
+        name: "Baffin",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2345,7 +2347,7 @@ export default generator([
         },
     },
     {
-        name: "belize",
+        name: "Belize",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2353,7 +2355,7 @@ export default generator([
         },
     },
     {
-        name: "bimini",
+        name: "Bimini",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2361,7 +2363,7 @@ export default generator([
         },
     },
     {
-        name: "bylot",
+        name: "Bylot",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2369,7 +2371,7 @@ export default generator([
         },
     },
     {
-        name: "canada",
+        name: "Canada",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2377,7 +2379,7 @@ export default generator([
         },
     },
     {
-        name: "cornwallis",
+        name: "Cornwallis",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2385,7 +2387,7 @@ export default generator([
         },
     },
     {
-        name: "costa rica",
+        name: "Costa rica",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2393,7 +2395,7 @@ export default generator([
         },
     },
     {
-        name: "cuba",
+        name: "Cuba",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2401,7 +2403,7 @@ export default generator([
         },
     },
     {
-        name: "devon",
+        name: "Devon",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2409,7 +2411,7 @@ export default generator([
         },
     },
     {
-        name: "disko",
+        name: "Disko",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2417,7 +2419,7 @@ export default generator([
         },
     },
     {
-        name: "domincan republic",
+        name: "Domincan republic",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2425,7 +2427,7 @@ export default generator([
         },
     },
     {
-        name: "dominica",
+        name: "Dominica",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2433,7 +2435,7 @@ export default generator([
         },
     },
     {
-        name: "eglinton",
+        name: "Eglinton",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2441,7 +2443,7 @@ export default generator([
         },
     },
     {
-        name: "el salvador",
+        name: "El salvador",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2449,7 +2451,7 @@ export default generator([
         },
     },
     {
-        name: "eleuthera",
+        name: "Eleuthera",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2457,7 +2459,7 @@ export default generator([
         },
     },
     {
-        name: "ellef ringnes",
+        name: "Ellef ringnes",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2465,7 +2467,7 @@ export default generator([
         },
     },
     {
-        name: "ellesmere",
+        name: "Ellesmere",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2473,7 +2475,7 @@ export default generator([
         },
     },
     {
-        name: "grand bahama",
+        name: "Grand bahama",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2481,7 +2483,7 @@ export default generator([
         },
     },
     {
-        name: "greenland",
+        name: "Greenland",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2489,7 +2491,7 @@ export default generator([
         },
     },
     {
-        name: "grenada",
+        name: "Grenada",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2497,7 +2499,7 @@ export default generator([
         },
     },
     {
-        name: "guatemala",
+        name: "Guatemala",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2505,7 +2507,7 @@ export default generator([
         },
     },
     {
-        name: "haida gwaii",
+        name: "Haida gwaii",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2513,7 +2515,7 @@ export default generator([
         },
     },
     {
-        name: "haiti",
+        name: "Haiti",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2521,7 +2523,7 @@ export default generator([
         },
     },
     {
-        name: "haiti-dominican border",
+        name: "Haiti-dominican border",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2529,7 +2531,7 @@ export default generator([
         },
     },
     {
-        name: "hawaii",
+        name: "Hawaii",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2537,7 +2539,7 @@ export default generator([
         },
     },
     {
-        name: "honduras",
+        name: "Honduras",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2545,7 +2547,7 @@ export default generator([
         },
     },
     {
-        name: "inagua",
+        name: "Inagua",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2553,7 +2555,7 @@ export default generator([
         },
     },
     {
-        name: "jamaica",
+        name: "Jamaica",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2561,7 +2563,7 @@ export default generator([
         },
     },
     {
-        name: "james ross",
+        name: "James ross",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2569,7 +2571,7 @@ export default generator([
         },
     },
     {
-        name: "kahului",
+        name: "Kahului",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2577,7 +2579,7 @@ export default generator([
         },
     },
     {
-        name: "kauai",
+        name: "Kauai",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2585,7 +2587,7 @@ export default generator([
         },
     },
     {
-        name: "king christian",
+        name: "King christian",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2593,7 +2595,7 @@ export default generator([
         },
     },
     {
-        name: "king george",
+        name: "King george",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2601,7 +2603,7 @@ export default generator([
         },
     },
     {
-        name: "mackenzie king",
+        name: "Mackenzie king",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2609,7 +2611,7 @@ export default generator([
         },
     },
     {
-        name: "martinique",
+        name: "Martinique",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2617,7 +2619,7 @@ export default generator([
         },
     },
     {
-        name: "mexico",
+        name: "Mexico",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2625,7 +2627,7 @@ export default generator([
         },
     },
     {
-        name: "newfoundland",
+        name: "Newfoundland",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2633,7 +2635,7 @@ export default generator([
         },
     },
     {
-        name: "nicaragua",
+        name: "Nicaragua",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2641,7 +2643,7 @@ export default generator([
         },
     },
     {
-        name: "oahu",
+        name: "Oahu",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2649,7 +2651,7 @@ export default generator([
         },
     },
     {
-        name: "panama",
+        name: "Panama",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2657,7 +2659,7 @@ export default generator([
         },
     },
     {
-        name: "prescott",
+        name: "Prescott",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2665,7 +2667,7 @@ export default generator([
         },
     },
     {
-        name: "prince patrick",
+        name: "Prince patrick",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2673,7 +2675,7 @@ export default generator([
         },
     },
     {
-        name: "puerto rico",
+        name: "Puerto rico",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2681,7 +2683,7 @@ export default generator([
         },
     },
     {
-        name: "robert",
+        name: "Robert",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2689,7 +2691,7 @@ export default generator([
         },
     },
     {
-        name: "st. lawrence island",
+        name: "St. lawrence island",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2697,7 +2699,7 @@ export default generator([
         },
     },
     {
-        name: "st. lawrence island west",
+        name: "St. lawrence island west",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2705,7 +2707,7 @@ export default generator([
         },
     },
     {
-        name: "st. lucia",
+        name: "St. lucia",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2713,7 +2715,7 @@ export default generator([
         },
     },
     {
-        name: "st. vincent",
+        name: "St. vincent",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2721,7 +2723,7 @@ export default generator([
         },
     },
     {
-        name: "thrace",
+        name: "Thrace",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2729,7 +2731,7 @@ export default generator([
         },
     },
     {
-        name: "thurston",
+        name: "Thurston",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2737,7 +2739,7 @@ export default generator([
         },
     },
     {
-        name: "trinidad",
+        name: "Trinidad",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2745,7 +2747,7 @@ export default generator([
         },
     },
     {
-        name: "ulster",
+        name: "Ulster",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2753,7 +2755,7 @@ export default generator([
         },
     },
     {
-        name: "umnak",
+        name: "Umnak",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2761,7 +2763,7 @@ export default generator([
         },
     },
     {
-        name: "umnak west",
+        name: "Umnak west",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2769,7 +2771,7 @@ export default generator([
         },
     },
     {
-        name: "unalaska",
+        name: "Unalaska",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2777,7 +2779,7 @@ export default generator([
         },
     },
     {
-        name: "unalaska west",
+        name: "Unalaska west",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2785,7 +2787,7 @@ export default generator([
         },
     },
     {
-        name: "usa",
+        name: "Usa",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2793,7 +2795,7 @@ export default generator([
         },
     },
     {
-        name: "vancouver",
+        name: "Vancouver",
         continent: "north america",
         climate: {
             temperature: 20,

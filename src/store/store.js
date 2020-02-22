@@ -27,6 +27,8 @@ window.store = {
 		],
 	},
 	points: 0,
+    maxPoints: 10000,
     temperature: 0,
     fuzzTemperature: 15,
+    maxTemperature: 20,
 };
