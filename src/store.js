@@ -8,7 +8,8 @@ window.store = {
 			timestamp: Date.now(),
 			name: "France",
 			state: {
-				"openBorders": true
+				"openBorders": true,
+				"flooding": false
 			}
 		},
 		{
@@ -16,7 +17,8 @@ window.store = {
 			timestamp: Date.now(),
 			name: "Germany",
 			state: {
-				"openBorders": true
+				"openBorders": true,		
+				"flooding": false
 			}
 		},
 		{
@@ -24,7 +26,8 @@ window.store = {
 			timestamp: Date.now(),
 			name: "The United Kingdom",
 			state: {
-				"openBorders": true
+				"openBorders": true,
+				"flooding": false
 			}
 		},
 	]
