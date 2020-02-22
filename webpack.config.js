@@ -4,6 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
     entry: "./src/index.js",
     mode: "development",
+    devtool: "eval",
     resolve: {
         alias: {
             "~assets": path.resolve(__dirname, "assets"),
