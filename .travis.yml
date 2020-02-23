@@ -4,6 +4,7 @@ node_js:
 
 install:
   - yarn travis
+  - pwd
 
 deploy:
   provider: pages
