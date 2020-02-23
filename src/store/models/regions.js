@@ -132,6 +132,10 @@ const generator = entries => entries.map(entry => {
                 electicCarsBanned: false,
                 renewableEnergyBanned: false,
 				wildfire: false,
+                activeToken: {
+                    timestamp: 0,
+    				key: null
+                },
             },
             ...entry,
         };

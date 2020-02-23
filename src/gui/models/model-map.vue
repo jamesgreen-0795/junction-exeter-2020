@@ -1,5 +1,6 @@
 <template>
     <div class="bg-grey">
+        <model-tokens-overlay v-model="tokens"></model-tokens-overlay>
         <div ref="svg" class="model-map">
             <div style="padding-bottom: 64%;">
                 <svg-map class="svg-map"></svg-map>
@@ -46,35 +47,60 @@
     import SvgMap from "~assets/regions.svg";
     import Panzoom from '@panzoom/panzoom';
     import relativeElementPosition from "./../misc/relativeElementPosition";
+    import modeltokensOverlay from "./model-tokens-overlay.vue";
 
     export default {
         name: "model-map",
 
         components: {
             SvgMap,
+            "model-tokens-overlay": modeltokensOverlay,
         },
 
         data(){
             return {
                 panzoom: null,
+                tokens: {},
             }
+        },
+
+        computed: {
+            svgPosition(){
+                return this.$refs.svg.getBoundingClientRect();
+            },
         },
 
         watch: {
             '$root.store.models.regions': {
                 deep: true,
                 handler: function(updatedRegions, previousRegions){
+                    this.tokens = {};
                     JSON.parse(JSON.stringify(updatedRegions)).forEach(region => {
 
                         try {
                             var element = this.getSvgRegion(region);
-                            var toggleClass = (prop, cName) => { element && element.classList[prop ? 'add':'remove'](cName); }
 
-                            toggleClass(region.state.flooding, 'fill-blue');
-                            toggleClass(region.state.wildfire, 'fill-orange');
+                            if (element){
+                                var toggleClass = (prop, cName) => { element.classList[prop ? 'add':'remove'](cName); }
+
+                                toggleClass(region.state.flooding, 'fill-blue');
+                                toggleClass(region.state.wildfire, 'fill-orange');
+
+                                var regionPosition = element.getBoundingClientRect();
+
+                                var left = regionPosition.x - this.svgPosition.x;
+                                var top = regionPosition.y - this.svgPosition.y;
+
+                                if (region.state.activeToken && region.state.activeToken.timestamp){
+                                    this.tokens[region.uuid] = {
+                                        region: region,
+                                        data: region.state.activeToken,
+                                        style: `top: ${top}px; left: ${left}px;`,
+                                    };
+                                }
+                            }
 
                         } catch (error){console.warn(error)}
-
                     });
                 },
             },

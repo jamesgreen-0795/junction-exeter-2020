@@ -17,6 +17,11 @@ toggleFlooding = ->
 		if Math.floor(Math.random() * 100) < window.store.temperature
 			country.state.flooding = true
 			window.store.points += 10
+			country.state.activeToken = {
+				timestamp: Date.now(),
+				type: "flooding"
+				points: 25,
+			}
 			createNewsItem("Severe flooding in " + country.name + ".")
 		else
 			true
@@ -30,6 +35,11 @@ toggleWildfires = ->
 		if Math.floor(Math.random() * 150) < window.store.temperature
 			country.state.wildfire = true
 			window.store.points += 15
+			country.state.activeToken = {
+				timestamp: Date.now(),
+				type: "wildfires"
+				points: 25,
+			}
 			createNewsItem("Wildfires have broken out in " + country.name + ".")
 		else
 			true
@@ -52,10 +62,14 @@ drought = ->
 	country = getCountry()
 	if Math.floor(Math.random() * 200) < window.store.temperature
 			country.state.flooding = true
-			window.store.points += 25
 			events = [" is in drought.",
 				" has imposed a hose pipe ban",
 				"'s water reserves are at an all time low."]
+			country.state.activeToken = {
+				timestamp: Date.now(),
+				type: "drought"
+				points: 25,
+			}
 			createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 		else
 			true
@@ -71,6 +85,11 @@ oilDeal = ->
 				" has given CrudeInc increased oil drilling rights.",
 				" has started a national oil company",
 				" approved Petroleum International's national expansion plans."]
+		country.state.activeToken = {
+			timestamp: Date.now(),
+			type: "oilDeal"
+			points: 25,
+		}
 		createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 	else
 		false
@@ -83,6 +102,11 @@ banElectricCars = ->
 		window.store.points += 100
 		events = ["The government of " + country.name + " has banned electric cars over fears of toenail cancer.",
 			country.name + " has banned electric transport over fears of reduced oil profits."]
+		country.state.activeToken = {
+			timestamp: Date.now(),
+			type: "banElectricCars"
+			points: 25,
+		}
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
 		false
@@ -95,6 +119,11 @@ banRenewableEnergy = ->
 		window.store.points += 150
 		events = [country.name + " has banned wind turbines over fears of sub sonic noises",
 			country.name + " has banned home solar panels."]
+		country.state.activeToken = {
+			timestamp: Date.now(),
+			type: "banRenewableEnergy"
+			points: 25,
+		}
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
 		false
@@ -103,6 +132,11 @@ closeBorders = ->
 	country = getCountry()
 	if country.state.openBorders
 		country.state.openBorders = false
+		country.state.activeToken = {
+			timestamp: Date.now(),
+			type: "closeBorders"
+			points: 25,
+		}
 		if country.name == "Britain"
 			createNewsItem("Brexit means brexit, " + country.name + " has closed its borders.")
 		else
@@ -120,6 +154,11 @@ carFactory = ->
 			" hit a new all time sales record in ",
 			" have been given a large tax break in "]
 	eventString = carBrands[Math.floor(Math.random() * carBrands.length)] + events[Math.floor(Math.random() * events.length)] + country.name
+	country.state.activeToken = {
+		timestamp: Date.now(),
+		type: "carFactory"
+		points: 25,
+	}
 	createNewsItem(eventString)
 
 newsTypes = [
