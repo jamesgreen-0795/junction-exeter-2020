@@ -314,6 +314,10 @@ newsTypes = [
 	whalingShipDestroyed,
 	increaseEleCars,
 	megaEleCars
+	beefProduction,
+	mcDonalds,
+	landClearance,
+	cowDomination
 ]
 
 doEvent = ->
