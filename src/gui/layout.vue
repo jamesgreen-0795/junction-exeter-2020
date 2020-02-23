@@ -3,7 +3,6 @@
         <model-scores></model-scores>
         <div class="map">
             <model-inventory style="z-index: 50;"></model-inventory>
-            <model-test class="test"></model-test>
             <model-newsfeed class="newsfeed"></model-newsfeed>
 
             <model-map></model-map>

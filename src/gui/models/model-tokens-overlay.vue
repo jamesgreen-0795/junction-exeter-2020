@@ -3,7 +3,7 @@
         <div
             v-for="(uuid, index) in Object.keys(value)"
             :key="uuid"
-            @click="useToken(value[uuid].data)"
+            @click="useToken(value[uuid].region.activeToken)"
             class="token"
             :style="value[uuid].style"
         >
@@ -18,7 +18,18 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @keyframes token {
+        0%{
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
     .overlay {
         position: absolute;
         top: 0;
@@ -29,8 +40,8 @@
     }
     .token {
         position: absolute;
-        width: 4rem;
-        height: 4rem;
+        width: 3rem;
+        height: 3rem;
         background: #{var(--darkred)};
         border-radius: 50%;
         color: #{var(--darkred)};
@@ -40,6 +51,7 @@
         filter: saturate(1);
         transition: filter 0.15s ease;
         filter: drop-shadow(0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1));
+        // animation: token 0.4s ease infinite;
 
         &:hover {
             filter: saturate(1.5);

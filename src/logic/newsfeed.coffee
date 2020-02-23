@@ -1,7 +1,7 @@
 utils = require './utils.coffee'
 
 export getNews = ->
-	if (Math.random()) < 0.8
+	if (Math.random()) < 0.1
 		doEvent()
 
 toggleFlooding = ->
@@ -48,7 +48,6 @@ toggleWildfires = ->
 
 carbonTax = ->
 	country = getCountry()
-	console.log country
 	if country.state.corruption < 5 and window.store.temperature > 60
 		window.store.temperature -= 10
 		events = [country.name + " has imposed an emergency carbon tax.",]
@@ -177,7 +176,6 @@ carFactory = ->
 
 climateJournalist = ->
 	country = getCountry()
-	console.log country
 	if country.state.disinformation > 8 && Math.floor(math.random() * 5) == 3
 		window.store.temperature += 15
 		events = ["The UN has reported widespread imprisonment of climate journalists in " + country.name + ".",]

@@ -10,6 +10,14 @@
             <button @click="panzoom.zoomIn()">+</button>
             <button @click="panzoom.zoomOut()">-</button>
         </div>
+        <div class="information">
+            <div class="key bg-blue">
+                Flooded
+            </div>
+            <div class="key bg-orange">
+                Wildfires
+            </div>
+        </div>
     </div>
 </template>
 
@@ -67,6 +75,20 @@
             &:hover, &:active {
                 filter: contrast(2);
             }
+        }
+    }
+
+    .information {
+        position: absolute;
+        left: 0.5rem;
+        top: 0.5rem;
+
+        .key {
+            display: inline-block;
+            padding: 0.25rem;
+            margin-right: 0.25rem;
+            font-size: 0.85rem;
+            border-radius: 0.25rem;
         }
     }
 </style>
