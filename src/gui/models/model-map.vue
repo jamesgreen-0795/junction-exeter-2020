@@ -6,6 +6,10 @@
                 <svg-map class="svg-map"></svg-map>
             </div>
         </div>
+        <div class="zoom">
+            <button @click="panzoom.zoomIn()">+</button>
+            <button @click="panzoom.zoomOut()">-</button>
+        </div>
     </div>
 </template>
 
@@ -38,6 +42,31 @@
         filter: drop-shadow( 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, .1));
         path, g {
             transition: fill 0.3s ease;
+        }
+    }
+
+    .zoom {
+        position: absolute;
+        right: 0.5rem;
+        bottom: 0.5rem;
+        button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 2rem;
+            height: 2rem;
+            border: 0;
+            border-radius: 0.25rem;
+            background-color: #{var(--teal)};
+            color: #{var(--white)};
+            font-size: 1.25rem;
+            outline: 0 !important;
+            cursor: pointer;
+            filter: contrast(1);
+
+            &:hover, &:active {
+                filter: contrast(2);
+            }
         }
     }
 </style>

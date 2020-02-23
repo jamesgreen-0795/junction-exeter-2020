@@ -18,7 +18,7 @@
             </div>
         </model-buy-popup>
         <div class="sidebar">
-            <h5 style="text-align:center;">Inventory</h5>
+            <h5 style="text-align:center;">Shop</h5>
             <div class="inventory">
         		<button
                     v-for="(upgradeCategoryKey, index) in availableUpgradeKeys"
