@@ -187,6 +187,57 @@ climateJournalist = ->
 	else
 		false
 
+# good
+carTax = ->
+	country = getCountry()
+	if country.state.corruption < 4 && country.state.disinformation < 6 == 0
+		window.store.temperature -= 5
+		events = [country.name + " has implemented low emission zones in major cities.",
+				country.name + " has implemented a fossil-fuel powered car tax."]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+transportLimitations = ->
+	country = getCountry()
+	if country.state.corruption < 6 && Math.floor(math.random() * 2) == 0
+		window.store.temperature -= 5
+		events = [country.name + " has introduced a number plate waiting list.",
+				country.name + " has implemented a fossil-fuel powered car tax."]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+environmentalOrg = ->
+	country = getCountry()
+	if country.state.corruption > 6 && Math.floor(math.random() * 3) == 0
+		window.store.temperature -= 3
+		events = [country.name + " has implemented low emission zones in major cities.",
+				country.name + " has implemented a fossil-fuel powered car tax."]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+coalBan = ->
+	country = getCountry()
+	if country.state.corruption < 4 && Math.floor(math.random() * 2) == 0
+		window.store.temperature -= 3
+		events = [country.name + " has implemented low emission zones in major cities.",
+				country.name + " has implemented a fossil-fuel powered car tax."]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+whalingShipDestroyed = ->
+	country = getCountry()
+	if country.state.corruption < 4 && Math.floor(math.random() * 2) == 0
+		window.store.temperature -= 3
+		events = [country.name + " has implemented low emission zones in major cities.",
+				country.name + " has implemented a fossil-fuel powered car tax."]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
 
 newsTypes = [
 	# closeBorders,
