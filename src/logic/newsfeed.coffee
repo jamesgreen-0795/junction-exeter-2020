@@ -182,7 +182,7 @@ carFactory = ->
 
 climateJournalist = ->
 	country = getCountry()
-	if country.state.disinformation > 8 && Math.floor(math.random() * 5) == 0
+	if country.state.disinformation > 8 && Math.floor(Math.random() * 5) == 0
 		window.store.temperature += 15
 		events = ["The UN has reported widespread imprisonment of climate journalists in " + country.name + ".",]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
@@ -202,27 +202,27 @@ carTax = ->
 
 transportLimitations = ->
 	country = getCountry()
-	if country.state.corruption < 6 && Math.floor(math.random() * 2) == 0
+	if country.state.corruption < 6 && Math.floor(Math.random() * 2) == 0
 		window.store.temperature -= 5
 		events = [country.name + " has introduced a number plate waiting list.",
-				country.name + " has implemented a fossil-fuel powered car tax."]
+				country.name + " has introduced a 1 car per family policy."]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
 		false
 
 environmentalOrg = ->
 	country = getCountry()
-	if country.state.corruption > 6 && Math.floor(math.random() * 3) == 0
-		window.store.temperature -= 3
-		events = [country.name + " has implemented low emission zones in major cities.",
-				country.name + " has implemented a fossil-fuel powered car tax."]
-		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	if country.state.corruption > 7 && Math.floor(Math.random() * 3) == 0
+		window.store.temperature -= 1
+		window.store.disinformation -= 1
+		events = ["Pink Peace","WWZ", "Extinction Stoppers"]
+		createNewsItem(events[Math.floor(Math.random() * events.length) + "have started an environmental awareness campaign in " + country.name])
 	else
 		false
 
 coalBan = ->
 	country = getCountry()
-	if country.state.corruption < 4 && Math.floor(math.random() * 2) == 0
+	if country.state.corruption < 4 && Math.floor(Math.random() * 2) == 0
 		window.store.temperature -= 3
 		events = [country.name + " has implemented low emission zones in major cities.",
 				country.name + " has implemented a fossil-fuel powered car tax."]
@@ -232,7 +232,7 @@ coalBan = ->
 
 whalingShipDestroyed = ->
 	country = getCountry()
-	if country.state.corruption < 4 && Math.floor(math.random() * 2) == 0
+	if country.state.corruption < 4 && Math.floor(Math.random() * 2) == 0
 		window.store.temperature -= 3
 		events = [country.name + " has implemented low emission zones in major cities.",
 				country.name + " has implemented a fossil-fuel powered car tax."]
@@ -251,7 +251,13 @@ newsTypes = [
 	banElectricCars,
 	toggleWildfires,
 	carbonTax,
-	climateJournalist
+	climateJournalist,
+	emissionsTargetMet,
+	carTax,
+	transportLimitations,
+	environmentalOrg,
+	coalBan,
+	whalingShipDestroyed,
 ]
 
 doEvent = ->
