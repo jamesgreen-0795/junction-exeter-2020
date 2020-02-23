@@ -7,10 +7,10 @@ install:
   - pwd
 
 deploy:
+  local_dir: public
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
   on:
     branch: master
-  local_dir: /home/travis/build/jamesgreen-0795/junction-exeter-2020/dist
