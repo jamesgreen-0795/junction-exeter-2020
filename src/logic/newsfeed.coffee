@@ -9,7 +9,7 @@ export getNews = ->
 		doEvent()
 
 toggleFlooding = ->
-	if Math.floor(Math.random() * 2)
+	if !Math.floor(Math.random() * 10)
 		country = c for c in window.store.models.regions when c.state.flooding
 		if country?
 			country.state.flooding = false
@@ -18,7 +18,7 @@ toggleFlooding = ->
 			false
 	else
 		country = getCountry()
-		if Math.floor(Math.random() * 100) < window.store.temperature
+		if Math.floor(Math.random() * 100) < 60
 			country.state.flooding = true
 			country.state.activeToken = {
 				timestamp: Date.now(),
@@ -38,7 +38,7 @@ toggleWildfires = ->
 			createNewsItem("Wildfires have ceased in " + country.name + ".")
 	else
 		country = getCountry()
-		if Math.floor(Math.random() * 150) < window.store.temperature
+		if Math.floor(Math.random() * 150) > 60
 			country.state.wildfire = true
 			country.state.activeToken = {
 				timestamp: Date.now(),
