@@ -7,12 +7,12 @@
             class="token"
             :style="value[uuid].style"
         >
-            <svg-map-marker></svg-map-marker>
-
             <div class="value">
                 <component v-if="value[uuid].data.icon" :is="value[uuid].data.icon"></component>
                 <br>
-                {{ value[uuid].data.points }}+
+                <span class="points">
+                    {{ value[uuid].data.points }}
+                </span>
             </div>
         </div>
     </div>
@@ -31,7 +31,9 @@
         position: absolute;
         width: 4rem;
         height: 4rem;
-        color: #{var(--orange)};
+        background: #{var(--darkred)};
+        border-radius: 50%;
+        color: #{var(--darkred)};
         opacity: 0.8;
         transform: translate(-50%, -50%);
         cursor: pointer;
@@ -46,20 +48,24 @@
 
         .value {
             position: absolute;
-            top: 1rem;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             z-index: 5;
             color: #fff;
             text-align: center;
 
             svg {
                 color: #fff;
-                width: 1rem;
+                width: 0.75rem;
                 height: auto;
                 path {
                     fill: #fff;
                 }
+            }
+
+            .points {
+                font-size: 0.85rem;
             }
         }
     }

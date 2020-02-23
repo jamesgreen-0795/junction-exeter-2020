@@ -1,7 +1,7 @@
 utils = require './utils.coffee'
 
 export getNews = ->
-	if (Math.random()) < 0.1
+	if (Math.random()) < 0.8
 		doEvent()
 
 toggleFlooding = ->
@@ -40,7 +40,7 @@ toggleWildfires = ->
 				timestamp: Date.now(),
 				type: "wildfires"
 				points: 25,
-				icon: "svg-upgrades-deforestation"
+				icon: "svg-impacts-fire"
 			}
 			createNewsItem("Wildfires have broken out in " + country.name + ".")
 		else
@@ -80,7 +80,7 @@ drought = ->
 				timestamp: Date.now(),
 				type: "drought"
 				points: 25,
-				icon: "svg-weather-sun-solid",
+				icon: "svg-impacts-drought-brown-plant",
 			}
 			createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 		else
@@ -137,7 +137,7 @@ banRenewableEnergy = ->
 			timestamp: Date.now(),
 			type: "banRenewableEnergy"
 			points: 25,
-			icon: "svg-renewable-energy-wind-turbine",
+			icon: "svg-impacts-ban-renewable",
 		}
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
@@ -169,13 +169,14 @@ carFactory = ->
 			timestamp: Date.now(),
 			type: "carFactory"
 			points: 25,
+			icon: "svg-upgrades-car-factory"
 		}
 		createNewsItem(eventString)
 	else
 		false
 
 # climateJournalist = ->
-# 	if 
+# 	if
 
 newsTypes = [
 	# closeBorders,
