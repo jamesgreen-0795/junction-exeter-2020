@@ -1,6 +1,6 @@
 <template>
     <div class="scores">
-        <span class="label">
+        <span :class="`label ${activeTweens ? 'is-tweening':''}`">
             {{ tweenedPointsFloored }} Points
         </span>
         <span class="label">
@@ -14,7 +14,18 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @keyframes growing {
+        0% {
+            transform: translateZ(0) scale(1);
+        }
+        50% {
+            transform: translateZ(0) scale(1.15);
+        }
+        100% {
+            transform: translateZ(0) scale(1);
+        }
+    }
     .scores {
         position: absolute;
         top: 2.5vh;
@@ -30,6 +41,12 @@
         font-size: 0.85rem;
         min-width: 75px;
         white-space: nowrap;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+
+        &.is-tweening {
+            animation: growing 0.2s ease infinite;
+        }
     }
     .bar {
         position: relative;
@@ -76,6 +93,7 @@
         data(){
             return {
                 tweenedPoints: 0,
+                activeTweens: 0,
             }
         },
 
@@ -95,8 +113,14 @@
             '$root.store.points': {
                 deep: true,
                 handler: function(newValue, oldValue){
+                    this.activeTweens = this.activeTweens + 1;
                     TweenLite.to(this.$data, 0.5, {
                         tweenedPoints: newValue,
+                        onComplete: () => {
+                            setTimeout(() => {
+                                this.activeTweens = this.activeTweens - 1;
+                            }, 200);
+                        }
                     });
                 }
             }

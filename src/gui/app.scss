@@ -45,8 +45,6 @@ $colors: (
 
     svg path.fill-#{$name}, svg g.fill-#{$name} {
         fill: #{$value};
-        transform-origin: center;
-        animation: bounce 1s ease;
     }
 
     .btn-#{$name} {
