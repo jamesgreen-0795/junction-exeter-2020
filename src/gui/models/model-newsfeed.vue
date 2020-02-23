@@ -1,6 +1,6 @@
 <template>
     <div class="model-newsfeed">
-        <div v-for="(item, index) in recentNews.reverse()" v-if="isNewsRecent(item)" :key="item.uuid" class="item">
+        <div v-for="(item, index) in recentNews.reverse()" v-if="isNewsRecent(item)&&index < 5" :key="item.uuid" class="item">
             <span v-html="item.message" :style="`opacity: ${(Math.abs(Date.now() - item.timestamp)/100)};`"></span>
         </div>
     </div>
