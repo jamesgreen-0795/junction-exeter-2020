@@ -1,7 +1,9 @@
 <template>
-    <div ref="svg" class="model-map">
-        <div>
-            <svg-map class="svg-map"></svg-map>
+    <div class="bg-grey">
+        <div ref="svg" class="model-map">
+            <div style="padding-bottom: 64%;">
+                <svg-map class="svg-map"></svg-map>
+            </div>
         </div>
     </div>
 </template>
@@ -20,12 +22,18 @@
         width: 100%;
         border-radius: 0.25rem;
         cursor: grab !important;
+        overflow: hidden;
         &.is-moving {
             cursor: grabbing !important;
         }
     }
     .svg-map {
         transform: scale(1.1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
     }
 </style>
 
@@ -104,9 +112,10 @@
 
         mounted(){
             this.panzoom = new Panzoom(this.$refs['svg'], {
-                contain: "outside",
+                // contain: "outside",
                 maxScale: 10,
                 minScale: 1,
+
             });
             this.panzoom.zoom(1, {animate: true});
             // this.panzoom.zoom(1, {animate: true});
