@@ -266,9 +266,9 @@ coalBan = ->
 
 whalingShipDestroyed = ->
 	country = getCountry()
-	if country.state.corruption > 4 && Math.floor(Math.random() * 2) == 0
-		window.store.temperature -= 3
-		events = [country.name + " has implemented low emission zones in major cities.",
+	if country.state.corruption > 8 && Math.floor(Math.random() * 2) == 0
+		window.store.temperature -= 5
+		events = [enviroActivists[Math.floor(Math.random() * enviroActivists.length)] + " was found to be behind the recent Whaling ship sinking.",
 				country.name + " has implemented a fossil-fuel powered car tax."]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
