@@ -44,29 +44,29 @@ window.store = {
         "fossil": [
             {
                 uuid: uuid(),
-                name: "Fossil Fuel Exploration 1",
-                message: "",
+                name: "Coal Mining",
+                message: "Open new coal mines, increasing the world wide supply of coal.",
                 onPurchase: window.mutations.upgrades.oil1,
                 points: 10
             },
             {
                 uuid: uuid(),
-                name: "Fossil Fuel Exploration 2",
+                name: "Coal Power Plant Research",
+                message: "Discover new, more cost effective ways to cut corners in burning coal.",
+                onPurchase: window.mutations.upgrades.oil2,
+                points: 50
+            },
+            {
+                uuid: uuid(),
+                name: "Developing",
                 message: "",
                 onPurchase: window.mutations.upgrades.oil2,
                 points: 50
             },
             {
                 uuid: uuid(),
-                name: "Fossil Fuel Exploration 3",
-                message: "",
-                onPurchase: window.mutations.upgrades.oil2,
-                points: 50
-            },
-            {
-                uuid: uuid(),
-                name: "Fossil Fuel Exploration 4",
-                message: "",
+                name: "Artic Oil Reserves",
+                message: "Pass international law to allow the drilling of oil in the artic.",
                 onPurchase: window.mutations.upgrades.oil2,
                 points: 50
             }
