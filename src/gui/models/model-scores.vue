@@ -3,9 +3,6 @@
         <span class="label">
             {{ tweenedPointsFloored }} Points
         </span>
-        <div class="bar points">
-            <span class="progress" :style="`width:${pointsPercentage}%;`"></span>
-        </div>
         <span class="label">
             Temperature
         </span>

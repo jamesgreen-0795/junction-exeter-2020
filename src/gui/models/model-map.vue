@@ -2,7 +2,23 @@
     <div class="bg-grey">
         <div ref="svg" class="model-map">
             <div style="padding-bottom: 64%;">
-                <model-tokens-overlay v-model="tokens"></model-tokens-overlay>
+                <div class="overlay" ref="overlay">
+                    <div
+                        v-for="(region, index) in regionsWithTokens"
+                        :key="region.uuid"
+                        @click="useToken(region.state.activeToken)"
+                        class="token"
+                        :style="getStyle(region)"
+                    >
+                        <div class="value">
+                            <component v-if="region.state.activeToken.icon" :is="region.state.activeToken.icon"></component>
+                            <br>
+                            <span class="points">
+                                {{ region.state.activeToken.points }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <svg-map class="svg-map"></svg-map>
             </div>
         </div>
@@ -91,6 +107,68 @@
             border-radius: 0.25rem;
         }
     }
+    @keyframes token {
+        0%{
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+    }
+    .token {
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        background: #{var(--darkred)};
+        border-radius: 50%;
+        color: #{var(--darkred)};
+        opacity: 0.8;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        filter: saturate(1);
+        transition: filter 0.15s ease;
+        filter: drop-shadow(0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1));
+        animation: token 0.4s ease infinite;
+
+        &:hover {
+            filter: saturate(1.5);
+            z-index: 5;
+        }
+
+        .value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            color: #fff;
+            text-align: center;
+
+            svg {
+                color: #fff;
+                width: 0.75rem;
+                height: auto;
+                path {
+                    fill: #fff;
+                }
+            }
+
+            .points {
+                font-size: 0.85rem;
+            }
+        }
+    }
 </style>
 
 <script>
@@ -100,24 +178,58 @@
     import relativeElementPosition from "./../misc/relativeElementPosition";
     import modeltokensOverlay from "./model-tokens-overlay.vue";
 
+    const svgImpactsContext = require.context("~assets/icons/impacts", true, /.svg/);
+    const svgUpgradesContext = require.context("~assets/icons/upgrades", true, /.svg/);
+    const svgWeatherContext = require.context("~assets/icons/weather", true, /.svg/);
+    const svgTravelContext = require.context("~assets/icons/travel", true, /.svg/);
+    const svgRenewableEnergyContext = require.context("~assets/icons/renewable-energy", true, /.svg/);
+
     export default {
         name: "model-map",
 
         components: {
             SvgMap,
             "model-tokens-overlay": modeltokensOverlay,
+            // Load svgs - `<svg-${basename}/>`
+            ...svgImpactsContext.keys().reduce((svgs, contextKey) => {
+                svgs[`svg-impacts-${contextKey.replace(/\.\//, "").replace(/\.svg/, "")}`] = svgImpactsContext(contextKey);
+                return svgs;
+            }, {}),
+            ...svgUpgradesContext.keys().reduce((svgs, contextKey) => {
+                svgs[`svg-upgrades-${contextKey.replace(/\.\//, "").replace(/\.svg/, "")}`] = svgUpgradesContext(contextKey);
+                return svgs;
+            }, {}),
+            ...svgWeatherContext.keys().reduce((svgs, contextKey) => {
+                svgs[`svg-weather-${contextKey.replace(/\.\//, "").replace(/\.svg/, "")}`] = svgWeatherContext(contextKey);
+                return svgs;
+            }, {}),
+            ...svgTravelContext.keys().reduce((svgs, contextKey) => {
+                svgs[`svg-travel-${contextKey.replace(/\.\//, "").replace(/\.svg/, "")}`] = svgTravelContext(contextKey);
+                return svgs;
+            }, {}),
+            ...svgRenewableEnergyContext.keys().reduce((svgs, contextKey) => {
+                svgs[`svg-renewable-energy-${contextKey.replace(/\.\//, "").replace(/\.svg/, "")}`] = svgRenewableEnergyContext(contextKey);
+                return svgs;
+            }, {}),
         },
 
         data(){
             return {
                 panzoom: null,
                 tokens: {},
+                currentZoom: 1,
             }
         },
 
         computed: {
             svgPosition(){
                 return this.$refs.svg.getBoundingClientRect();
+            },
+            regionsWithTokens(){
+                const zoom = this.currentZoom;
+                return this.$root.store.models.regions.filter(region => {
+                    return region.state.activeToken && region.state.activeToken.timestamp;
+                });
             },
         },
 
@@ -127,30 +239,13 @@
                 handler: function(updatedRegions, previousRegions){
                     this.tokens = {};
                     JSON.parse(JSON.stringify(updatedRegions)).forEach(region => {
-
                         try {
                             var element = this.getSvgRegion(region);
-
                             if (element){
                                 var toggleClass = (prop, cName) => { element.classList[prop ? 'add':'remove'](cName); }
-
                                 toggleClass(region.state.flooding, 'fill-blue');
                                 toggleClass(region.state.wildfire, 'fill-orange');
-
-                                var regionPosition = element.getBoundingClientRect();
-
-                                var left = regionPosition.x - this.svgPosition.x;
-                                var top = regionPosition.y - this.svgPosition.y;
-
-                                if (region.state.activeToken && region.state.activeToken.timestamp){
-                                    this.tokens[region.uuid] = {
-                                        region: region,
-                                        data: region.state.activeToken,
-                                        style: `top: ${top}px; left: ${left}px;`,
-                                    };
-                                }
                             }
-
                         } catch (error){console.warn(error)}
                     });
                 },
@@ -185,7 +280,7 @@
                 // this.panzoom.moveTo(coords.x, coords.y);
             },
             getSvgRegion(region){
-                var element = [...this.$refs.svg.querySelectorAll("path")].find(element => element.getAttribute("class") == region.name.toLowerCase());
+                var element = [...this.$refs.svg.querySelectorAll("path")].find(element => (element.getAttribute("class")+"").includes(region.name.toLowerCase()));
                 return element;
             },
             getRegionByName(name){
@@ -194,12 +289,28 @@
             getRegionByUuid(uuid){
                 return this.$root.store.models.regions.find(region => region.uuid == uuid);
             },
+            getStyle(region){
+                try {
+                    var element = this.getSvgRegion(region);
+                    var regionPosition = element.getBoundingClientRect();
+                    var left = regionPosition.x - this.svgPosition.x;
+                    var top = regionPosition.y - this.svgPosition.y;
+                    return `top: ${top}px; left: ${left}px;`;
+                }
+                catch (error){
+                    console.warn("Unable to get style for region", region.name.toLowerCase(), error);
+                }
+            },
+            useToken(token){
+                window.mutations.useToken(token);
+                console.log("used token", token)
+            },
         },
 
         mounted(){
             this.panzoom = new Panzoom(this.$refs['svg'], {
                 contain: "outside",
-                maxScale: 10,
+                maxScale: 2,
                 // minScale: 1,
 
             });
@@ -212,6 +323,14 @@
             });
             this.$refs["svg"].addEventListener("panzoomend", () => {
                 this.$refs["svg"].classList.remove("is-moving");
+            });
+
+            this.$refs["svg"].addEventListener("panzoomchange", event => {
+                this.currentZoom = event.detail.scale;
+            });
+
+            this.$refs["svg"].addEventListener("panzoomzoom", event => {
+                this.currentZoom = event.detail.scale;
             });
         },
 
