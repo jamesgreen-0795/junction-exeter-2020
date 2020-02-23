@@ -1,7 +1,5 @@
 <template>
-    <transition name="fade">
-        <component :is="$root.store.currentScreen"></component>
-    </transition>
+    <component :is="$root.store.currentScreen"></component>
 </template>
 
 <script>
