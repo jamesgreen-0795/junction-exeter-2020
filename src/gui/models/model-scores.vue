@@ -21,7 +21,9 @@
     .scores {
         position: absolute;
         top: 2.5vh;
-        right: 5vw;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90vw;
         display: flex;
         align-items: center;
     }

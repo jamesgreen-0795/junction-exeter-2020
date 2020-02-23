@@ -58,6 +58,8 @@
         display: inline-block;
         width: 90vw;
         height: 85vh;
+        max-width: 950px;
+        max-height: 620px;
         top: 0.25rem;
         border-radius: 12px;
         background: var(--black);
