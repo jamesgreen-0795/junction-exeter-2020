@@ -5,11 +5,13 @@ export getNews = ->
 		doEvent()
 
 toggleFlooding = ->
-	country = getCountry()
-	if country.state.flooding
-		country.state.flooding = false
-		createNewsItem(country.name + " has stopped flooding.")
+	if Math.floor(Math.random() * 2)
+		country = getCountryWhere((c) -> c.flooding)
+		if country
+			country.state.flooding = false
+			createNewsItem(country.name + " has stopped flooding.")
 	else
+		country = getCountry()
 		if Math.floor(Math.random() * 100) < window.store.temperature
 			country.state.flooding = true
 			window.store.points += 10
@@ -145,3 +147,10 @@ createNewsItem = (msg) ->
 getCountry = ->
 	cCount = window.store.models.regions.length
 	country = window.store.models.regions[Math.floor(Math.random() * cCount)]
+
+getCountryWhere = (func) ->
+	countries = c for c in window.store.models.regions when func(c)
+	if countries && countries.length
+		countries[Math.floor(Math.random() * countries.length)]
+	else
+		false
