@@ -292,6 +292,10 @@ newsTypes = [
 	environmentalOrg,
 	coalBan,
 	whalingShipDestroyed,
+	beefProduction,
+	mcDonalds,
+	landClearance,
+	cowDomination
 ]
 
 doEvent = ->
