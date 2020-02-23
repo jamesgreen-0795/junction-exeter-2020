@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "10.4"
 
-before_install:
+install:
   - yarn travis
 
 deploy:
@@ -12,4 +12,4 @@ deploy:
   keep_history: true
   on:
     branch: master
-  local_dir: $TRAVIS_BUILD_LOCATION/dist
+  local_dir: dist
