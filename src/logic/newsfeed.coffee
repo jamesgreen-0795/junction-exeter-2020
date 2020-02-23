@@ -313,7 +313,7 @@ newsTypes = [
 	coalBan,
 	whalingShipDestroyed,
 	increaseEleCars,
-	megaEleCars
+	megaEleCars,
 	beefProduction,
 	mcDonalds,
 	landClearance,
@@ -334,7 +334,14 @@ createNewsItem = (msg) ->
 	true
 
 getCountry = ->
+	if Math.random() < 0.5
+		countryList = ["Russia","Canada","China","Usa","Brazil","Australia","India","Argentina","Kazakhstan","Algeria",
+		"Congo","Greenland","Saudi","Mexico","Sumatra","South_sudan","Libya","Iran","Mongolia","Peru","Chad","Niger",
+		"Angola","Mali","South Africa","Colombia","Ethiopia","Bolivia","Mauretania","Egypt","Alaska","Britain","France","Germany"]
+		countryName = countryList[Math.floor(Math.random() * countryList.length)]
+		for i in [0..window.store.models.regions.length - 1]
+			console.log(window.store.models.regions[i])
+			if window.store.models.regions[i].name == countryName
+				return window.store.models.regions[i]
 	cCount = window.store.models.regions.length
-	country = window.store.models.regions[Math.floor(Math.random() * cCount)]
-
-
+	window.store.models.regions[Math.floor(Math.random() * cCount)]
