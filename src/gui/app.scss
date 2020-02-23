@@ -27,7 +27,7 @@ $colors: (
         background: #{$value};
     }
 
-    .fill-#{$name} {
+    svg path.fill-#{$name}, svg g.fill-#{$name} {
         fill: #{$value};
     }
 

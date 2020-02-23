@@ -32,8 +32,10 @@
         height: 620px;
     }
 
-    .svg-map, svg {
-        // max-height: 64vw;
+    svg {
+        path, g {
+            transition: fill 0.3s ease;
+        }
     }
 </style>
 
@@ -62,11 +64,16 @@
                 handler: function(updatedRegions, previousRegions){
                     JSON.parse(JSON.stringify(updatedRegions)).forEach(region => {
                         if (region.state.flooding){
-                            console.log("flood", this.$refs.svg.querySelector(region.classIdentifier));
-                            // this.$refs.svg.querySelector(region.classIdentifier).classList.add("flooding");
+                            try {
+                                this.getSvgRegion(region).classList.add("fill-blue");
+                            } catch (error){
+
+                            }
                         }
                         else {
-                            // this.$refs.svg.querySelector(region.classIdentifier).classList.remove("flooding");
+                            try {
+                                this.getSvgRegion(region).classList.remove("fill-blue");
+                            } catch (error){}
                         }
                     });
                 },
@@ -81,7 +88,7 @@
 
         methods: {
             panToRegion(region){
-                const element = this.$refs.svg.querySelector(`.${region.name}`);
+                const element = this.getSvgRegion(region);
 
                 if (typeof element == "undefined"){
                     console.error("Unable to find region in SVG? ", region, this.$refs["svg"]);
@@ -101,6 +108,9 @@
                 // this.panzoom.zoom(1.1, {animate: true});
 
                 // this.panzoom.moveTo(coords.x, coords.y);
+            },
+            getSvgRegion(region){
+                return this.$refs.svg.querySelector(`.${region.name.toLowerCase()}`);
             },
             getRegionByName(name){
                 return this.$root.store.models.regions.find(region => region.name == name);
