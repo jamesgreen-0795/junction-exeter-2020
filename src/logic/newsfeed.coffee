@@ -17,6 +17,20 @@ toggleFlooding = ->
 		else
 			true
 
+toggleWildfires = ->
+	country = getCountry()
+	if country.state.wildfire
+		country.state.wildfire = false
+		createNewsItem("Wildfires have ceased in " + country.name + ".")
+	else
+		if Math.floor(Math.random() * 150) < window.store.temperature
+			country.state.wildfire = true
+			window.store.points += 15
+			createNewsItem("Wildfires have broken out in " + country.name + ".")
+		else
+			true
+
+
 emissionsTarget = ->
 	country = getCountry()
 	if country.state.corruption < 5 and window.store.temperature > 30
