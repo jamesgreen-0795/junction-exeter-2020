@@ -5,7 +5,7 @@ utils = require './utils.coffee'
 mainLoop = ->
 	window.store.currentFrame++
 
-	if (window.store.temperature >= 20)
+	if (window.store.temperature >= 100)
 		window.store.currentScreen = "end-screen"
 
 	if (window.store.currentScreen == "game-screen")
