@@ -1,8 +1,8 @@
 <template>
     <div class="bg-grey">
-        <model-tokens-overlay v-model="tokens"></model-tokens-overlay>
         <div ref="svg" class="model-map">
             <div style="padding-bottom: 64%;">
+                <model-tokens-overlay v-model="tokens"></model-tokens-overlay>
                 <svg-map class="svg-map"></svg-map>
             </div>
         </div>
