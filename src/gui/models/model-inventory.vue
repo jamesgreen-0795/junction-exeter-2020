@@ -2,7 +2,7 @@
     <div class="inventory">
 
 		<button
-            v-for="(upgrade, index) in $root.store.availableUpgrades"
+            v-for="(upgrade, index) in currentLevelUpgrades"
             :key="upgrade.uuid"
             class="upgrade"
             @click="runUpgrade($event, upgrade)"
@@ -89,6 +89,21 @@
             }, {})
         },
 
+        computed: {
+            currentLevelUpgrades(){
+                var result = Object.keys(this.$root.store.availableUpgrades).reduce((accum, categoryKey) => {
+                    var category = this.$root.store.availableUpgrades[categoryKey];
+                    if (category && category.length){
+                        var firstUpgrade = JSON.parse(JSON.stringify(category[0]));
+                        firstUpgrade.categoryKey = categoryKey;
+                        accum.push(firstUpgrade);
+                    }
+                    return accum;
+                }, []);
+                return result;
+            },
+        },
+
         methods: {
             runUpgrade($event, upgrade){
                 // remove focus from button after 200ms and remove upgrade from list
@@ -97,6 +112,7 @@
                     target.blur();
 					window.mutations.upgrades.removeUpgrade(upgrade);
                 }, 200);
+                
                 upgrade.onPurchase();
             },
         },
