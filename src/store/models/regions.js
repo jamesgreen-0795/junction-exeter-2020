@@ -128,7 +128,10 @@ const generator = entries => entries.map(entry => {
                 flooding: false,
                 temperture: 0,
                 corruption: Math.floor(Math.random() * 2), // randomly level 0 or 1
-                hasOil: isOil(entry.name),
+                disinformation: Math.floor(Math.random() * 2), // randomly level 0 or 1
+                infrastructure: Math.floor(Math.random() * 2), // randomly level 0 or 1
+				agriculture: Math.floor(Math.random() * 2), // randomly level 0 or 1
+				hasOil: isOil(entry.name),
                 electicCarsBanned: false,
                 renewableEnergyBanned: false,
 				wildfire: false,
