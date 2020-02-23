@@ -336,3 +336,5 @@ createNewsItem = (msg) ->
 getCountry = ->
 	cCount = window.store.models.regions.length
 	country = window.store.models.regions[Math.floor(Math.random() * cCount)]
+
+
