@@ -20,6 +20,7 @@
                     </div>
                 </div>
                 <svg-map class="svg-map"></svg-map>
+                <div class="svg-map-overlay" :style="`background: var(--red);opacity:${temperaturePercentage * 0.75}`"></div>
             </div>
         </div>
         <div class="zoom">
@@ -67,6 +68,14 @@
         path, g {
             transition: fill 0.3s ease;
         }
+    }
+
+    .svg-map-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 
     .zoom {
@@ -229,6 +238,9 @@
                 return this.$root.store.models.regions.filter(region => {
                     return region.state.activeToken && region.state.activeToken.timestamp;
                 });
+            },
+            temperaturePercentage(){
+                return ((this.$root.store.fuzzTemperature - 15) / this.$root.store.maxTemperature);
             },
         },
 
