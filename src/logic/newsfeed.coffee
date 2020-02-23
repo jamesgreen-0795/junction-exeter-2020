@@ -48,8 +48,9 @@ toggleWildfires = ->
 
 carbonTax = ->
 	country = getCountry()
+	console.log country
 	if country.state.corruption < 8 and window.store.temperature > 60
-		window.store.temperature -= 3
+		window.store.temperature -= 10
 		events = [country.name + " has imposed an emergency carbon tax.",]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
@@ -172,7 +173,10 @@ carFactory = ->
 		createNewsItem(eventString)
 	else
 		false
-		
+
+# climateJournalist = ->
+# 	if 
+
 newsTypes = [
 	# closeBorders,
 	toggleFlooding,
@@ -199,14 +203,5 @@ createNewsItem = (msg) ->
 	true
 
 getCountry = ->
-	cCount = window.store.models.regions.lengthj
+	cCount = window.store.models.regions.length
 	country = window.store.models.regions[Math.floor(Math.random() * cCount)]
-
-	if Math.random() < 0.5
-		countryList = ["Britain", "Usa", "South Africa", "Russia", "China", "Canada", "Australia", "Brazil", "India",
-			"Argentina", "Kazakhstan", "Algeria"]
-		countryName = countryList[Math.floor(Math.random() * countryList.length)]
-		for i in [0..window.store.models.regions.length - 1]
-			if window.store.models.regions[i].name == countryName
-				return window.store.models.regions[i]
-	return window.store.models.regions[Math.floor(Math.random() * cCount)]
