@@ -3,5 +3,5 @@ window.mutations = {
 	useToken: (token) ->
 		window.store.points += token.points
 		console.log token.region
-		token.data.timestamp = 0
+		token.timestamp = 0
 }
