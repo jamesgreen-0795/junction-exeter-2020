@@ -31,10 +31,10 @@
         position: relative;
         display: inline-block;
         width: 90vw;
-        height: 85vh;
+        height: 80vh;
         max-width: 950px;
         max-height: 620px;
-        top: 0.25rem;
+        top: 0.5rem;
         border-radius: 12px;
         background: var(--black);
         box-shadow:  7px 7px 14px #111111, -7px -7px 14px #3d3d3d;
