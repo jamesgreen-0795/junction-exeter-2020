@@ -62,8 +62,17 @@ emissionsTarget = ->
 		events = ["During the UN, " + country.name + " announced ambitious climate targets.",
 				country.name + " has signed the Paris climate accords.",
 				"Within 15 years, " + country.name + " has pledged to ban all petrol cars.",
-				country.name + " are in talks with Bestla to open a new electric car factory.",
-				country.name + " have reached their emissions goals " + Math.round(Math.random()*5) + " years ahead of schedule."]
+				country.name + " are in talks with Bestla to open a new electric car factory.",]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+emissionsTargetMet = ->
+	country = getCountry()
+	if country.state.corruption < 3 and window.store.temperature > 50
+		window.store.temperature -= 20
+		events = [country.name + " have reached their emissions goals " + Math.round(Math.random()*5) + " years ahead of schedule.",
+				country.name + " met their carbon emission goals."]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
 		false
@@ -176,7 +185,7 @@ carFactory = ->
 
 climateJournalist = ->
 	country = getCountry()
-	if country.state.disinformation > 8 && Math.floor(math.random() * 5) == 3
+	if country.state.disinformation > 8 && Math.floor(math.random() * 5) == 0
 		window.store.temperature += 15
 		events = ["The UN has reported widespread imprisonment of climate journalists in " + country.name + ".",]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
