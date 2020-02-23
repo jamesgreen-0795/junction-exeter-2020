@@ -7,3 +7,8 @@ export createStoreItem = -> {
 
 export collectGarbage = (items, timeout) -> 
 	(item for item in items when (Date.now() - item.timestamp) < timeout)
+
+export cleanUpTokens = () ->
+	for c in window.store.models.regions
+		if c.state.activeToken	
+			c.state.activeToken = if Date.now() - 5000 > c.state.activeToken.timestamp then null else c.state.activeToken
