@@ -191,6 +191,39 @@ climateJournalist = ->
 	else
 		false
 
+beefProduction = ->
+	country = getCountry()
+	if country.state.agriculture > 2
+		window.store.temperature += 1
+		createNewsItem(country.name + " reports increased beef farming output.")
+	else
+		false 
+
+mcDonalds = ->
+	country = getCountry()
+	if country.state.agriculture > 6
+		window.store.temperature += 2
+		createNewsItem("McDennys expands into " + country.name + " and begins importing beef to meet rising demand.")
+	else
+		false
+
+landClearance = ->
+	country = getCountry()
+	if country.state.agriculture > 11
+		window.store.temperature += 3
+		createNewsItem("Mass land clearances for beef farming begin in " + country.name)
+	else
+		false
+
+cowDomination = ->
+	country = getCountry()
+	if country.state.agriculture > 18
+		window.store.temperature += 4
+		createNewsItem("Cows now vastly outnumber humans in " + country.name + " and subsequently have gained citizenship and the right to vote.")
+	else
+		false
+
+
 # good
 carTax = ->
 	country = getCountry()
