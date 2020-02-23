@@ -1,15 +1,19 @@
 utils = require './utils.coffee'
 
 export getNews = ->
-	if (Math.random()) < 0.1
+	if Math.floor(Math.random() * 100) == 1
+		console.log getCountryWhere((c) -> c.flooding)
+	if (Math.random()) < 0
 		doEvent()
 
 toggleFlooding = ->
 	if Math.floor(Math.random() * 2)
-		country = getCountryWhere((c) -> c.flooding)
+		country = c for c in window.store.models.regions when c.flooding
 		if country
 			country.state.flooding = false
 			createNewsItem(country.name + " has stopped flooding.")
+		else
+			false
 	else
 		country = getCountry()
 		if Math.floor(Math.random() * 100) < window.store.temperature
@@ -147,10 +151,3 @@ createNewsItem = (msg) ->
 getCountry = ->
 	cCount = window.store.models.regions.length
 	country = window.store.models.regions[Math.floor(Math.random() * cCount)]
-
-getCountryWhere = (func) ->
-	countries = c for c in window.store.models.regions when func(c)
-	if countries && countries.length
-		countries[Math.floor(Math.random() * countries.length)]
-	else
-		false
