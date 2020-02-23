@@ -1,16 +1,21 @@
 <template>
     <div>
-        <model-buy-popup v-if="showPopup" title="popupTitle">
-            <div>
+        <model-buy-popup v-if="showPopup && canUpgrade(openUpgrade, $root.store.points)" :title="popupTitle">
+            <div style="text-align:center;">
                 Apply upgrade?
+                <br>
+                <br>
                 Cost: {{ openUpgrade.points }}
+                <br>
+                <br>
+                <br>
+                <button class="btn-green" @click="closeOpenUpgrade()">
+                    Cancel
+                </button>
+                <button class="btn-orange" @click="runUpgrade(openUpgrade, openUpgradeCategoryKey)">
+                    Purchase
+                </button>
             </div>
-            <button @click="closeOpenUpgrade()">
-                Cancel
-            </button>
-            <button @click="runUpgrade(openUpgrade, openUpgradeCategoryKey)">
-                Purchase
-            </button>
         </model-buy-popup>
         <div class="sidebar">
             <h5 style="text-align:center;">Inventory</h5>
