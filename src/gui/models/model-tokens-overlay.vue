@@ -10,8 +10,9 @@
             <svg-map-marker></svg-map-marker>
 
             <div class="value">
-                + {{ value[uuid].data.points }}
                 <component v-if="value[uuid].data.icon" :is="value[uuid].data.icon"></component>
+                <br>
+                {{ value[uuid].data.points }}+
             </div>
         </div>
     </div>
@@ -36,9 +37,11 @@
         cursor: pointer;
         filter: saturate(1);
         transition: filter 0.15s ease;
+        filter: drop-shadow(0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1));
 
         &:hover {
             filter: saturate(1.5);
+            z-index: 5;
         }
 
         .value {
@@ -48,6 +51,16 @@
             transform: translateX(-50%);
             z-index: 5;
             color: #fff;
+            text-align: center;
+
+            svg {
+                color: #fff;
+                width: 1rem;
+                height: auto;
+                path {
+                    fill: #fff;
+                }
+            }
         }
     }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="scores">
         <span class="label">
-            {{ $root.store.points }} Points
+            {{ tweenedPointsFloored }} Points
         </span>
         <div class="bar points">
             <span class="progress" :style="`width:${pointsPercentage}%;`"></span>
@@ -29,8 +29,9 @@
     }
     .label {
         display: inline-block;
-        margin-left: 2rem;
+        margin-left: 3rem;
         font-size: 0.85rem;
+        min-width: 75px;
         white-space: nowrap;
     }
     .bar {
@@ -70,8 +71,17 @@
 </style>
 
 <script>
+    import { TweenLite } from "gsap";
+
     export default {
         name: "model-scores",
+
+        data(){
+            return {
+                tweenedPoints: 0,
+            }
+        },
+
         computed: {
             pointsPercentage(){
                 return (this.$root.store.points / this.$root.store.maxPoints)*100;
@@ -79,6 +89,20 @@
             temperaturePercentage(){
                 return ((this.$root.store.fuzzTemperature - 15) / this.$root.store.maxTemperature);
             },
+            tweenedPointsFloored(){
+                return Math.floor(this.tweenedPoints);
+            },
+        },
+
+        watch: {
+            '$root.store.points': {
+                deep: true,
+                handler: function(newValue, oldValue){
+                    TweenLite.to(this.$data, 0.5, {
+                        tweenedPoints: newValue,
+                    });
+                }
+            }
         }
     }
 </script>
