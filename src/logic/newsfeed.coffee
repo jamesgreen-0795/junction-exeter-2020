@@ -18,7 +18,7 @@ toggleFlooding = ->
 			false
 	else
 		country = getCountry()
-		if Math.floor(Math.random() * 100) < 60
+		if Math.floor(Math.random() * 100) < 40
 			country.state.flooding = true
 			country.state.activeToken = {
 				timestamp: Date.now(),
@@ -38,7 +38,7 @@ toggleWildfires = ->
 			createNewsItem("Wildfires have ceased in " + country.name + ".")
 	else
 		country = getCountry()
-		if Math.floor(Math.random() * 150) > 60
+		if Math.floor(Math.random() * 150) > 40
 			country.state.wildfire = true
 			country.state.activeToken = {
 				timestamp: Date.now(),

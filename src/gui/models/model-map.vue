@@ -226,18 +226,13 @@
                 panzoom: null,
                 tokens: {},
                 currentZoom: 1,
+                regionsWithTokens: [],
             }
         },
 
         computed: {
             svgPosition(){
                 return this.$refs.svg.getBoundingClientRect();
-            },
-            regionsWithTokens(){
-                const zoom = this.currentZoom;
-                return this.$root.store.models.regions.filter(region => {
-                    return region.state.activeToken && region.state.activeToken.timestamp;
-                });
             },
             temperaturePercentage(){
                 return ((this.$root.store.fuzzTemperature - 15) / this.$root.store.maxTemperature);
@@ -256,6 +251,10 @@
                             toggleClass(region.state.flooding, 'fill-blue');
                             toggleClass(region.state.wildfire, 'fill-orange');
                         } catch (error){console.warn(error)}
+                    });
+
+                    this.regionsWithTokens = JSON.parse(JSON.stringify(updatedRegions)).filter(region => {
+                        return region.state.activeToken && region.state.activeToken.timestamp;
                     });
                 },
             },
