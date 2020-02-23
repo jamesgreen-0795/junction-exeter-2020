@@ -112,6 +112,7 @@
         watch: {
             '$root.store.points': {
                 deep: true,
+                immediate: true,
                 handler: function(newValue, oldValue){
                     this.activeTweens = this.activeTweens + 1;
                     TweenLite.to(this.$data, 0.5, {
