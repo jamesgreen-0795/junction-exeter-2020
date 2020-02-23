@@ -131,7 +131,7 @@ const generator = entries => entries.map(entry => {
                 hasOil: isOil(entry.name),
                 electicCarsBanned: false,
                 renewableEnergyBanned: false,
-
+				wildfire: false,
             },
             ...entry,
         };

@@ -1,8 +1,10 @@
 export oil1 = ->
+	window.store.points -= 10
 	for region in window.store.models.regions
 		region.state.corruption += 2
 
 export oil2 = ->
+	window.store.points -= 50
 	for region in window.store.models.regions
 		region.state.corruption += 2
 
