@@ -102,7 +102,7 @@
                 const target = $event.target;
                 setTimeout(() => {
                     target.blur();
-					window.mutations.upgrades.removeUpgrade(upgrade);
+					window.mutations.upgrades.removeUpgrade(upgrade, upgradeCategoryKey);
                 }, 200);
 
                 upgrade.onPurchase();
