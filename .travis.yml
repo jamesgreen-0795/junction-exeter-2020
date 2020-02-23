@@ -3,8 +3,8 @@ node_js:
   - "10.4"
 
 install:
+  - cd /home/travis/build/jamesgreen-0795/junction-exeter-2020
   - yarn travis
-  - pwd
 
 deploy:
   local_dir: public
