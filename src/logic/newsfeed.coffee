@@ -6,8 +6,8 @@ export getNews = ->
 
 toggleFlooding = ->
 	if Math.floor(Math.random() * 2)
-		country = c for c in window.store.models.regions when c.flooding
-		if country
+		country = c for c in window.store.models.regions when c.state.flooding
+		if country?
 			country.state.flooding = false
 			createNewsItem(country.name + " has stopped flooding.")
 		else
@@ -27,10 +27,11 @@ toggleFlooding = ->
 			true
 
 toggleWildfires = ->
-	country = getCountry()
-	if country.state.wildfire
-		country.state.wildfire = false
-		createNewsItem("Wildfires have ceased in " + country.name + ".")
+	if Math.floor(Math.random() * 2)
+		country = c for c in window.store.models.regions when c.state.wildfire
+		if country?
+			country.state.wildfire = true
+			createNewsItem("Wildfires have ceased in " + country.name + ".")
 	else
 		if Math.floor(Math.random() * 150) < window.store.temperature
 			country.state.wildfire = true
