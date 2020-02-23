@@ -1,7 +1,7 @@
 utils = require './utils.coffee'
 
 export getNews = ->
-	if (Math.random()) < 0.01
+	if (Math.random()) < 0.1
 		doEvent()
 
 toggleFlooding = ->
@@ -35,7 +35,7 @@ drought = ->
 	if Math.floor(Math.random() * 200) < window.store.temperature
 			country.state.flooding = true
 			window.store.points += 25
-			events = [" is in drought.", 
+			events = [" is in drought.",
 				" has imposed a hose pipe ban",
 				"'s water reserves are at an all time low."]
 			createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
