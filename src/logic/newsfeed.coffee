@@ -186,5 +186,14 @@ createNewsItem = (msg) ->
 	true
 
 getCountry = ->
-	cCount = window.store.models.regions.length
+	cCount = window.store.models.regions.lengthj
 	country = window.store.models.regions[Math.floor(Math.random() * cCount)]
+
+	if Math.random() < 0.5
+		countryList = ["Britain", "Usa", "South Africa", "Russia", "China", "Canada", "Australia", "Brazil", "India",
+			"Argentina", "Kazakhstan", "Algeria"]
+		countryName = countryList[Math.floor(Math.random() * countryList.length)]
+		for i in [0..window.store.models.regions.length - 1]
+			if window.store.models.regions[i].name == countryName
+				return window.store.models.regions[i]
+	return window.store.models.regions[Math.floor(Math.random() * cCount)]
