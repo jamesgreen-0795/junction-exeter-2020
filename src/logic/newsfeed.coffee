@@ -1,6 +1,7 @@
 utils = require './utils.coffee'
 enviroActivists = ["Pink Peace","WWZ", "Extinction Stoppers"]
 badCarBrands = ["Ferd","Tayata","Handa","Renot","VMW","Markedes"]
+goodCarBrands = ["Bestla", "E-Autos", "iCar"]
 
 
 export getNews = ->
@@ -269,7 +270,26 @@ whalingShipDestroyed = ->
 	if country.state.corruption > 8 && Math.floor(Math.random() * 2) == 0
 		window.store.temperature -= 5
 		events = [enviroActivists[Math.floor(Math.random() * enviroActivists.length)] + " was found to be behind the recent Whaling ship sinking.",
-				country.name + " has implemented a fossil-fuel powered car tax."]
+				enviroActivists[Math.floor(Math.random() * enviroActivists.length)] + " has chained themselves to a whaling ships in " + country.name]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+increaseEleCars = ->
+	country = getCountry()
+	if country.state.corruption < 7 && Math.floor(Math.random() * 5) == 0
+		window.store.temperature -= 5
+		events = [goodCarBrands[Math.floor(Math.random() * goodCarBrands.length)] + " has achieved record sales in " + country.name,
+				goodCarBrands[Math.floor(Math.random() * goodCarBrands.length)] + " has opened a new electric car factory in " + country.name]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+megaEleCars = ->
+	country = getCountry()
+	if country.state.infrastructure > 12 && country.state.corruption < 6 && Math.floor(Math.random() * 4) == 0 && window.store.temperature > 50
+		window.store.temperature -= 30
+		events = [goodCarBrands[Math.floor(Math.random() * goodCarBrands.length)] + " has had a research breakthrough in electric cars"]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
 		false
@@ -292,6 +312,8 @@ newsTypes = [
 	environmentalOrg,
 	coalBan,
 	whalingShipDestroyed,
+	increaseEleCars,
+	megaEleCars
 ]
 
 doEvent = ->
