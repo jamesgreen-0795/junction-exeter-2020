@@ -21,6 +21,7 @@ toggleFlooding = ->
 				timestamp: Date.now(),
 				type: "flooding"
 				points: 25,
+				icon: "svg-impacts-flooding",
 			}
 			createNewsItem("Severe flooding in " + country.name + ".")
 		else
@@ -39,6 +40,7 @@ toggleWildfires = ->
 				timestamp: Date.now(),
 				type: "wildfires"
 				points: 25,
+				icon: "svg-upgrades-deforestation"
 			}
 			createNewsItem("Wildfires have broken out in " + country.name + ".")
 		else
@@ -77,6 +79,7 @@ drought = ->
 				timestamp: Date.now(),
 				type: "drought"
 				points: 25,
+				icon: "svg-weather-sun-solid",
 			}
 			createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 		else
@@ -97,6 +100,7 @@ oilDeal = ->
 			timestamp: Date.now(),
 			type: "oilDeal"
 			points: 25,
+			icon: "svg-upgrades-oilrig",
 		}
 		createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 	else
@@ -114,6 +118,7 @@ banElectricCars = ->
 			timestamp: Date.now(),
 			type: "banElectricCars"
 			points: 25,
+			icon: "svg-travel-car"
 		}
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
@@ -131,6 +136,7 @@ banRenewableEnergy = ->
 			timestamp: Date.now(),
 			type: "banRenewableEnergy"
 			points: 25,
+			icon: "svg-renewable-energy-wind-turbine",
 		}
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
@@ -140,11 +146,6 @@ closeBorders = ->
 	country = getCountry()
 	if country.state.openBorders
 		country.state.openBorders = false
-		country.state.activeToken = {
-			timestamp: Date.now(),
-			type: "closeBorders"
-			points: 25,
-		}
 		if country.name == "Britain"
 			createNewsItem("Brexit means brexit, " + country.name + " has closed its borders.")
 		else
