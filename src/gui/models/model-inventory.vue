@@ -10,6 +10,10 @@
         >
 			<span class="name">
                 {{ $root.store.availableUpgrades[upgradeCategoryKey][0].name }}
+                <br>
+                <span class="price bg-yellow">
+                    {{ $root.store.availableUpgrades[upgradeCategoryKey][0].price }}
+                </span>
             </span>
 		</button>
     </div>
@@ -22,6 +26,14 @@
         height: 100%;
         border-radius: 0 0 0.5rem 0.5rem;
         background-color: rgba(0, 0, 0, 0.1);
+
+        .price {
+            display: inline-block;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            margin-top: 0.25rem;
+            color: #{var(--black)};
+        }
 
         .upgrade {
             position: relative;
