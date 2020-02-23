@@ -33,6 +33,7 @@ toggleWildfires = ->
 			country.state.wildfire = true
 			createNewsItem("Wildfires have ceased in " + country.name + ".")
 	else
+		country = getCountry()
 		if Math.floor(Math.random() * 150) < window.store.temperature
 			country.state.wildfire = true
 			country.state.activeToken = {
