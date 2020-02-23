@@ -16,7 +16,6 @@ toggleFlooding = ->
 		country = getCountry()
 		if Math.floor(Math.random() * 100) < window.store.temperature
 			country.state.flooding = true
-			window.store.points += 10
 			country.state.activeToken = {
 				timestamp: Date.now(),
 				type: "flooding"
@@ -35,7 +34,6 @@ toggleWildfires = ->
 	else
 		if Math.floor(Math.random() * 150) < window.store.temperature
 			country.state.wildfire = true
-			window.store.points += 15
 			country.state.activeToken = {
 				timestamp: Date.now(),
 				type: "wildfires"
@@ -90,7 +88,6 @@ oilDeal = ->
 	if country.state.corruption > 2 && country.state.hasOil
 		country.state.hasOil = false
 		window.store.temperature += 1
-		window.store.points += 50
 		events = [" has started to increase investment in oil.",
 				" has increased its oil exports.",
 				" has given CrudeInc increased oil drilling rights.",
@@ -111,7 +108,6 @@ banElectricCars = ->
 	if country.state.corruption > 4 && !country.state.electicCarsBanned
 		country.state.electicCarsBanned = true
 		window.store.temperature += 2
-		window.store.points += 100
 		events = ["The government of " + country.name + " has banned electric cars over fears of toenail cancer.",
 			country.name + " has banned electric transport over fears of reduced oil profits."]
 		country.state.activeToken = {
@@ -129,7 +125,6 @@ banRenewableEnergy = ->
 	if country.state.corruption > 5 && !country.state.renewableEnergyBanned
 		country.state.renewableEnergyBanned = true
 		window.store.temperature += 2
-		window.store.points += 150
 		events = [country.name + " has banned wind turbines over fears of sub sonic noises",
 			country.name + " has banned home solar panels."]
 		country.state.activeToken = {
