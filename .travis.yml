@@ -7,7 +7,7 @@ install:
   - yarn travis
 
 deploy:
-  local_dir: /home/travis/build/jamesgreen-0795/junction-exeter-2020/dist
+  local_dir: dist
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
