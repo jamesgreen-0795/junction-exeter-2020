@@ -44,6 +44,14 @@ toggleWildfires = ->
 		else
 			true
 
+carbonTax = ->
+	country = getCountry()
+	if country.state.corruption < 8 and window.store.temperature > 60
+		window.store.temperature -= 3
+		events = [country.name + " has imposed an emergency carbon tax.",]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
 
 emissionsTarget = ->
 	country = getCountry()
@@ -146,21 +154,24 @@ closeBorders = ->
 		false
 
 carFactory = ->
-	country = getCountry()
-	window.store.temperature += 0.5
-	carBrands = ["Ferd","Tayata","Handa","Renot","VMW","Markedes"]
-	events = [" have opened a new factory in " ,
-			" have expanded operations in ",
-			" hit a new all time sales record in ",
-			" have been given a large tax break in "]
-	eventString = carBrands[Math.floor(Math.random() * carBrands.length)] + events[Math.floor(Math.random() * events.length)] + country.name
-	country.state.activeToken = {
-		timestamp: Date.now(),
-		type: "carFactory"
-		points: 25,
-	}
-	createNewsItem(eventString)
-
+	if Math.floor(Math.random() * 10) == 7
+		country = getCountry()
+		window.store.temperature += 0.5
+		carBrands = ["Ferd","Tayata","Handa","Renot","VMW","Markedes"]
+		events = [" have opened a new factory in " ,
+				" have expanded operations in ",
+				" hit a new all time sales record in ",
+				" have been given a large tax break in "]
+		eventString = carBrands[Math.floor(Math.random() * carBrands.length)] + events[Math.floor(Math.random() * events.length)] + country.name
+		country.state.activeToken = {
+			timestamp: Date.now(),
+			type: "carFactory"
+			points: 25,
+		}
+		createNewsItem(eventString)
+	else
+		false
+		
 newsTypes = [
 	# closeBorders,
 	toggleFlooding,
@@ -169,7 +180,8 @@ newsTypes = [
 	emissionsTarget,
 	carFactory,
 	banElectricCars,
-	toggleWildfires
+	toggleWildfires,
+	carbonTax
 ]
 
 doEvent = ->
