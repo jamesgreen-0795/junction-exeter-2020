@@ -1,17 +1,17 @@
 <template>
     <div class="overlay" ref="overlay">
         <div
-            v-for="(uuid, index) in Object.keys(value)"
-            :key="uuid"
-            @click="useToken(value[uuid].region.activeToken)"
+            v-for="(region, index) in regionsWithTokens"
+            :key="region.uuid"
+            @click="useToken(region.state.activeToken)"
             class="token"
-            :style="value[uuid].style"
+            :style="getStyle(region)"
         >
             <div class="value">
-                <component v-if="value[uuid].data.icon" :is="value[uuid].data.icon"></component>
+                <component v-if="region.state.activeToken.icon" :is="region.state.activeToken.icon"></component>
                 <br>
                 <span class="points">
-                    {{ value[uuid].data.points }}
+                    {{ region.state.activeToken.points }}
                 </span>
             </div>
         </div>
@@ -121,12 +121,31 @@
             }, {}),
         },
 
-        props: ["value"],
+        props: ["svg"],
+
+        computed: {
+            regionsWithTokens(){
+                return this.$root.store.models.regions.filter(region => {
+                    return region.state.activeToken && region.state.activeToken.timestamp;
+                });
+            },
+        },
 
         methods: {
             useToken(token){
                 window.mutations.useToken(token);
                 console.log("used token", token)
+            },
+            getSvgRegion(region){
+                var element = [...this.svg.querySelectorAll("path")].find(element => element.getAttribute("class") == region.name.toLowerCase());
+                return element;
+            },
+            getStyle(region){
+                var element = this.getSvgRegion(region);
+                var regionPosition = element.getBoundingClientRect();
+                var left = regionPosition.x - this.svgPosition.x;
+                var top = regionPosition.y - this.svgPosition.y;
+                return `top: ${top}px; left: ${left}px;`;
             }
         }
     }
