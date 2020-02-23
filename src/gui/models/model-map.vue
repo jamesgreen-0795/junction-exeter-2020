@@ -14,7 +14,8 @@
     }
 
     path {
-        fill: #{var(--teal)};
+        fill: #{var(--grey)};
+        stroke: #{var(--grey)};
     }
     .model-map {
         background: #{var(--white)};
@@ -63,18 +64,16 @@
                 deep: true,
                 handler: function(updatedRegions, previousRegions){
                     JSON.parse(JSON.stringify(updatedRegions)).forEach(region => {
-                        if (region.state.flooding){
-                            try {
-                                this.getSvgRegion(region).classList.add("fill-blue");
-                            } catch (error){
 
-                            }
-                        }
-                        else {
-                            try {
-                                this.getSvgRegion(region).classList.remove("fill-blue");
-                            } catch (error){}
-                        }
+                        try {
+                            var element = this.getSvgRegion(region);
+                            var toggleClass = (prop, cName) => { element && element.classList[prop ? 'add':'remove'](cName); }
+
+                            toggleClass(region.state.flooding, 'fill-blue');
+                            toggleClass(region.state.wildfire, 'fill-orange');
+
+                        } catch (error){console.warn(error)}
+
                     });
                 },
             },
@@ -110,7 +109,8 @@
                 // this.panzoom.moveTo(coords.x, coords.y);
             },
             getSvgRegion(region){
-                return this.$refs.svg.querySelector(`.${region.name.toLowerCase()}`);
+                var element = [...this.$refs.svg.querySelectorAll("path")].find(element => element.getAttribute("class") == region.name.toLowerCase());
+                return element;
             },
             getRegionByName(name){
                 return this.$root.store.models.regions.find(region => region.name == name);

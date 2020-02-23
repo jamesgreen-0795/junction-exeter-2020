@@ -6,7 +6,7 @@ mainLoop = ->
 	window.store.currentFrame++
 	newsfeed.getNews()
 	climate.modulateClimate()
-	window.store.newsfeed = utils.collectGarbage(window.store.newsfeed, 5000)
+	window.store.newsfeed = utils.collectGarbage(window.store.newsfeed, 2500)
 
 	if window.store.currentFrame % (30 * 30) == 0
 		window.store.currentYear++

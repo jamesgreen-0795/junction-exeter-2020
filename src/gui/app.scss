@@ -14,6 +14,21 @@ $colors: (
     "dark": lighten(#272727, 10%),
 );
 
+@keyframes bounce {
+    0% {
+        filter: #{saturate(1)};
+        transform: scale(1);
+    }
+    50% {
+        filter: #{saturate(2)};
+        transform: scale(1.025);
+    }
+    100% {
+        filter: #{saturate(1)};
+        transform: scale(1);
+    }
+}
+
 @each $name, $value in $colors {
     :root {
         --#{$name}: #{$value};
@@ -29,6 +44,8 @@ $colors: (
 
     svg path.fill-#{$name}, svg g.fill-#{$name} {
         fill: #{$value};
+        transform-origin: center;
+        animation: bounce 1s ease;
     }
 
     .btn-#{$name} {
