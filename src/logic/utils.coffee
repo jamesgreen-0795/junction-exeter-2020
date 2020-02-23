@@ -11,4 +11,4 @@ export collectGarbage = (items, timeout) ->
 export cleanUpTokens = () ->
 	for c in window.store.models.regions
 		if c.state.activeToken
-			c.state.activeToken = if Date.now() - 5000 > c.state.activeToken.timestamp then null else c.state.activeToken
+			c.state.activeToken = if Date.now() - 1500 > c.state.activeToken.timestamp then null else c.state.activeToken
