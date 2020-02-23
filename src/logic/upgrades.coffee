@@ -3,7 +3,10 @@
 export oil1 = ->
 	window.store.points -= 60
 	for region in window.store.models.regions
-		region.state.temp += 1
+		region.state.corruption += 1
+		region.state.disinformation += 1
+		region.state.infrastructure += 1
+		region.state.agriculture += 1
 
 export oil2 = ->
 	window.store.points -= 120
