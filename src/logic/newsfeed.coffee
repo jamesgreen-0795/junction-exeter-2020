@@ -1,4 +1,7 @@
 utils = require './utils.coffee'
+enviroActivists = ["Pink Peace","WWZ", "Extinction Stoppers"]
+badCarBrands = ["Ferd","Tayata","Handa","Renot","VMW","Markedes"]
+
 
 export getNews = ->
 	if (Math.random()) < 0.4
@@ -164,12 +167,11 @@ carFactory = ->
 	if Math.floor(Math.random() * 10) == 7
 		country = getCountry()
 		window.store.temperature += 0.5
-		carBrands = ["Ferd","Tayata","Handa","Renot","VMW","Markedes"]
 		events = [" have opened a new factory in " ,
 				" have expanded operations in ",
 				" hit a new all time sales record in ",
 				" have been given a large tax break in "]
-		eventString = carBrands[Math.floor(Math.random() * carBrands.length)] + events[Math.floor(Math.random() * events.length)] + country.name
+		eventString = badCarBrands[Math.floor(Math.random() * badCarBrands.length)] + events[Math.floor(Math.random() * events.length)] + country.name
 		country.state.activeToken = {
 			timestamp: Date.now(),
 			type: "carFactory"
@@ -215,24 +217,23 @@ environmentalOrg = ->
 	if country.state.corruption > 7 && Math.floor(Math.random() * 3) == 0
 		window.store.temperature -= 1
 		window.store.disinformation -= 1
-		events = ["Pink Peace","WWZ", "Extinction Stoppers"]
-		createNewsItem(events[Math.floor(Math.random() * events.length) + "have started an environmental awareness campaign in " + country.name])
+		createNewsItem(enviroActivists[Math.floor(Math.random() * enviroActivists.length) + "have started an environmental awareness campaign in " + country.name])
 	else
 		false
 
 coalBan = ->
 	country = getCountry()
-	if country.state.corruption < 4 && Math.floor(Math.random() * 2) == 0
-		window.store.temperature -= 3
-		events = [country.name + " has implemented low emission zones in major cities.",
-				country.name + " has implemented a fossil-fuel powered car tax."]
+	if country.state.corruption < 4 && country.state.infrastructure < 8
+		window.store.temperature -= 7
+		events = [country.name + " has closed all its coal power plants.",
+				country.name + " will phase out coal within the year."]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
 		false
 
 whalingShipDestroyed = ->
 	country = getCountry()
-	if country.state.corruption < 4 && Math.floor(Math.random() * 2) == 0
+	if country.state.corruption > 4 && Math.floor(Math.random() * 2) == 0
 		window.store.temperature -= 3
 		events = [country.name + " has implemented low emission zones in major cities.",
 				country.name + " has implemented a fossil-fuel powered car tax."]
