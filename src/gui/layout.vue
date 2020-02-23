@@ -2,10 +2,7 @@
     <div class="wrapper">
         <model-scores></model-scores>
         <div class="map">
-            <div class="sidebar">
-                <h5 style="text-align:center;">Inventory</h5>
-                <model-inventory></model-inventory>
-            </div>
+            <model-inventory></model-inventory>
             <model-test class="test"></model-test>
             <model-newsfeed class="newsfeed"></model-newsfeed>
 
@@ -32,32 +29,13 @@
         color: #000;
     }
 
-    .sidebar {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        display: inline-flex;
-        flex-direction: column;
-        width: 25%;
-        background: #{var(--teal)};
-        border-radius: 0 12px 0 12px;
-        z-index: 5;
-        opacity: 0.75;
-        transform: #{translateY(calc(100% - 3.85rem))};
-        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-        transition: opacity 0.15s ease, transform 0.3s ease;
-
-        &:hover {
-            opacity: 1;
-            transform: #{translateY(0)};
-        }
-    }
-
     .map {
         position: relative;
         display: inline-block;
         width: 90vw;
         height: 85vh;
+        max-width: 950px;
+        max-height: 620px;
         top: 0.25rem;
         border-radius: 12px;
         background: var(--black);

@@ -18,8 +18,8 @@
     }
     .model-map {
         background: #{var(--white)};
-        height: 100%;
-        width: 100%;
+        // height: 100%;
+        // width: 100%;
         border-radius: 0.25rem;
         cursor: grab !important;
         overflow: hidden;
@@ -27,13 +27,13 @@
             cursor: grabbing !important;
         }
     }
-    .svg-map {
-        transform: scale(1.1);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
+    .model-map, .svg-map, svg {
+        width: 950px;
+        height: 620px;
+    }
+
+    .svg-map, svg {
+        // max-height: 64vw;
     }
 </style>
 
@@ -112,9 +112,9 @@
 
         mounted(){
             this.panzoom = new Panzoom(this.$refs['svg'], {
-                // contain: "outside",
+                contain: "outside",
                 maxScale: 10,
-                minScale: 1,
+                // minScale: 1,
 
             });
             this.panzoom.zoom(1, {animate: true});

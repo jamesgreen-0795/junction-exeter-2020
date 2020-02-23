@@ -1,13 +1,12 @@
 <template>
     <div class="popup">
         <div class="header">
-            {{ title }}
+            <h2>
+                {{ title }}
+            </h2>
         </div>
         <div class="content">
             <slot></slot>
-        </div>
-        <div class="footer">
-            <slot #footer></slot>
         </div>
     </div>
 </template>
@@ -19,13 +18,18 @@
         left: 50%;
         transform: translate(-50%, -50%);
         min-width: 50vw;
-        min-height: 50vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         background: #{var(--white)};
+        padding: 2rem;
         color: #{var(--dark)};
+        box-shadow: 0 0 5rem rgba(0, 0, 0, 0.5);
         z-index: 20;
+
+        .header, .content {
+            padding: 0 0 2rem 0;
+        }
     }
 </style>
 
