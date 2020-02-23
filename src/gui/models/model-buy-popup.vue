@@ -25,7 +25,7 @@
         padding: 2rem;
         color: #{var(--dark)};
         box-shadow: 0 0 5rem rgba(0, 0, 0, 0.5);
-        z-index: 20;
+        z-index: 80;
 
         .header, .content {
             padding: 0 0 2rem 0;

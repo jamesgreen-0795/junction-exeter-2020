@@ -63,7 +63,7 @@
         width: 25%;
         background: #{var(--teal)};
         border-radius: 0 12px 0 12px;
-        z-index: 5;
+        z-index: 50;
         opacity: 0.75;
         transform: #{translateY(calc(100% - 3.85rem))};
         box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
