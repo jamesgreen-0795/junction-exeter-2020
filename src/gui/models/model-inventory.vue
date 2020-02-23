@@ -1,29 +1,38 @@
 <template>
-    <div class="inventory">
+    <div>
         <model-buy-popup v-if="showPopup" title="popupTitle">
-            Apply upgrade?
-            Cost: {{ openUpgrade.price }}
-
-            <template #footer>
-                <button @click="runUpgrade(openUpgrade, openUpgradeCategoryKey)"></button>
-            </template>
+            <div>
+                Apply upgrade?
+                Cost: {{ openUpgrade.points }}
+            </div>
+            <button @click="closeOpenUpgrade()">
+                Cancel
+            </button>
+            <button @click="runUpgrade(openUpgrade, openUpgradeCategoryKey)">
+                Purchase
+            </button>
         </model-buy-popup>
-		<button
-            v-for="(upgradeCategoryKey, index) in availableUpgradeKeys"
-            :key="upgradeCategoryKey"
-            v-if="$root.store.availableUpgrades[upgradeCategoryKey].length"
-            class="upgrade"
-            :disabled="!canUpgrade($root.store.availableUpgrades[upgradeCategoryKey][0])"
-            @click="startUpgrade($event, $root.store.availableUpgrades[upgradeCategoryKey][0], upgradeCategoryKey)"
-        >
-			<span class="name">
-                {{ $root.store.availableUpgrades[upgradeCategoryKey][0].name }}
-                <br>
-                <span class="price bg-yellow">
-                    {{ $root.store.availableUpgrades[upgradeCategoryKey][0].price }}
-                </span>
-            </span>
-		</button>
+        <div class="sidebar">
+            <h5 style="text-align:center;">Inventory</h5>
+            <div class="inventory">
+        		<button
+                    v-for="(upgradeCategoryKey, index) in availableUpgradeKeys"
+                    :key="upgradeCategoryKey"
+                    v-if="$root.store.availableUpgrades[upgradeCategoryKey].length"
+                    class="upgrade"
+                    :disabled="!canUpgrade($root.store.availableUpgrades[upgradeCategoryKey][0], $root.store.points)"
+                    @click="startUpgrade($event, $root.store.availableUpgrades[upgradeCategoryKey][0], upgradeCategoryKey)"
+                >
+        			<span class="name">
+                        {{ $root.store.availableUpgrades[upgradeCategoryKey][0].name }}
+                        <br>
+                        <span class="points bg-yellow">
+                            {{ $root.store.availableUpgrades[upgradeCategoryKey][0].points }}
+                        </span>
+                    </span>
+        		</button>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -40,6 +49,27 @@
         }
     }
 
+    .sidebar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: inline-flex;
+        flex-direction: column;
+        width: 25%;
+        background: #{var(--teal)};
+        border-radius: 0 12px 0 12px;
+        z-index: 5;
+        opacity: 0.75;
+        transform: #{translateY(calc(100% - 3.85rem))};
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+        transition: opacity 0.15s ease, transform 0.3s ease;
+
+        &:hover {
+            opacity: 1;
+            transform: #{translateY(0)};
+        }
+    }
+
     .inventory {
         display: flex;
         flex-wrap: wrap;
@@ -47,7 +77,7 @@
         border-radius: 0 0 0.5rem 0.5rem;
         background-color: rgba(0, 0, 0, 0.1);
 
-        .price {
+        .points {
             display: inline-block;
             padding: 0.25rem;
             border-radius: 0.25rem;
@@ -172,8 +202,8 @@
                 this.popupTitle = upgrade.name;
                 this.showPopup = true;
             },
-            canUpgrade(upgrade){
-                return upgrade.points <= this.$root.store.points;
+            canUpgrade(upgrade, points){
+                return upgrade.points <= points;
             },
         },
     }

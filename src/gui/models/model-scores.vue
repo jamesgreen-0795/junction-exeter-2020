@@ -1,7 +1,7 @@
 <template>
     <div class="scores">
         <span class="label">
-            Points
+            {{ $root.store.points }} Points
         </span>
         <div class="bar points">
             <span class="progress" :style="`width:${pointsPercentage}%;`"></span>
@@ -31,6 +31,7 @@
         display: inline-block;
         margin-left: 2rem;
         font-size: 0.85rem;
+        white-space: nowrap;
     }
     .bar {
         position: relative;

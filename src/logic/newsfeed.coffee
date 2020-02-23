@@ -1,7 +1,7 @@
 utils = require './utils.coffee'
 
 export getNews = ->
-	if (Math.random()) < 0
+	if (Math.random()) < 0.1
 		doEvent()
 
 toggleFlooding = ->
