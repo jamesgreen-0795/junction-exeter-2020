@@ -3,14 +3,17 @@ node_js:
   - "10.4"
 
 install:
+  - cd /home/travis/build/jamesgreen-0795/junction-exeter-2020
   - yarn travis
-  - pwd
+
 
 deploy:
+  local_dir: dist
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
+  target_branch:
   on:
     branch: master
-  local_dir: /home/travis/build/jamesgreen-0795/junction-exeter-2020/dist
+
