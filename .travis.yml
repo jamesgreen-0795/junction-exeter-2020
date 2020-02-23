@@ -4,7 +4,9 @@ node_js:
 
 install:
   - cd /home/travis/build/jamesgreen-0795/junction-exeter-2020
+  - pwd
   - yarn travis
+  - pwd
 
 deploy:
   local_dir: dist
