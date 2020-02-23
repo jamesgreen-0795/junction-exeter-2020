@@ -176,7 +176,6 @@
     import SvgMap from "~assets/regions.svg";
     import Panzoom from '@panzoom/panzoom';
     import relativeElementPosition from "./../misc/relativeElementPosition";
-    import modeltokensOverlay from "./model-tokens-overlay.vue";
 
     const svgImpactsContext = require.context("~assets/icons/impacts", true, /.svg/);
     const svgUpgradesContext = require.context("~assets/icons/upgrades", true, /.svg/);
@@ -189,7 +188,7 @@
 
         components: {
             SvgMap,
-            "model-tokens-overlay": modeltokensOverlay,
+
             // Load svgs - `<svg-${basename}/>`
             ...svgImpactsContext.keys().reduce((svgs, contextKey) => {
                 svgs[`svg-impacts-${contextKey.replace(/\.\//, "").replace(/\.svg/, "")}`] = svgImpactsContext(contextKey);
