@@ -195,7 +195,8 @@ newsTypes = [
 	carFactory,
 	banElectricCars,
 	toggleWildfires,
-	carbonTax
+	carbonTax,
+	climateJournalist
 ]
 
 doEvent = ->
