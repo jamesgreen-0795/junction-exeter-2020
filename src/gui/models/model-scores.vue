@@ -1,7 +1,7 @@
 <template>
     <div class="scores">
         <span :class="`label ${activeTweens ? 'is-tweening':''}`">
-            {{ tweenedPointsFloored }} Points
+            {{ tweenedPointsFloored }} Carbon Points
         </span>
         <span class="label">
             Temperature

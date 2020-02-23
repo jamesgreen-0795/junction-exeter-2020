@@ -340,7 +340,6 @@ getCountry = ->
 		"Angola","Mali","South Africa","Colombia","Ethiopia","Bolivia","Mauretania","Egypt","Alaska","Britain","France","Germany"]
 		countryName = countryList[Math.floor(Math.random() * countryList.length)]
 		for i in [0..window.store.models.regions.length - 1]
-			console.log(window.store.models.regions[i])
 			if window.store.models.regions[i].name == countryName
 				return window.store.models.regions[i]
 	cCount = window.store.models.regions.length

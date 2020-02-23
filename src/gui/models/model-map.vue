@@ -252,11 +252,9 @@
                     JSON.parse(JSON.stringify(updatedRegions)).forEach(region => {
                         try {
                             var element = this.getSvgRegion(region);
-                            if (element){
-                                var toggleClass = (prop, cName) => { element.classList[prop ? 'add':'remove'](cName); }
-                                toggleClass(region.state.flooding, 'fill-blue');
-                                toggleClass(region.state.wildfire, 'fill-orange');
-                            }
+                            var toggleClass = (prop, cName) => { element&&element.classList[prop ? 'add':'remove'](cName); }
+                            toggleClass(region.state.flooding, 'fill-blue');
+                            toggleClass(region.state.wildfire, 'fill-orange');
                         } catch (error){console.warn(error)}
                     });
                 },
