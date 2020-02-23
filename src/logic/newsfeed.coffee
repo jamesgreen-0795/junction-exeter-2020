@@ -297,7 +297,7 @@ megaEleCars = ->
 
 newsTypes = [
 	# closeBorders,
-	toggleFlooding,toggleFlooding,toggleFlooding,
+	toggleFlooding,toggleFlooding,toggleFlooding,toggleFlooding,toggleFlooding,toggleFlooding,
 	oilDeal,oilDeal,oilDeal,
 	drought,drought,drought,
 	emissionsTarget,
