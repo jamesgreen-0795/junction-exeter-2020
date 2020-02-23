@@ -5,7 +5,7 @@ goodCarBrands = ["Bestla", "E-Autos", "iCar"]
 
 
 export getNews = ->
-	if (Math.random()) < 0.4
+	if (Math.random()) < 0.1
 		doEvent()
 
 toggleFlooding = ->
@@ -198,7 +198,7 @@ beefProduction = ->
 		window.store.temperature += 1
 		createNewsItem(country.name + " reports increased beef farming output.")
 	else
-		false 
+		false
 
 mcDonalds = ->
 	country = getCountry()
