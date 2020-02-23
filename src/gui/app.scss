@@ -30,6 +30,20 @@ $colors: (
     .fill-#{$name} {
         fill: #{$value};
     }
+
+    .btn-#{$name} {
+        border: 0;
+        padding: 0.75rem 1rem;
+        background: #{$value};
+        color: #fff;
+        border-radius: 0.25rem;
+        font-weight: 300;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            background: darken($value, 10%);
+        }
+    }
 }
 
 body {
