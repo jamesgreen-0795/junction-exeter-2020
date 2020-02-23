@@ -1,8 +1,6 @@
 utils = require './utils.coffee'
 
 export getNews = ->
-	if Math.floor(Math.random() * 100) == 1
-		console.log getCountryWhere((c) -> c.flooding)
 	if (Math.random()) < 0
 		doEvent()
 
