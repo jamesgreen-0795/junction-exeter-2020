@@ -30,7 +30,7 @@ toggleWildfires = ->
 	if Math.floor(Math.random() * 2)
 		country = c for c in window.store.models.regions when c.state.wildfire
 		if country?
-			country.state.wildfire = true
+			country.state.wildfire = false
 			createNewsItem("Wildfires have ceased in " + country.name + ".")
 	else
 		country = getCountry()
