@@ -4,7 +4,6 @@ export modulateClimate = ->
 	if window.store.currentFrame % 50 == 0
 		#doModulate()
 		week = window.store.currentFrame % (50 * 52)/50
-		#console.log(getWeekTemperature(week,0,15,10))
 
 getWeek = ->
 	((window.store.currentFrame / 50 ) % 52)
@@ -15,7 +14,6 @@ getSeasonOffset = ->
 doModulate = ->
 	for region in window.store.models.regions
 		region.climate.temperature += region.climate.temperature * getSeasonOffset()
-		console.log(region.name + ": " + region.climate.temperature)
 
 fuzzYearTemperature = (tempPoints) ->
 	temp = 15 + (tempPoints/20) # 0=0 100=5

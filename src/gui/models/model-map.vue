@@ -180,8 +180,6 @@
                     y: regionPosition.y - svgPosition.y - (svgPosition.height / 2),
                 };
 
-                console.log(svgPosition, regionPosition);
-
                 // this.panzoom.zoom(1.1, {animate: true});
 
                 // this.panzoom.moveTo(coords.x, coords.y);

@@ -81,12 +81,7 @@ export beef4 = ->
 		region.state.temp += 2
 
 
-
-
-
-
 export removeUpgrade = (toRemove, catKey) ->
-	console.log catKey
 	l = window.store.availableUpgrades[catKey]
 	window.store.availableUpgrades[catKey] = (u for u in l when u.uuid != toRemove.uuid)
 
