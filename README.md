@@ -1,3 +1,7 @@
+# View latest build
+
+https://jamesgreen-0795.github.io/junction-exeter-2020/
+
 # How to build
 
 run `yarn build`
