@@ -1,7 +1,9 @@
 window.mutations = {
 	upgrades: require "./upgrades.coffee"
 	useToken: (token) ->
-		window.store.points += token.points
-		console.log token.region
-		token.timestamp = 0
+		if !token.clicked
+			token.clicked = true
+			window.store.points += token.points
+			token.timestamp = 0
+			console.log "token used"
 }

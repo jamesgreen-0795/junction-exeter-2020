@@ -137,7 +137,8 @@ const generator = entries => entries.map(entry => {
 				wildfire: false,
                 activeToken: {
                     timestamp: 0,
-    				key: null
+                    key: null,
+                    clicked: false,
                 },
             },
             ...entry,
@@ -546,7 +547,7 @@ export default generator([
         },
     },
     {
-        name: "Sjælland",
+        name: "Sjaelland",
         continent: "europe",
         climate: {
             temperature: 20,

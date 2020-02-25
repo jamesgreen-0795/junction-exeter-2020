@@ -9,7 +9,7 @@ export getNews = ->
 		doEvent()
 
 toggleFlooding = ->
-	if !Math.floor(Math.random() * 4)
+	if Math.random() < 0.3
 		country = c for c in window.store.models.regions when c.state.flooding
 		if country?
 			country.state.flooding = false
@@ -32,7 +32,7 @@ toggleFlooding = ->
 			true
 
 toggleWildfires = ->
-	if Math.floor(Math.random() * 4)
+	if Math.random() < 0.3
 		country = c for c in window.store.models.regions when c.state.wildfire
 		if country?
 			country.state.wildfire = false
@@ -90,6 +90,26 @@ oilDeal = ->
 	else
 		false
 
+carFactory = ->
+	if Math.floor(Math.random() * 10) == 7
+		country = getCountry()
+		window.store.temperature += 0.5
+		events = [" have opened a new factory in " ,
+				" have expanded operations in ",
+				" hit a new all time sales record in ",
+				" have been given a large tax break in "]
+		eventString = badCarBrands[Math.floor(Math.random() * badCarBrands.length)] + events[Math.floor(Math.random() * events.length)] + country.name
+		country.state.activeToken = {
+			timestamp: Date.now(),
+			type: "carFactory"
+			points: 25,
+			icon: "svg-upgrades-car-factory"
+			color: "777777"
+		}
+		createNewsItem(eventString)
+	else
+		false
+
 banElectricCars = ->
 	country = getCountry()
 	if country.state.corruption > 4 && !country.state.electicCarsBanned
@@ -123,26 +143,6 @@ banRenewableEnergy = ->
 			color: "61b86d"
 		}
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
-	else
-		false
-
-carFactory = ->
-	if Math.floor(Math.random() * 10) == 7
-		country = getCountry()
-		window.store.temperature += 0.5
-		events = [" have opened a new factory in " ,
-				" have expanded operations in ",
-				" hit a new all time sales record in ",
-				" have been given a large tax break in "]
-		eventString = badCarBrands[Math.floor(Math.random() * badCarBrands.length)] + events[Math.floor(Math.random() * events.length)] + country.name
-		country.state.activeToken = {
-			timestamp: Date.now(),
-			type: "carFactory"
-			points: 25,
-			icon: "svg-upgrades-car-factory"
-			color: "777777"
-		}
-		createNewsItem(eventString)
 	else
 		false
 

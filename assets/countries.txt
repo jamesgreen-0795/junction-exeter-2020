@@ -307,7 +307,7 @@ netherlands
 belgium
 germany
 denmark
-sjælland
+sjaelland
 gotland
 switzerland
 czech

@@ -312,7 +312,6 @@
             },
             useToken(token){
                 window.mutations.useToken(token);
-                console.log("used token", token)
             },
         },
 
