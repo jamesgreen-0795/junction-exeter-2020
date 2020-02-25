@@ -9,7 +9,7 @@ export getNews = ->
 		doEvent()
 
 toggleFlooding = ->
-	if !Math.floor(Math.random() * 10)
+	if !Math.floor(Math.random() * 4)
 		country = c for c in window.store.models.regions when c.state.flooding
 		if country?
 			country.state.flooding = false
@@ -25,13 +25,14 @@ toggleFlooding = ->
 				type: "flooding"
 				points: 25,
 				icon: "svg-impacts-flooding",
+				color: "037ffc"
 			}
 			createNewsItem("Severe flooding in " + country.name + ".")
 		else
 			true
 
 toggleWildfires = ->
-	if Math.floor(Math.random() * 2)
+	if Math.floor(Math.random() * 4)
 		country = c for c in window.store.models.regions when c.state.wildfire
 		if country?
 			country.state.wildfire = false
@@ -50,37 +51,6 @@ toggleWildfires = ->
 		else
 			true
 
-carbonTax = ->
-	country = getCountry()
-	if country.state.corruption < 5 and window.store.temperature > 60
-		window.store.temperature -= 10
-		events = [country.name + " has imposed an emergency carbon tax.",]
-		createNewsItem(events[Math.floor(Math.random() * events.length)])
-	else
-		false
-
-emissionsTarget = ->
-	country = getCountry()
-	if country.state.corruption < 5 and window.store.temperature > 30
-		window.store.temperature -= 2
-		events = ["During the UN, " + country.name + " announced ambitious climate targets.",
-				country.name + " has signed the Paris climate accords.",
-				"Within 15 years, " + country.name + " has pledged to ban all petrol cars.",
-				country.name + " are in talks with Bestla to open a new electric car factory.",]
-		createNewsItem(events[Math.floor(Math.random() * events.length)])
-	else
-		false
-
-emissionsTargetMet = ->
-	country = getCountry()
-	if country.state.corruption < 3 and window.store.temperature > 50
-		window.store.temperature -= 20
-		events = [country.name + " have reached their emissions goals " + Math.round(Math.random()*5) + " years ahead of schedule.",
-				country.name + " met their carbon emission goals."]
-		createNewsItem(events[Math.floor(Math.random() * events.length)])
-	else
-		false
-
 drought = ->
 	country = getCountry()
 	if Math.floor(Math.random() * 200) < window.store.temperature
@@ -93,6 +63,7 @@ drought = ->
 				type: "drought"
 				points: 25,
 				icon: "svg-impacts-drought-brown-plant",
+				color: "cc9618"
 			}
 			createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 		else
@@ -113,6 +84,7 @@ oilDeal = ->
 			type: "oilDeal"
 			points: 25,
 			icon: "svg-upgrades-oilrig",
+			color: "583470"
 		}
 		createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 	else
@@ -130,6 +102,7 @@ banElectricCars = ->
 			type: "banElectricCars"
 			points: 25,
 			icon: "svg-travel-car"
+			color: "ffeb0a"
 		}
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
@@ -147,20 +120,9 @@ banRenewableEnergy = ->
 			type: "banRenewableEnergy"
 			points: 25,
 			icon: "svg-impacts-ban-renewable",
+			color: "61b86d"
 		}
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
-	else
-		false
-
-closeBorders = ->
-	country = getCountry()
-	if country.state.openBorders
-		country.state.openBorders = false
-		if country.name == "Britain"
-			createNewsItem("Brexit means brexit, " + country.name + " has closed its borders.")
-		else
-			createNewsItem(country.name + " has closed its borders.")
-		true
 	else
 		false
 
@@ -178,8 +140,21 @@ carFactory = ->
 			type: "carFactory"
 			points: 25,
 			icon: "svg-upgrades-car-factory"
+			color: "777777"
 		}
 		createNewsItem(eventString)
+	else
+		false
+
+closeBorders = ->
+	country = getCountry()
+	if country.state.openBorders
+		country.state.openBorders = false
+		if country.name == "Britain"
+			createNewsItem("Brexit means brexit, " + country.name + " has closed its borders.")
+		else
+			createNewsItem(country.name + " has closed its borders.")
+		true
 	else
 		false
 
@@ -226,6 +201,37 @@ cowDomination = ->
 
 
 # good
+carbonTax = ->
+	country = getCountry()
+	if country.state.corruption < 5 && window.store.temperature > 60
+		window.store.temperature -= 10
+		events = [country.name + " has imposed an emergency carbon tax.",]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+emissionsTarget = ->
+	country = getCountry()
+	if country.state.corruption < 5 && window.store.temperature > 30
+		window.store.temperature -= 2
+		events = ["During the UN, " + country.name + " announced ambitious climate targets.",
+				country.name + " has signed the Paris climate accords.",
+				"Within 15 years, " + country.name + " has pledged to ban all petrol cars.",
+				country.name + " are in talks with Bestla to open a new electric car factory.",]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
+emissionsTargetMet = ->
+	country = getCountry()
+	if country.state.corruption < 3 && window.store.temperature > 50
+		window.store.temperature -= 20
+		events = [country.name + " have reached their emissions goals " + Math.round(Math.random()*5) + " years ahead of schedule.",
+				country.name + " met their carbon emission goals."]
+		createNewsItem(events[Math.floor(Math.random() * events.length)])
+	else
+		false
+
 carTax = ->
 	country = getCountry()
 	if country.state.corruption < 4 && country.state.disinformation < 6 == 0
@@ -296,25 +302,28 @@ megaEleCars = ->
 
 
 newsTypes = [
+	toggleFlooding,
+	toggleWildfires,
+	drought,
+	oilDeal,
+	banElectricCars,
+	banRenewableEnergy,
+	carFactory,
 	# closeBorders,
-	toggleFlooding,toggleFlooding,toggleFlooding,toggleFlooding,toggleFlooding,toggleFlooding,
-	oilDeal,oilDeal,oilDeal,
-	drought,drought,drought,
-	emissionsTarget,
-	carFactory,carFactory,carFactory,
-	banElectricCars,banElectricCars,banElectricCars,
-	toggleWildfires,toggleWildfires,toggleWildfires,
-	carbonTax,
 	climateJournalist,
-	emissionsTargetMet,
-	carTax,
-	transportLimitations,
-	environmentalOrg,
-	megaEleCars,
 	beefProduction,
 	mcDonalds,
 	landClearance,
-	cowDomination
+	cowDomination,
+	carbonTax,
+	emissionsTarget
+	emissionsTargetMet,
+	carTax,
+	transportLimitations,
+	coalBan,
+	whalingShipDestroyed,
+	increaseEleCars,
+	megaEleCars,
 ]
 
 doEvent = ->

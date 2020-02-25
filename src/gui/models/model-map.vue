@@ -303,7 +303,8 @@
                     var regionPosition = element.getBoundingClientRect();
                     var left = regionPosition.x - this.svgPosition.x;
                     var top = regionPosition.y - this.svgPosition.y;
-                    return `top: ${top}px; left: ${left}px;`;
+                    var color = region.state.activeToken.color; 
+                    return `background:#${color}; top: ${top}px; left: ${left}px;`;
                 }
                 catch (error){
                     console.warn("Unable to get style for region", region.name.toLowerCase(), error);
