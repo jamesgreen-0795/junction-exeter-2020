@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <svg-map class="svg-map"></svg-map>
-                <div class="svg-map-overlay" :style="`background: var(--red);opacity:${temperaturePercentage * 0.75}`"></div>
+                <div class="svg-map-overlay" :style="`background: var(--red);opacity:${temperaturePercentage * 0.3}`"></div>
             </div>
         </div>
         <div class="zoom">
@@ -235,7 +235,7 @@
                 return this.$refs.svg.getBoundingClientRect();
             },
             temperaturePercentage(){
-                return ((this.$root.store.fuzzTemperature - 15) / this.$root.store.maxTemperature);
+                return (this.$root.store.temperature) / 100;
             },
         },
 
