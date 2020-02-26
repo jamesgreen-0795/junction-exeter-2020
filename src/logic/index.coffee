@@ -4,6 +4,9 @@ utils = require './utils.coffee'
 
 mainLoop = ->
 	window.store.currentFrame++
+	prevFrameTime = window.store.frameTime
+	window.store.frameTime = Date.now()
+	window.store.deltaTime = (window.store.frameTime - prevFrameTime) / 1000
 
 	if (window.store.temperature >= 100)
 		window.store.currentScreen = "end-screen"

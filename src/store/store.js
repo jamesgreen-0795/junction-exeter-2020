@@ -2,6 +2,8 @@ const uuid = require('uuid/v4');
 
 window.store = {
     currentFrame: 0,
+    deltaTime: 0,
+    frameTime: 0,
     currentYear: 1970,
     currentScreen: "start-screen",
 	newsfeed: [],
