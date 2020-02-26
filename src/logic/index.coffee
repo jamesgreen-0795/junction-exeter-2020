@@ -1,6 +1,7 @@
 newsfeed = require './newsfeed.coffee'
 climate = require './climate.coffee'
 utils = require './utils.coffee'
+dev = require './dev.coffee'
 
 mainLoop = ->
 	window.store.currentFrame++
@@ -18,6 +19,8 @@ mainLoop = ->
 		utils.cleanUpTokens()
 		if window.store.currentFrame % (30 * 30) == 0
 			window.store.currentYear++
+
+	dev.dev()
 
 	requestAnimationFrame(mainLoop)
 
