@@ -3,10 +3,13 @@ enviroActivists = ["Pink Peace","WWZ", "Extinction Stoppers"]
 badCarBrands = ["Ferd","Tayata","Handa","Renot","VMW","Markedes"]
 goodCarBrands = ["Bestla", "E-Autos", "iCar"]
 
+prevEventTime = 0
+eventSpacing = 1000
 
 export getNews = ->
-	if (Math.random()) < 0.1
+	if window.store.frameTime - prevEventTime > eventSpacing
 		doEvent()
+		prevEventTime = window.store.frameTime
 
 toggleFlooding = ->
 	if Math.random() < 0.3
@@ -29,7 +32,7 @@ toggleFlooding = ->
 			}
 			createNewsItem("Severe flooding in " + country.name + ".")
 		else
-			true
+			false
 
 toggleWildfires = ->
 	if Math.random() < 0.3
@@ -49,7 +52,7 @@ toggleWildfires = ->
 			}
 			createNewsItem("Wildfires have broken out in " + country.name + ".")
 		else
-			true
+			false
 
 drought = ->
 	country = getCountry()
@@ -67,7 +70,7 @@ drought = ->
 			}
 			createNewsItem(country.name + events[Math.floor(Math.random() * events.length)])
 		else
-			true
+			false
 
 oilDeal = ->
 	country = getCountry()
