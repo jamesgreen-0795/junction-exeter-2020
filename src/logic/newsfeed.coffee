@@ -24,19 +24,16 @@ toggleFlooding = ->
 			false
 	else
 		country = getCountry()
-		if Math.floor(Math.random() * 100) < 40
-			window.store.temperature += 1
-			country.state.flooding = true
-			country.state.activeToken = {
-				timestamp: Date.now(),
-				type: "flooding"
-				points: 25,
-				icon: "svg-impacts-flooding",
-				color: "037ffc"
-			}
-			createNewsItem("Severe flooding in " + country.name + ".")
-		else
-			false
+		window.store.temperature += 1
+		country.state.flooding = true
+		country.state.activeToken = {
+			timestamp: Date.now(),
+			type: "flooding"
+			points: 25,
+			icon: "svg-impacts-flooding",
+			color: "037ffc"
+		}
+		createNewsItem("Severe flooding in " + country.name + ".")
 
 toggleWildfires = ->
 	if Math.random() < 0.3
@@ -47,18 +44,15 @@ toggleWildfires = ->
 			eventSpacing *= 0.5 # make next event happen twice as fast
 	else
 		country = getCountry()
-		if Math.floor(Math.random() * 150) > 40
-			window.store.temperature += 1
-			country.state.wildfire = true
-			country.state.activeToken = {
-				timestamp: Date.now(),
-				type: "wildfires"
-				points: 25,
-				icon: "svg-impacts-fire"
-			}
-			createNewsItem("Wildfires have broken out in " + country.name + ".")
-		else
-			false
+		window.store.temperature += 1
+		country.state.wildfire = true
+		country.state.activeToken = {
+			timestamp: Date.now(),
+			type: "wildfires"
+			points: 25,
+			icon: "svg-impacts-fire"
+		}
+		createNewsItem("Wildfires have broken out in " + country.name + ".")
 
 drought = ->
 	country = getCountry()
@@ -170,7 +164,7 @@ closeBorders = ->
 
 climateJournalist = ->
 	country = getCountry()
-	if country.state.disinformation > 8 && Math.floor(Math.random() * 5) == 0
+	if country.state.disinformation > 8
 		window.store.temperature += 15
 		events = ["The UN has reported widespread imprisonment of climate journalists in " + country.name + ".",]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
@@ -254,7 +248,7 @@ carTax = ->
 
 transportLimitations = ->
 	country = getCountry()
-	if country.state.corruption < 6 && Math.floor(Math.random() * 2) == 0 && window.store.temperature > 10
+	if country.state.corruption < 6 && window.store.temperature > 10
 		window.store.temperature -= 1
 		events = [country.name + " has introduced a number plate waiting list.",
 				country.name + " has introduced a 1 car per family policy."]
@@ -264,7 +258,7 @@ transportLimitations = ->
 
 environmentalOrg = ->
 	country = getCountry()
-	if country.state.corruption > 7 && Math.floor(Math.random() * 3) == 0
+	if country.state.corruption > 7
 		window.store.temperature -= 1
 		window.store.disinformation -= 1
 		createNewsItem(enviroActivists[Math.floor(Math.random() * enviroActivists.length) + "have started an environmental awareness campaign in " + country.name])
@@ -283,7 +277,7 @@ coalBan = ->
 
 whalingShipDestroyed = ->
 	country = getCountry()
-	if country.state.corruption > 8 && Math.floor(Math.random() * 2) == 0
+	if country.state.corruption > 8
 		window.store.temperature -= 5
 		events = [enviroActivists[Math.floor(Math.random() * enviroActivists.length)] + " was found to be behind the recent Whaling ship sinking.",
 				enviroActivists[Math.floor(Math.random() * enviroActivists.length)] + " has chained themselves to a whaling ships in " + country.name]
@@ -293,7 +287,7 @@ whalingShipDestroyed = ->
 
 increaseEleCars = ->
 	country = getCountry()
-	if country.state.corruption < 7 && Math.floor(Math.random() * 5) == 0 && window.store.temperature > 10
+	if country.state.corruption < 7 && window.store.temperature > 10
 		window.store.temperature -= 1
 		events = [goodCarBrands[Math.floor(Math.random() * goodCarBrands.length)] + " has achieved record sales in " + country.name,
 				goodCarBrands[Math.floor(Math.random() * goodCarBrands.length)] + " has opened a new electric car factory in " + country.name]
@@ -303,41 +297,50 @@ increaseEleCars = ->
 
 megaEleCars = ->
 	country = getCountry()
-	if country.state.infrastructure > 12 && country.state.corruption < 6 && Math.floor(Math.random() * 4) == 0 && window.store.temperature > 50
+	if country.state.infrastructure > 12 && country.state.corruption < 6 && window.store.temperature > 50
 		window.store.temperature -= 30
 		events = [goodCarBrands[Math.floor(Math.random() * goodCarBrands.length)] + " has had a research breakthrough in electric cars"]
 		createNewsItem(events[Math.floor(Math.random() * events.length)])
 	else
 		false
 
-
-newsTypes = [
-	toggleFlooding,
-	toggleWildfires,
-	drought,
-	oilDeal,
-	banElectricCars,
-	banRenewableEnergy,
-	carFactory,
-	# closeBorders,
-	climateJournalist,
-	beefProduction,
-	mcDonalds,
-	landClearance,
-	cowDomination,
-	carbonTax,
-	emissionsTarget
-	emissionsTargetMet,
-	carTax,
-	transportLimitations,
-	coalBan,
-	whalingShipDestroyed,
-	increaseEleCars,
-	megaEleCars,
-]
+# Events with their probabilities of happening if selected
+getEventTypes = ->
+	[
+		[toggleFlooding,		1],
+		[toggleWildfires,		1],
+		[drought,				(window.store.temperature + 0.1) / 100],
+		[oilDeal,				1],
+		[banElectricCars,		1],
+		[banRenewableEnergy,	1],
+		[carFactory,			1],
+		#[closeBorders,			1],
+		[climateJournalist,		1],
+		[beefProduction,		1],
+		[mcDonalds,				1],
+		[landClearance,			1],
+		[cowDomination,			1],
+		[carbonTax,				1],
+		[emissionsTarget,		1],
+		[emissionsTargetMet,	1],
+		[carTax,				1],
+		[transportLimitations,	1],
+		[coalBan,				1],
+		[whalingShipDestroyed,	1],
+		[increaseEleCars,		1],
+		[megaEleCars,			1 * (country.state.infrastructure > 12 && country.state.corruption < 6 && window.store.temperature > 50)],
+	]
 
 doEvent = ->
-	if newsTypes[Math.floor(Math.random() * newsTypes.length)]()
+	eventTypes = getEventTypes()
+	[event, prob] = eventTypes[Math.floor(Math.random() * eventTypes.length)]
+	while true
+		if Math.random() < prob
+			break
+		else
+			[event, prob] = eventTypes[Math.floor(Math.random() * eventTypes.length)]
+
+	if event()
 		true
 	else
 		doEvent()
