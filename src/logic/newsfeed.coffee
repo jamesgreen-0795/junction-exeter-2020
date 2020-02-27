@@ -305,8 +305,9 @@ megaEleCars = ->
 		false
 
 # Events with their probabilities of happening if selected
-getEventTypes = ->
-	[
+getEvent = ->
+	country = getCountry()
+	eventTypes = [
 		[toggleFlooding,		1],
 		[toggleWildfires,		1],
 		[drought,				(window.store.temperature + 0.1) / 100],
@@ -318,8 +319,8 @@ getEventTypes = ->
 		[climateJournalist,		1],
 		[beefProduction,		1],
 		[mcDonalds,				1],
-		[landClearance,			1],
-		[cowDomination,			1],
+		[landClearance,			0],
+		[cowDomination,			0],
 		[carbonTax,				1],
 		[emissionsTarget,		1],
 		[emissionsTargetMet,	1],
@@ -329,18 +330,17 @@ getEventTypes = ->
 		[whalingShipDestroyed,	1],
 		[increaseEleCars,		1],
 		[megaEleCars,			1],
-	]
-
-doEvent = ->
-	eventTypes = getEventTypes()
+		]
+	eventTypes = (e for e in eventTypes when e[1] > 0) # remove impossible events
 	[event, prob] = eventTypes[Math.floor(Math.random() * eventTypes.length)]
 	while true
 		if Math.random() < prob
-			break
+			return event
 		else
 			[event, prob] = eventTypes[Math.floor(Math.random() * eventTypes.length)]
 
-	if event()
+doEvent = ->
+	if getEvent()()
 		true
 	else
 		doEvent()
