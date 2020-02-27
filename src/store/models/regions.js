@@ -1460,14 +1460,6 @@ export default generator([
         },
     },
     {
-        name: "Onekotan",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Pakistan",
         continent: "asia",
         climate: {
@@ -1477,14 +1469,6 @@ export default generator([
     },
     {
         name: "Palawan",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Paramushir",
         continent: "asia",
         climate: {
             temperature: 20,
