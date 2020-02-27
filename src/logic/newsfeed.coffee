@@ -3,6 +3,7 @@ enviroActivists = ["Pink Peace","WWZ", "Extinction Stoppers"]
 badCarBrands = ["Ferd","Tayata","Handa","Renot","VMW","Markedes"]
 goodCarBrands = ["Bestla", "E-Autos", "iCar"]
 
+
 prevEventTime = 0
 eventSpacing = 0
 
@@ -11,19 +12,20 @@ export getNews = ->
 		prevEventTime = window.store.frameTime
 		eventSpacing = 1200 + (100-window.store.temperature) * 38 + (Math.random() - 0.5) * 500
 		doEvent()
-		console.log eventSpacing
 
-toggleFlooding = ->
-	if Math.random() < 0.3
-		country = c for c in window.store.models.regions when c.state.flooding
-		if country?
-			country.state.flooding = false
-			createNewsItem(country.name + " has stopped flooding.")
+toggleFlooding = (country) ->
+	if country.state.flooding || Math.random() < 0.3
+		if country.state.flooding
+			floodedCountry = country
+		else
+			floodedCountry = c for c in window.store.models.regions when c.state.flooding
+		if floodedCountry?
+			floodedCountry.state.flooding = false
+			createNewsItem(floodedCountry.name + " has stopped flooding.")
 			eventSpacing *= 0.5 # make next event happen twice as fast
 		else
 			false
 	else
-		country = getCountry()
 		window.store.temperature += 1
 		country.state.flooding = true
 		country.state.activeToken = {
@@ -35,15 +37,17 @@ toggleFlooding = ->
 		}
 		createNewsItem("Severe flooding in " + country.name + ".")
 
-toggleWildfires = ->
-	if Math.random() < 0.3
-		country = c for c in window.store.models.regions when c.state.wildfire
-		if country?
-			country.state.wildfire = false
-			createNewsItem("Wildfires have ceased in " + country.name + ".")
+toggleWildfires = (country) ->
+	if country.state.wildfire || Math.random() < 0.3
+		if country.state.wildfire
+			fireCountry = country
+		else
+			fireCountry = c for c in window.store.models.regions when c.state.wildfire
+		if fireCountry?
+			fireCountry.state.wildfire = false
+			createNewsItem("Wildfires have ceased in " + fireCountry.name + ".")
 			eventSpacing *= 0.5 # make next event happen twice as fast
 	else
-		country = getCountry()
 		window.store.temperature += 1
 		country.state.wildfire = true
 		country.state.activeToken = {
@@ -54,8 +58,7 @@ toggleWildfires = ->
 		}
 		createNewsItem("Wildfires have broken out in " + country.name + ".")
 
-drought = ->
-	country = getCountry()
+drought = (country) ->
 	if Math.floor(Math.random() * 200) < window.store.temperature
 			window.store.temperature += 1
 			country.state.flooding = true
@@ -73,8 +76,7 @@ drought = ->
 		else
 			false
 
-oilDeal = ->
-	country = getCountry()
+oilDeal = (country) ->
 	if country.state.corruption > 2 && country.state.hasOil
 		country.state.hasOil = false
 		window.store.temperature += 1
@@ -94,9 +96,8 @@ oilDeal = ->
 	else
 		false
 
-carFactory = ->
+carFactory = (country) ->
 	if Math.floor(Math.random() * 8) == 0
-		country = getCountry()
 		window.store.temperature += 0.5
 		events = [" have opened a new factory in " ,
 				" have expanded operations in ",
@@ -114,8 +115,7 @@ carFactory = ->
 	else
 		false
 
-banElectricCars = ->
-	country = getCountry()
+banElectricCars = (country) ->
 	if country.state.corruption > 4 && !country.state.electicCarsBanned
 		country.state.electicCarsBanned = true
 		window.store.temperature += 2
@@ -132,8 +132,7 @@ banElectricCars = ->
 	else
 		false
 
-banRenewableEnergy = ->
-	country = getCountry()
+banRenewableEnergy = (country) ->
 	if country.state.corruption > 5 && !country.state.renewableEnergyBanned
 		country.state.renewableEnergyBanned = true
 		window.store.temperature += 2
@@ -150,8 +149,7 @@ banRenewableEnergy = ->
 	else
 		false
 
-closeBorders = ->
-	country = getCountry()
+closeBorders = (country) ->
 	if country.state.openBorders
 		country.state.openBorders = false
 		if country.name == "Britain"
@@ -162,8 +160,7 @@ closeBorders = ->
 	else
 		false
 
-climateJournalist = ->
-	country = getCountry()
+climateJournalist = (country) ->
 	if country.state.disinformation > 8
 		window.store.temperature += 15
 		events = ["The UN has reported widespread imprisonment of climate journalists in " + country.name + ".",]
@@ -171,32 +168,28 @@ climateJournalist = ->
 	else
 		false
 
-beefProduction = ->
-	country = getCountry()
+beefProduction = (country) ->
 	if country.state.agriculture > 2
 		window.store.temperature += 1
 		createNewsItem(country.name + " reports increased beef farming output.")
 	else
 		false
 
-mcDonalds = ->
-	country = getCountry()
+mcDonalds = (country) ->
 	if country.state.agriculture > 6
 		window.store.temperature += 2
 		createNewsItem("McDennys expands into " + country.name + " and begins importing beef to meet rising demand.")
 	else
 		false
 
-landClearance = ->
-	country = getCountry()
+landClearance = (country) ->
 	if country.state.agriculture > 11
 		window.store.temperature += 3
 		createNewsItem("Mass land clearances for beef farming begin in " + country.name)
 	else
 		false
 
-cowDomination = ->
-	country = getCountry()
+cowDomination = (country) ->
 	if country.state.agriculture > 18
 		window.store.temperature += 4
 		createNewsItem("Cows now vastly outnumber humans in " + country.name + " and subsequently have gained citizenship and the right to vote.")
@@ -205,8 +198,7 @@ cowDomination = ->
 
 
 # good
-carbonTax = ->
-	country = getCountry()
+carbonTax = (country) ->
 	if country.state.corruption < 5 && window.store.temperature > 60
 		window.store.temperature -= 10
 		events = [country.name + " has imposed an emergency carbon tax.",]
@@ -214,8 +206,7 @@ carbonTax = ->
 	else
 		false
 
-emissionsTarget = ->
-	country = getCountry()
+emissionsTarget = (country) ->
 	if country.state.corruption < 5 && window.store.temperature > 30
 		window.store.temperature -= 2
 		events = ["During the UN, " + country.name + " announced ambitious climate targets.",
@@ -226,8 +217,7 @@ emissionsTarget = ->
 	else
 		false
 
-emissionsTargetMet = ->
-	country = getCountry()
+emissionsTargetMet = (country) ->
 	if country.state.corruption < 3 && window.store.temperature > 50
 		window.store.temperature -= 7
 		events = [country.name + " have reached their emissions goals " + Math.round(Math.random()*5) + " years ahead of schedule.",
@@ -236,8 +226,7 @@ emissionsTargetMet = ->
 	else
 		false
 
-carTax = ->
-	country = getCountry()
+carTax = (country) ->
 	if country.state.corruption < 4 && country.state.disinformation < 6 == 0 && window.store.temperature > 10
 		window.store.temperature -= 1
 		events = [country.name + " has implemented low emission zones in major cities.",
@@ -246,8 +235,7 @@ carTax = ->
 	else
 		false
 
-transportLimitations = ->
-	country = getCountry()
+transportLimitations = (country) ->
 	if country.state.corruption < 6 && window.store.temperature > 10
 		window.store.temperature -= 1
 		events = [country.name + " has introduced a number plate waiting list.",
@@ -256,8 +244,7 @@ transportLimitations = ->
 	else
 		false
 
-environmentalOrg = ->
-	country = getCountry()
+environmentalOrg = (country) ->
 	if country.state.corruption > 7
 		window.store.temperature -= 1
 		window.store.disinformation -= 1
@@ -265,8 +252,7 @@ environmentalOrg = ->
 	else
 		false
 
-coalBan = ->
-	country = getCountry()
+coalBan = (country) ->
 	if country.state.corruption < 4 && country.state.infrastructure < 8 && window.store.temperature > 10
 		window.store.temperature -= 5
 		events = [country.name + " has closed all its coal power plants.",
@@ -275,8 +261,7 @@ coalBan = ->
 	else
 		false
 
-whalingShipDestroyed = ->
-	country = getCountry()
+whalingShipDestroyed = (country) ->
 	if country.state.corruption > 8
 		window.store.temperature -= 5
 		events = [enviroActivists[Math.floor(Math.random() * enviroActivists.length)] + " was found to be behind the recent Whaling ship sinking.",
@@ -285,8 +270,7 @@ whalingShipDestroyed = ->
 	else
 		false
 
-increaseEleCars = ->
-	country = getCountry()
+increaseEleCars = (country) ->
 	if country.state.corruption < 7 && window.store.temperature > 10
 		window.store.temperature -= 1
 		events = [goodCarBrands[Math.floor(Math.random() * goodCarBrands.length)] + " has achieved record sales in " + country.name,
@@ -295,8 +279,7 @@ increaseEleCars = ->
 	else
 		false
 
-megaEleCars = ->
-	country = getCountry()
+megaEleCars = (country) ->
 	if country.state.infrastructure > 12 && country.state.corruption < 6 && window.store.temperature > 50
 		window.store.temperature -= 30
 		events = [goodCarBrands[Math.floor(Math.random() * goodCarBrands.length)] + " has had a research breakthrough in electric cars"]
@@ -306,10 +289,10 @@ megaEleCars = ->
 
 # Events with their probabilities of happening if selected
 getEvent = ->
-	country = getCountry()
+	c = getCountry()
 	eventTypes = [
-		[toggleFlooding,		1],
-		[toggleWildfires,		1],
+		[toggleFlooding,		1 * !(c.state.wildfire)],
+		[toggleWildfires,		1 * !(c.state.flooding)],
 		[drought,				(window.store.temperature + 0.1) / 100],
 		[oilDeal,				1],
 		[banElectricCars,		1],
@@ -335,12 +318,12 @@ getEvent = ->
 	[event, prob] = eventTypes[Math.floor(Math.random() * eventTypes.length)]
 	while true
 		if Math.random() < prob
-			return event
+			return event(c)
 		else
 			[event, prob] = eventTypes[Math.floor(Math.random() * eventTypes.length)]
 
 doEvent = ->
-	if getEvent()()
+	if getEvent()
 		true
 	else
 		doEvent()
@@ -353,10 +336,11 @@ createNewsItem = (msg) ->
 	true
 
 getCountry = ->
-	if Math.random() < 0.5
-		countryList = ["Russia","Canada","China","Usa","Brazil","Australia","India","Argentina","Kazakhstan","Algeria",
-		"Congo","Greenland","Saudi","Mexico","Sumatra","South_sudan","Libya","Iran","Mongolia","Peru","Chad","Niger",
-		"Angola","Mali","South Africa","Colombia","Ethiopia","Bolivia","Mauretania","Egypt","Alaska","Britain","France","Germany"]
+	if Math.random() < 1
+		countryList = [ "Russia"]
+			# "Russia","Canada","China","Usa","Brazil","Australia","India","Argentina","Kazakhstan","Algeria",
+			# "Congo","Greenland","Saudi","Mexico","Sumatra","South_sudan","Libya","Iran","Mongolia","Peru","Chad","Niger",
+			# "Angola","Mali","South Africa","Colombia","Ethiopia","Bolivia","Mauretania","Egypt","Alaska","Britain","France","Germany"]
 		countryName = countryList[Math.floor(Math.random() * countryList.length)]
 		for i in [0..window.store.models.regions.length - 1]
 			if window.store.models.regions[i].name == countryName
