@@ -98,9 +98,6 @@
         },
 
         computed: {
-            pointsPercentage(){
-                return (this.$root.store.points / this.$root.store.maxPoints)*100;
-            },
             temperaturePercentage(){
                 return ((this.$root.store.fuzzTemperature - 15) / this.$root.store.maxTemperature);
             },

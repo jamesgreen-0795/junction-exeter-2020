@@ -328,7 +328,7 @@ getEventTypes = ->
 		[coalBan,				1],
 		[whalingShipDestroyed,	1],
 		[increaseEleCars,		1],
-		[megaEleCars,			1 * (country.state.infrastructure > 12 && country.state.corruption < 6 && window.store.temperature > 50)],
+		[megaEleCars,			1],
 	]
 
 doEvent = ->
