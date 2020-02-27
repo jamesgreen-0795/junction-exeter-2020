@@ -99,7 +99,7 @@
 
         computed: {
             temperaturePercentage(){
-                return ((this.$root.store.fuzzTemperature - 15) / this.$root.store.maxTemperature);
+                return ((this.$root.store.fuzzTemperature - this.$root.store.START_TEMPERATURE) / (this.$root.store.MAX_TEMPERATURE - this.$root.store.START_TEMPERATURE));
             },
             tweenedPointsFloored(){
                 return Math.floor(this.tweenedPoints);

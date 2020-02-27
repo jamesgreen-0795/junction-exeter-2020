@@ -17,8 +17,14 @@ mainLoop = ->
 		climate.modulateClimate()
 		window.store.newsfeed = utils.collectGarbage(window.store.newsfeed, 4000)
 		utils.cleanUpTokens()
-		if window.store.currentFrame % (30 * 30) == 0
-			window.store.currentYear++
+
+		window.store.timeSinceLastWeek += window.store.deltaTime
+		if window.store.timeSinceLastWeek > (window.store.TIME_PER_YEAR/52)
+			window.store.currentWeek++
+			window.store.timeSinceLastWeek = 0
+			if window.store.currentWeek >= 52
+				window.store.currentYear++
+				window.store.currentWeek = 0
 
 	dev.dev()
 

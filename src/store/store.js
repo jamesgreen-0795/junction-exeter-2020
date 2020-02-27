@@ -3,8 +3,19 @@ const uuid = require('uuid/v4');
 window.store = {
     currentFrame: 0,
     deltaTime: 0,
-    frameTime: 0,
-    currentYear: 1970,
+    frameTime: 0,       // current time in miliseconds
+    TIME_PER_YEAR: 20,      // seconds per in game year
+    timeSinceLastWeek: 0,   //seconds since last ingame week
+    currentYear: 1970,      // current ingame year (starting year)
+    currentWeek: 0,         // current ingame week
+
+    points: 10,
+    temperature: 0,     // game temp val, game ends at 100
+
+    START_TEMPERATURE: 15,  // player visible temp game starts at
+    MAX_TEMPERATURE: 20,    // player visible temp player wins at
+    fuzzTemperature: 15,    // player visible progress to 100 temperature
+
     currentScreen: "start-screen",
 	newsfeed: [],
     user: {
@@ -136,8 +147,4 @@ window.store = {
             }
         ],
 	},
-	points: 10,
-    temperature: 0,
-    fuzzTemperature: 15,
-    maxTemperature: 5,
 };
