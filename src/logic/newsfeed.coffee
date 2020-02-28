@@ -336,11 +336,8 @@ createNewsItem = (msg) ->
 	true
 
 getCountry = ->
-	if Math.random() < 1
-		countryList = [ "Russia"]
-			# "Russia","Canada","China","Usa","Brazil","Australia","India","Argentina","Kazakhstan","Algeria",
-			# "Congo","Greenland","Saudi","Mexico","Sumatra","South_sudan","Libya","Iran","Mongolia","Peru","Chad","Niger",
-			# "Angola","Mali","South Africa","Colombia","Ethiopia","Bolivia","Mauretania","Egypt","Alaska","Britain","France","Germany"]
+	if false
+		countryList = ["Russia"]
 		countryName = countryList[Math.floor(Math.random() * countryList.length)]
 		for i in [0..window.store.models.regions.length - 1]
 			if window.store.models.regions[i].name == countryName
