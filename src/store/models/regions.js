@@ -22,7 +22,7 @@ const isOil = name => {
         "Angola",
         "Ecuador",
         "Guyana",
-        "Mexico",
+        "Central America",
         "Azerbaijan",
         "Norway",
         "Oman",
@@ -55,7 +55,6 @@ const isOil = name => {
         "Ukraine",
         "Pakistan",
         "Turkey",
-        "Trinidad and Tobago",
         "Bolivia",
         "Cameroon",
         "Belarus",
@@ -70,11 +69,10 @@ const isOil = name => {
         "Philippines",
         "Poland",
         "Bahrain",
-        "Cuba",
+        "Caribbean",
         "Netherlands",
         "Ivory Coast",
         "Suriname",
-        "Guatemala",
         "France",
         "Serbia",
         "Croatia",
@@ -95,7 +93,6 @@ const isOil = name => {
         "Greece",
         "Slovakia",
         "Benin",
-        "Belize",
         "Taiwan",
         "Barbados",
         "Jordan",
@@ -195,14 +192,6 @@ export default generator([
         },
     },
     {
-        name: "Bell",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Bosnia",
         continent: "europe",
         climate: {
@@ -211,7 +200,7 @@ export default generator([
         },
     },
     {
-        name: "Britain",
+        name: "United Kingdom",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -220,14 +209,6 @@ export default generator([
     },
     {
         name: "Bulgaria",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Corsica",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -275,14 +256,6 @@ export default generator([
         },
     },
     {
-        name: "Edgeoya",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Estonia",
         continent: "europe",
         climate: {
@@ -323,23 +296,7 @@ export default generator([
         },
     },
     {
-        name: "Gotland",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Greece",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Hiumaa",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -395,14 +352,6 @@ export default generator([
         },
     },
     {
-        name: "Majorca",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Malta",
         continent: "europe",
         climate: {
@@ -435,7 +384,7 @@ export default generator([
         },
     },
     {
-        name: "Nordaustlandet",
+        name: "Svalbard",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -444,22 +393,6 @@ export default generator([
     },
     {
         name: "Norway",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Novaya zemlya north",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Novaya zemlya south",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -483,22 +416,6 @@ export default generator([
         },
     },
     {
-        name: "Prince george",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Prince of wales",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Romania",
         continent: "europe",
         climate: {
@@ -507,47 +424,7 @@ export default generator([
         },
     },
     {
-        name: "Saaremaa",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Salisbury",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Sardinia",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Serbia",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Sicily",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Sjaelland",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -571,23 +448,7 @@ export default generator([
         },
     },
     {
-        name: "Southhampton",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Spain",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Spitsbergen",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -611,14 +472,6 @@ export default generator([
         },
     },
     {
-        name: "Terceira",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Ukraine",
         continent: "europe",
         climate: {
@@ -626,15 +479,6 @@ export default generator([
             hemisphere: "n"
         },
     },
-    {
-        name: "Wilczek",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-
     {
         name: "Aldabra",
         continent: "africa",
@@ -1020,14 +864,6 @@ export default generator([
         },
     },
     {
-        name: "Pico",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Praslin",
         continent: "africa",
         climate: {
@@ -1069,14 +905,6 @@ export default generator([
     },
     {
         name: "Santo antao",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Sao miguel",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1237,23 +1065,7 @@ export default generator([
         },
     },
     {
-        name: "Bering island",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Bhutan",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Bolshevik",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1301,14 +1113,6 @@ export default generator([
         },
     },
     {
-        name: "Chukotka",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "East malaysia",
         continent: "asia",
         climate: {
@@ -1349,15 +1153,7 @@ export default generator([
         },
     },
     {
-        name: "Hokkaido",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Honshu",
+        name: "Japan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1405,14 +1201,6 @@ export default generator([
         },
     },
     {
-        name: "Iturup",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Java",
         continent: "asia",
         climate: {
@@ -1445,31 +1233,7 @@ export default generator([
         },
     },
     {
-        name: "Komsomolets",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Kotelny",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Kuwait",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Kyushu",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1509,14 +1273,6 @@ export default generator([
         },
     },
     {
-        name: "Lyakhovsky",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Malaysia",
         continent: "asia",
         climate: {
@@ -1542,14 +1298,6 @@ export default generator([
     },
     {
         name: "Maluku",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Medny",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1589,39 +1337,7 @@ export default generator([
         },
     },
     {
-        name: "North korea",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Novaya sibir",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "October",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Oman",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Onekotan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1645,14 +1361,6 @@ export default generator([
         },
     },
     {
-        name: "Paramushir",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Qatar",
         continent: "asia",
         climate: {
@@ -1662,14 +1370,6 @@ export default generator([
     },
     {
         name: "Russia",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Sakhalin",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1701,15 +1401,7 @@ export default generator([
         },
     },
     {
-        name: "Shikoku",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "South korea",
+        name: "Korea",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1805,14 +1497,6 @@ export default generator([
         },
     },
     {
-        name: "Urup",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Uzbekistan",
         continent: "asia",
         climate: {
@@ -1829,22 +1513,6 @@ export default generator([
         },
     },
     {
-        name: "Wrangel",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Wrangel-w",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Yemen",
         continent: "asia",
         climate: {
@@ -1852,67 +1520,16 @@ export default generator([
             hemisphere: "n"
         },
     },
-
     {
-        name: "Alexander",
+        name: "antarctica",
         continent: "antarctica",
         climate: {
             temperature: 20,
             hemisphere: "n"
         },
     },
-    {
-        name: "Antarctic peninsula",
-        continent: "antarctica",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "East antarctica",
-        continent: "antarctica",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Elephant",
-        continent: "antarctica",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Kerguelen",
-        continent: "antarctica",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Smyley",
-        continent: "antarctica",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-
-
     {
         name: "Australia",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Banks",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2008,15 +1625,7 @@ export default generator([
         },
     },
     {
-        name: "New zealand north island",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "New zealand south island",
+        name: "New Zealand",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2025,14 +1634,6 @@ export default generator([
     },
     {
         name: "Papua new guinea",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Raiatea",
         continent: "oceania",
         climate: {
             temperature: 20,
@@ -2064,31 +1665,13 @@ export default generator([
         },
     },
     {
-        name: "Tahiti",
+        name: "Various Islands",
         continent: "oceania",
         climate: {
             temperature: 20,
             hemisphere: "n"
         },
     },
-    {
-        name: "Tasmania",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Victoria",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-
-
     {
         name: "Argentina",
         continent: "south america",
@@ -2139,38 +1722,6 @@ export default generator([
     },
     {
         name: "Ecuador",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Falklands east",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Falklands west",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Galapagos",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Guadeloupe",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -2249,129 +1800,8 @@ export default generator([
             hemisphere: "n"
         },
     },
-
-    {
-        name: "Adak",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Adak west",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
     {
         name: "Alaska",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Alaska-westcopy",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Amchitka",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Amchitka west",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Amund ringnes",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Andros",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Another aleutian west",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Attu",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Attu west",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Axel heiberg",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Baffin",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Belize",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Bimini",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Bylot",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2387,31 +1817,7 @@ export default generator([
         },
     },
     {
-        name: "Cornwallis",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Costa rica",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Cuba",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Devon",
+        name: "Caribbean",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2427,111 +1833,7 @@ export default generator([
         },
     },
     {
-        name: "Domincan republic",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Dominica",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Eglinton",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "El salvador",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Eleuthera",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Ellef ringnes",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Ellesmere",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Grand bahama",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Greenland",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Grenada",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Guatemala",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Haida gwaii",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Haiti",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Haiti-dominican border",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2547,183 +1849,7 @@ export default generator([
         },
     },
     {
-        name: "Honduras",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Inagua",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Jamaica",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "James ross",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Kahului",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Kauai",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "King christian",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "King george",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Mackenzie king",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Martinique",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Mexico",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Newfoundland",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Nicaragua",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Oahu",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Panama",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Prescott",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Prince patrick",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Puerto rico",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Robert",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "St. lawrence island",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "St. lawrence island west",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "St. lucia",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "St. vincent",
+        name: "Central America",
         continent: "north america",
         climate: {
             temperature: 20,
@@ -2739,71 +1865,7 @@ export default generator([
         },
     },
     {
-        name: "Thurston",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Trinidad",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Ulster",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Umnak",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Umnak west",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Unalaska",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Unalaska west",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Usa",
-        continent: "north america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Vancouver",
         continent: "north america",
         climate: {
             temperature: 20,
