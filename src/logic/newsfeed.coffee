@@ -11,7 +11,6 @@ export getNews = ->
 		prevEventTime = window.store.frameTime
 		eventSpacing = 1200 + (100-window.store.temperature) * 38 + (Math.random() - 0.5) * 500
 		doEvent()
-		console.log eventSpacing
 
 toggleFlooding = ->
 	if Math.random() < 0.3
@@ -350,8 +349,9 @@ createNewsItem = (msg) ->
 	true
 
 getCountry = ->
-	if Math.random() < 0.5
-		countryList = ["Russia","Canada","China","Usa","Brazil","Australia","India","Argentina","Kazakhstan","Algeria",
+	if Math.random() < 1
+		countryList = 
+		["Russia","Canada","China","Usa","Brazil","Australia","India","Argentina","Kazakhstan","Algeria",
 		"Congo","Greenland","Saudi","Mexico","Sumatra","South_sudan","Libya","Iran","Mongolia","Peru","Chad","Niger",
 		"Angola","Mali","South Africa","Colombia","Ethiopia","Bolivia","Mauretania","Egypt","Alaska","Britain","France","Germany"]
 		countryName = countryList[Math.floor(Math.random() * countryList.length)]

@@ -2,7 +2,6 @@ const uuid = require('uuid/v4');
 
 const isOil = name => {
     var countries_with_oil = [
-        "Venezuela",
         "Saudi",
         "Arabia",
         "Iran",
@@ -20,48 +19,42 @@ const isOil = name => {
         "Brazil",
         "Algeria",
         "Angola",
-        "Ecuador",
-        "Guyana",
+        "Spanish South America",
+        "Caribbean South America",
         "Central America",
         "Azerbaijan",
-        "Norway",
+        "The Nordics",
         "Oman",
         "India",
         "Egypt",
-        "Vietnam",
         "Indonesia",
         "Malaysia",
         "Yeman",
         "United Kingdom",
         "Syria",
         "Uganda",
-        "Argentina",
-        "Colombia",
         "Gabon",
         "Australia",
         "Congo",
         "Chad",
-        "Brunei",
+        "Borneo",
         "Equatorial Guinea",
         "Ghana",
         "Romania",
         "Turkmenistan",
         "Uzbekistan",
         "Italy",
-        "Denmark",
-        "Peru",
+        "The Nordics",
         "Tunisia",
-        "Thailand",
+        "Asean",
         "Ukraine",
         "Pakistan",
         "Turkey",
-        "Bolivia",
         "Cameroon",
         "Belarus",
         "Democratic Republic of the Congo",
         "Albania",
-        "Papua New Guinea",
-        "Chile",
+        "New Guinea",
         "Niger",
         "Spain",
         "Germany",
@@ -72,7 +65,6 @@ const isOil = name => {
         "Caribbean",
         "Netherlands",
         "Ivory Coast",
-        "Suriname",
         "France",
         "Serbia",
         "Croatia",
@@ -248,14 +240,6 @@ export default generator([
         },
     },
     {
-        name: "Denmark",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Estonia",
         continent: "europe",
         climate: {
@@ -305,14 +289,6 @@ export default generator([
     },
     {
         name: "Hungary",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Iceland",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -384,15 +360,7 @@ export default generator([
         },
     },
     {
-        name: "Svalbard",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Norway",
+        name: "The Nordics",
         continent: "europe",
         climate: {
             temperature: 20,
@@ -456,14 +424,6 @@ export default generator([
         },
     },
     {
-        name: "Sweden",
-        continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Switzerland",
         continent: "europe",
         climate: {
@@ -474,14 +434,6 @@ export default generator([
     {
         name: "Ukraine",
         continent: "europe",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Aldabra",
-        continent: "africa",
         climate: {
             temperature: 20,
             hemisphere: "n"
@@ -512,23 +464,7 @@ export default generator([
         },
     },
     {
-        name: "Bioko",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Bissau",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Boa vista",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -680,22 +616,6 @@ export default generator([
         },
     },
     {
-        name: "Gran canaria",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Grande comore",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Guinee",
         continent: "africa",
         climate: {
@@ -721,14 +641,6 @@ export default generator([
     },
     {
         name: "Kirgizstan",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Lanzarote",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -768,22 +680,6 @@ export default generator([
         },
     },
     {
-        name: "Madeira",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Mahe",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Malawi",
         continent: "africa",
         climate: {
@@ -801,22 +697,6 @@ export default generator([
     },
     {
         name: "Mauretania",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Mauritius",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Mayotte",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -864,55 +744,7 @@ export default generator([
         },
     },
     {
-        name: "Praslin",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Principe",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Reunion",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Rwanda",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Santiago",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Santo antao",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Sao tome",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -952,14 +784,6 @@ export default generator([
         },
     },
     {
-        name: "Soqotra",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "South africa",
         continent: "africa",
         climate: {
@@ -985,14 +809,6 @@ export default generator([
     },
     {
         name: "Tanzania",
-        continent: "africa",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Tenerife",
         continent: "africa",
         climate: {
             temperature: 20,
@@ -1049,7 +865,7 @@ export default generator([
         },
     },
     {
-        name: "Bali",
+        name: "Borneo",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1057,47 +873,7 @@ export default generator([
         },
     },
     {
-        name: "Bangladesh",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Bhutan",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Brunei",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Burma",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Cambodia",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Cebu",
+        name: "Asean",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1113,14 +889,6 @@ export default generator([
         },
     },
     {
-        name: "East malaysia",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Emirates",
         continent: "asia",
         climate: {
@@ -1129,23 +897,7 @@ export default generator([
         },
     },
     {
-        name: "Flores",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Gan",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Hainan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1185,7 +937,7 @@ export default generator([
         },
     },
     {
-        name: "Irian jaya",
+        name: "New Guinea",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1201,23 +953,7 @@ export default generator([
         },
     },
     {
-        name: "Java",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Jordan",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Kalimantan",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1241,14 +977,6 @@ export default generator([
         },
     },
     {
-        name: "Laos",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Lebanon",
         continent: "asia",
         climate: {
@@ -1257,23 +985,7 @@ export default generator([
         },
     },
     {
-        name: "Lombok",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Luzon",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Malaysia",
+        name: "Philippines",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1297,39 +1009,7 @@ export default generator([
         },
     },
     {
-        name: "Maluku",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Mindoro",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Mongolia",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Negros",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Nepal",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1353,14 +1033,6 @@ export default generator([
         },
     },
     {
-        name: "Palawan",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Qatar",
         continent: "asia",
         climate: {
@@ -1377,23 +1049,7 @@ export default generator([
         },
     },
     {
-        name: "Samar",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Saudi",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Seram",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1417,23 +1073,7 @@ export default generator([
         },
     },
     {
-        name: "Sulawesi",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Sumatra",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Sumba",
+        name: "Indonesia",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1465,22 +1105,6 @@ export default generator([
         },
     },
     {
-        name: "Thailand",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Timor",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Turkey",
         continent: "asia",
         climate: {
@@ -1498,14 +1122,6 @@ export default generator([
     },
     {
         name: "Uzbekistan",
-        continent: "asia",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Vietnam",
         continent: "asia",
         climate: {
             temperature: 20,
@@ -1537,94 +1153,6 @@ export default generator([
         },
     },
     {
-        name: "Bougainville",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Choiseul",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Efate",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Espiritu santo",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Fiji",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Malaita",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Malakula",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "New britain",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "New caledonia",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "New georgia",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "New ireland",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "New Zealand",
         continent: "oceania",
         climate: {
@@ -1633,71 +1161,7 @@ export default generator([
         },
     },
     {
-        name: "Papua new guinea",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Rennell",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Santa ana",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Santa isabel",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Various Islands",
-        continent: "oceania",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Argentina",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Bolivia",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
         name: "Brazil",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Chile",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -1713,7 +1177,7 @@ export default generator([
         },
     },
     {
-        name: "Colombia",
+        name: "Caribbean South America",
         continent: "south america",
         climate: {
             temperature: 20,
@@ -1721,79 +1185,7 @@ export default generator([
         },
     },
     {
-        name: "Ecuador",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Guyana",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Guyane",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Paraguay",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Peru",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Suriname",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Tierra del fuego argentina",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Tierra del fuego chile",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Uruguay",
-        continent: "south america",
-        climate: {
-            temperature: 20,
-            hemisphere: "n"
-        },
-    },
-    {
-        name: "Venezuela",
+        name: "Spanish South America",
         continent: "south america",
         climate: {
             temperature: 20,
